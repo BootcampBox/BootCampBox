@@ -8,12 +8,17 @@
     <title>BootCampBox</title>
     <meta name="description" content="A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google fonts cdn -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- Materialize CSS Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--Our Stylesheet-->
     <link rel="stylesheet" href="./assets/css/style.css">
     <!--Favicon Link-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!--Our Script-->
+    <script defer src="./assets/js/script.js"></script>
 </head>
 
 <body>
@@ -22,7 +27,7 @@
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">Logo</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#dash">Dashboard</a></li>
                     <li><a href="#cdnjs">CDNJS</a></li>
                     <li><a href="#slack">Slack</a></li>
                     <li><a href="#codeSnippets">Code Snippets</a></li>
@@ -32,24 +37,37 @@
 
     </header>
     <main>
-        <div class="carousel carousel-slider center">
-            <div class="carousel-fixed-item center">
-                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+        <div id="carouselFirst" class="carousel carousel-slider center">
+            <div id="prvBtn">
+                <a class="btn waves-effect  white-text darken-text-2 button">
+                    <<</a>
             </div>
-            <div class="carousel-item red white-text" href="#one!">
-                <h2>First Panel</h2>
-                <p class="white-text">This is your first panel</p>
+            <div id="nxtBtn">
+                <a class="btn waves-effect  white-text darken-text-2 button">
+                    >></a>
+            </div>
+            <div id="dash" class="carousel-item blue-grey white-text center" href="#">
+                <h2>Dashboard</h2>
+                <p class="white-text">This is your fourth panel</p>
+            </div>
+            <div class="carousel-item red white-text" id="slack" href="#slack">
+                <h2>Slack</h2>
+                <div class="card">
+                    <Form>
+                        <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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">
+                    </Form>
+                </div>
             </div>
             <div class="carousel-item amber white-text" href="#two!">
-                <h2>Second Panel</h2>
+                <h2>CDNJS Search Tool</h2>
                 <p class="white-text">This is your second panel</p>
             </div>
             <div class="carousel-item green white-text" href="#three!">
-                <h2>Third Panel</h2>
+                <h2>Code Snippets</h2>
                 <p class="white-text">This is your third panel</p>
             </div>
             <div class="carousel-item blue white-text" href="#four!">
-                <h2>Fourth Panel</h2>
+                <h2>Web BookMarks</h2>
                 <p class="white-text">This is your fourth panel</p>
             </div>
         </div>
@@ -57,13 +75,10 @@
     <footer>
 
     </footer>
-    <!--Other Scripts-->
     <!-- jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!--Our Script-->
-    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

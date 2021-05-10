@@ -1,0 +1,50 @@
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 20pt;
+}
+
+form {
+    display: grid;
+    width: 50%;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 1fr 1fr 1fr 1fr;
+    margin: 0 25%;
+}
+
+#useridlbl {
+    grid-column: 1;
+    text-align: right;
+    padding: 5px;
+}
+
+#useridInput {
+    grid-column: 2;
+}
+
+#userpasslbl {
+    grid-column: 1;
+    text-align: right;
+    padding: 5px;
+}
+
+#userpassinput {
+    grid-column: 2;
+}
+
+#loginBtn {
+    grid-column: 1;
+    grid-row: 4;
+    width: 50%;
+    margin-left: 80%;
+    text-align: center;
+}
+
+#resetBtn {
+    grid-column: 3;
+    grid-row: 4;
+    width: 50%;
+    margin-left: -30%;
+    text-align: center;
+}

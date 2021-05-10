@@ -7,3 +7,44 @@ li {
 a {
     text-decoration: none;
 }
+
+
+/*Carousel*/
+
+.button {
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+}
+
+#nxtBtn {
+    position: absolute;
+    Top: 50%;
+    Left: 100%;
+    transform: translateX(-100%) translateY(-50%);
+    z-index: 1;
+}
+
+#prvBtn {
+    position: absolute;
+    Top: 50%;
+    Left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+
+/*Main*/
+
+.card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+}
