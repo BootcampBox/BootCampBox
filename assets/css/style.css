@@ -1,0 +1,141 @@
+html {
+    background-color: black
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 80% !important;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800 !important;
+    margin-top: 1rem;
+}
+
+
+/* Nav Menu */
+
+.customheader {
+    background-color: black;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    margin-left: 1rem;
+    max-height: 60px;
+    z-index: 2;
+}
+
+
+/*Carousel*/
+
+.button {
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0, 0, 0, 0.34);
+}
+
+#nxtBtn {
+    position: absolute;
+    Top: 50%;
+    Left: 100%;
+    transform: translateX(-100%) translateY(-50%);
+    z-index: 1;
+}
+
+#prvBtn {
+    position: absolute;
+    Top: 50%;
+    Left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+
+/*Main*/
+
+.card {
+    background: rgb(8, 8, 8);
+    text-decoration: none;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #444;
+    box-shadow: 1px 4px 11px 4px rgba(0, 0, 0, 0.34);
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+}
+
+
+/*CDNJS Slide*/
+
+#cdnjsInput {
+    width: 50%;
+    height: 25px;
+    padding-right: 50px;
+}
+
+#cdnjsBtn {
+    margin-left: -70px;
+    height: 20px;
+    width: fit-content;
+    background: rgb(176, 4, 228);
+    color: white;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+#cdnjsInput:hover {
+    box-shadow: inset 0px 0px 48px 1px rgba(224, 140, 255, 0.1), -webkit-box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
+    box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
+}
+
+.uk-margin {
+    background-color: rgba(255, 255, 255, 0.75)
+}
+
+.scroll {
+    margin: 0 2.5%;
+    wrap: none;
+    padding: 4px;
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 95%;
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+.resultLi {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    user-select: none;
+    text-decoration: underline;
+    font-variant: small-caps;
+    text-align: center;
+}
+
+.resultLi,
+.cdnLi {
+    list-style: none;
+    width: 100%;
+    background-color: white;
+}
+
+.cdnLi {
+    margin-bottom: 1rem;
+    font-variant: none;
+}

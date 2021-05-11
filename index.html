@@ -8,23 +8,104 @@
     <title>BootCampBox</title>
     <meta name="description" content="A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google fonts cdn -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- Materialize CSS Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!--Our Stylesheet-->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Favicon Link-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!--Our Script-->
+    <script defer src="./assets/js/script.js"></script>
+    <!--Our Stylesheet-->
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
+    <header class="navbar-fixed ">
+        <nav class="nav-wrapper customheader">
+            <a href="#!" class="brand-logo">
+                <img src="./assets/images/009-giftbox.png"></img>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#dash">Dashboard</a></li>
+                <li><a href="#cdnjs">CDNJS</a></li>
+                <li><a href="#slack">Slack</a></li>
+                <li><a href="#snips">Code Snippets</a></li>
+                <li><a href="#bmarks">Bookmarks</a></li>
+            </ul>
 
-    <!--Other Scripts-->
+        </nav>
+
+    </header>
+    <main id="carouselFirst" class="carousel carousel-slider center">
+        <div id="prvBtn">
+            <a class="btn waves-effect  white-text darken-text-2 button">
+                <<</a>
+        </div>
+        <div id="nxtBtn">
+            <a class="btn waves-effect  white-text darken-text-2 button">
+                    >></a>
+        </div>
+        <div id="dash" class="carousel-item blue-grey white-text center" href="#one!">
+            <h2>Dashboard</h2>
+            <p class="white-text">This is your fourth panel</p>
+        </div>
+        <div class="carousel-item red white-text" id="slack" href="#two!">
+            <h2>Slack</h2>
+            <div class="card">
+                <Form>
+                    <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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">
+                </Form>
+            </div>
+        </div>
+        <div id="cdnjs" class="carousel-item white white-text" href="#three!">
+            <h2>CDNJS Search Tool</h2>
+            <div class="card">
+                <div class="uk-margin">
+                    <input id="cdnjsInput" type="text" placeholder="Search for a Library">
+                    <input id="cdnjsBtn" type="submit">
+                </div>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Oh no!</h4>
+                        <p>Your search returned no results, try again.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+                    </div>
+                </div>
+                <section id="cdnjsResults">
+                    <ol>
+
+                    </ol>
+                </section>
+            </div>
+        </div>
+        <div id="snips" class="carousel-item green white-text" href="#four!">
+            <h2>Code Snippets</h2>
+            <p class="white-text">This is your third panel</p>
+        </div>
+        <div class="carousel-item blue white-text" id="bmarks" href="#five!">
+            <h2>Web Bookmarks</h2>
+            <p class="white-text">This is your fourth panel</p>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
     <!-- jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!--Our Script-->
-    <script src="./assets/js/script.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
 </body>
 
 </html>
