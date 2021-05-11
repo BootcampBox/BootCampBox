@@ -7,6 +7,12 @@ body {
     height: 80% !important;
 }
 
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800 !important;
+    margin-top: 1rem;
+}
+
 
 /* Nav Menu */
 
@@ -34,7 +40,7 @@ a img {
 .button {
     font-weight: 800;
     font-family: 'Roboto', sans-serif;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.34);
 }
 
 #nxtBtn {
@@ -104,15 +110,18 @@ a img {
     margin: 0 2.5%;
     wrap: none;
     padding: 4px;
-    background-color: green;
+    background-color: rgba(255, 255, 255, 0.85);
     width: 95%;
-    height: 500px;
+    height: 400px;
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify;
 }
 
 .resultLi {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
     user-select: none;
     text-decoration: underline;
     font-variant: small-caps;

@@ -77,7 +77,7 @@ $('#cdnjsBtn').on('click', function() {
     var cdnjsBaseUrl = 'https://api.cdnjs.com/libraries';
     var cdnjsInput = $('#cdnjsInput').val();
     var searchAdd = '?search=' + cdnjsInput;
-    $('li').remove();
+    $('ol li').remove();
 
     console.log(cdnjsBaseUrl + searchAdd)
     $.ajax({
