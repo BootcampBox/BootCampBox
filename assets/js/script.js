@@ -6,7 +6,6 @@ $(document).ready(function() {
         fullWidth: true,
         indicators: true
     });
-    $('#dash').set(1);
 });
 
 /*Carousel Buttons*/
