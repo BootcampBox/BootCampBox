@@ -13,63 +13,89 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- Materialize CSS Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!--Our Stylesheet-->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Favicon Link-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!--Our Script-->
     <script defer src="./assets/js/script.js"></script>
+    <!--Our Stylesheet-->
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <header class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Logo</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#dash">Dashboard</a></li>
-                    <li><a href="#cdnjs">CDNJS</a></li>
-                    <li><a href="#slack">Slack</a></li>
-                    <li><a href="#codeSnippets">Code Snippets</a></li>
-                </ul>
-            </div>
+    <header class="navbar-fixed ">
+        <nav class="nav-wrapper customheader">
+            <a href="#" class="brand-logo">
+
+                <img src="./assets/images/009-giftbox.png"></img>
+
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#dash">Dashboard</a></li>
+                <li><a href="#cdnjs">CDNJS</a></li>
+                <li><a href="#slack">Slack</a></li>
+                <li><a href="#codeSnippets">Code Snippets</a></li>
+            </ul>
+
         </nav>
 
     </header>
-    <main>
-        <div id="carouselFirst" class="carousel carousel-slider center">
-            <div id="prvBtn">
-                <a class="btn waves-effect  white-text darken-text-2 button">
-                    <<</a>
-            </div>
-            <div id="nxtBtn">
-                <a class="btn waves-effect  white-text darken-text-2 button">
+    <main id="carouselFirst" class="carousel carousel-slider center">
+        <div id="prvBtn">
+            <a class="btn waves-effect  white-text darken-text-2 button">
+                <<</a>
+        </div>
+        <div id="nxtBtn">
+            <a class="btn waves-effect  white-text darken-text-2 button">
                     >></a>
+        </div>
+        <div id="dash" class="carousel-item blue-grey white-text center" href="#">
+            <h2>Dashboard</h2>
+            <p class="white-text">This is your fourth panel</p>
+        </div>
+        <div class="carousel-item red white-text" id="slack" href="#slack">
+            <h2>Slack</h2>
+            <div class="card">
+                <Form>
+                    <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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">
+                </Form>
             </div>
-            <div id="dash" class="carousel-item blue-grey white-text center" href="#">
-                <h2>Dashboard</h2>
-                <p class="white-text">This is your fourth panel</p>
-            </div>
-            <div class="carousel-item red white-text" id="slack" href="#slack">
-                <h2>Slack</h2>
-                <div class="card">
-                    <Form>
-                        <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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">
-                    </Form>
+        </div>
+        <div class="carousel-item white white-text" href="#two!">
+            <h2>CDNJS Search Tool</h2>
+            <div class="card">
+                <div class="uk-margin">
+                    <input id="cdnjsInput" type="text" placeholder="Search for a Library">
+                    <input id="cdnjsBtn" type="submit">
                 </div>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Oh no!</h4>
+                        <p>Your search returned no results, try again.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+                    </div>
+                </div>
+                <section id="cdnjsResults">
+                    <ol>
+
+                    </ol>
+                </section>
+
             </div>
-            <div class="carousel-item amber white-text" href="#two!">
-                <h2>CDNJS Search Tool</h2>
-                <p class="white-text">This is your second panel</p>
-            </div>
-            <div class="carousel-item green white-text" href="#three!">
-                <h2>Code Snippets</h2>
-                <p class="white-text">This is your third panel</p>
-            </div>
-            <div class="carousel-item blue white-text" href="#four!">
-                <h2>Web BookMarks</h2>
-                <p class="white-text">This is your fourth panel</p>
-            </div>
+        </div>
+        <div class="carousel-item green white-text" href="#three!">
+            <h2>Code Snippets</h2>
+            <p class="white-text">This is your third panel</p>
+        </div>
+        <div class="carousel-item blue white-text" href="#four!">
+            <h2>Web BookMarks</h2>
+            <p class="white-text">This is your fourth panel</p>
         </div>
     </main>
     <footer>
@@ -79,6 +105,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
 </body>
 
 </html>

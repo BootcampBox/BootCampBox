@@ -1,12 +1,14 @@
 /*initialize materialize components*/
 M.AutoInit();
 $(document).ready(function() {
-    $('.carousel').carousel();
+    $('.carousel').carousel().height(650);
     $('.carousel.carousel-slider').carousel({
         fullWidth: true,
         indicators: true
     });
+    // $('.modal').modal();
 });
+
 /*Carousel Buttons*/
 $('#nxtBtn').on('click', function(e) {
     e.preventDefault();
@@ -56,12 +58,59 @@ function check(form) /*function to check userid & password*/ {
 
         // initialize();
     } else {
-        console.log(userList[i].username, userList[i].password)
+
         alert("Error Password or Username ") /*displays error message*/
     }
 }
 
-/*CDNJS Variables*/
-var cdnjsBaseUrl = 'https://api.cdnjs.com/libraries'
-var cdnjsSearch = '?search=' + cdnjsUserInput
-var cdnjsUserInput = $('#cdnjsUserInput').val();
+
+//close modal if popped 
+$('.modal-close').on('click', function() {
+        $('.modal').hide();
+    })
+    //CDNJS Search Button and Results Parsing
+var nameListItemEl;
+var cdnListEl;
+var olEl = $('#cdnjsResults ol');
+$('#cdnjsBtn').on('click', function() {
+    /*CDNJS Variables*/
+    var cdnjsBaseUrl = 'https://api.cdnjs.com/libraries';
+    var cdnjsInput = $('#cdnjsInput').val();
+    var searchAdd = '?search=' + cdnjsInput;
+    $('li').remove();
+
+    console.log(cdnjsBaseUrl + searchAdd)
+    $.ajax({
+        url: cdnjsBaseUrl + searchAdd,
+        method: 'GET',
+    }).then(function(response) {
+
+        if (response.results.length == 0) {
+            console.log('Nothing in response ')
+            $('.modal').show();
+        } else {
+
+            olEl.addClass('scroll')
+                //Iterate through response data
+            for (var x = 0; x < response.results.length; x++) {
+                var respName = response.results[x].name;
+                var respUrl = response.results[x].latest;
+                //create a list item for each name result
+                nameListItemEl = $('<li class="resultLi">' + respName + '</li>');
+                //creat a list item for each url 
+                cdnListEl = $('<li class="cdnLi"><a href="' + respUrl + '">' + respUrl + '</a></li>')
+                    //append them to the page
+                olEl.append(nameListItemEl);
+                nameListItemEl.append(cdnListEl);
+            }
+            /*Not Working yet, revisit
+          cdnListEl.on('click', function() {
+                console.log(this, 'has been clicked')
+                $(this).val().select();
+                document.execCommand("copy");
+            })*/
+
+        }
+
+    });
+})
