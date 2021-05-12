@@ -8,6 +8,7 @@
     <title>BootCampBox</title>
     <meta name="description" content="A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="993767314328-rfm0arijtb8gk5h4irlv9cu4hip82lue.apps.googleusercontent.com">
     <!-- Google fonts cdn -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -23,6 +24,9 @@
     <script defer src="./assets/js/script.js"></script>
     <!--Our Stylesheet-->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!--Google Sign-in-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 
 <body>
@@ -53,13 +57,12 @@
         </div>
         <div id="dash" class="carousel-item blue-grey white-text center" href="#one!">
             <h2>Dashboard</h2>
-            <p class="white-text">This is your fourth panel</p>
         </div>
         <div class="carousel-item red white-text" id="slack" href="#two!">
             <h2>Slack</h2>
             <div class="card">
                 <Form>
-                    <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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">
+                    <!-- <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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"> -->
                 </Form>
             </div>
         </div>
