@@ -53,7 +53,7 @@ a img {
 }
 
 
-/*Carousel*/
+/* Carousel
 
 .button {
     font-weight: 800;
@@ -75,7 +75,7 @@ a img {
     Left: 0;
     transform: translateY(-50%);
     z-index: 1;
-}
+} */
 
 
 /*Main*/
@@ -97,7 +97,37 @@ a img {
 }
 
 
+/*Dashboard Slide*/
+
+#dash {
+    grid-template-columns: 2 / 11;
+    grid-template-rows: 2 / 11;
+}
+
+
+/* Slack Slide */
+
+#slack {
+    display: none;
+    grid-template-columns: 2 / 11;
+    grid-template-rows: 2 / 11;
+}
+
+
+/*Notion Slide*/
+
+#notion {
+    display: none;
+}
+
+
 /*CDNJS Slide*/
+
+#cdnjs {
+    display: none;
+    grid-template-columns: 2 / 11;
+    grid-template-rows: 2 / 11;
+}
 
 #cdnjsInput {
     width: 50%;

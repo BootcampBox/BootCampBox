@@ -41,4 +41,3 @@ A helpful dashboard for use in a web-development environment. Integrates multipl
   
 2. Work whenever you are free and we will use slack to orchestrate group meetings (probably before or after class)
 3. Each contributor is repsonsible for ensuring that they are contributing in both quantity and quality which directly correlates with the other members of the group.
-  
