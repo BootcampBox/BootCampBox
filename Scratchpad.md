@@ -22,6 +22,31 @@ Place in head tag.
 </body>
 ```
 
+### Form2 Example Usage
+
+``` 
+
+ <form action="https://form2channel.com?form=sample" method="POST" enctype="multipart/form-data">
+
+                <!-- Recipients for the form info -->
+                <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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">
+                <!-- Form fields need name and value attributes -->
+                TextField:
+                <input type="text" name="TextField" value="TextValue"> TextArea: ption>
+                </select>
+                <label>CheckBox1: <input name="CheckBox1" type="checkbox" value="checked" checked></label>
+                <label>CheckBox2: <input name="CheckBox2" type="checkbox"></label>
+                <label>CheckBox3: <input name="CheckBox3" type="checkbox" checked></label> RadioButton:
+                <label><input name="RadioButton" type="radio" value="checked" checked> Checked</label>
+                <label><input name="RadioButton" type="radio" value="unchecked"> Unchecked</label> Single File:
+                <input type="file" name="fieldname1"> Multiple Files:
+                <input type="file" name="fieldname2[]" multiple>
+                <button type="Submit">Send</button>
+            </form>
+
+```
+
+
 ## JS 
 
 ---

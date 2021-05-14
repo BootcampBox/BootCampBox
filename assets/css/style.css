@@ -4,7 +4,14 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    height: 80% !important;
+    height: 80%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: .5rem;
 }
 
 h2 {
@@ -16,8 +23,19 @@ h2 {
 
 /* Nav Menu */
 
-.customheader {
-    background-color: black;
+nav {
+    display: grid;
+    grid-template-rows: repeat(5fr);
+}
+
+#navTabsTop {
+    grid-column: 1;
+    grid-row: 1/5;
+}
+
+#navTabsBottom {
+    grid-column: 1;
+    grid-row: 8/11;
 }
 
 li {
@@ -35,7 +53,7 @@ a img {
 }
 
 
-/*Carousel*/
+/* Carousel
 
 .button {
     font-weight: 800;
@@ -57,7 +75,7 @@ a img {
     Left: 0;
     transform: translateY(-50%);
     z-index: 1;
-}
+} */
 
 
 /*Main*/
@@ -79,7 +97,37 @@ a img {
 }
 
 
+/*Dashboard Slide*/
+
+#dash {
+    grid-template-columns: 2 / 11;
+    grid-template-rows: 2 / 11;
+}
+
+
+/* Slack Slide */
+
+#slack {
+    display: none;
+    grid-template-columns: 2 / 11;
+    grid-template-rows: 2 / 11;
+}
+
+
+/*Notion Slide*/
+
+#notion {
+    display: none;
+}
+
+
 /*CDNJS Slide*/
+
+#cdnjs {
+    display: none;
+    grid-template-columns: 2 / 11;
+    grid-template-rows: 2 / 11;
+}
 
 #cdnjsInput {
     width: 50%;
@@ -100,10 +148,6 @@ a img {
 #cdnjsInput:hover {
     box-shadow: inset 0px 0px 48px 1px rgba(224, 140, 255, 0.1), -webkit-box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
     box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
-}
-
-.uk-margin {
-    background-color: rgba(255, 255, 255, 0.75)
 }
 
 .scroll {
