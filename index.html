@@ -30,35 +30,32 @@
 </head>
 
 <body>
-    <header class="navbar-fixed ">
-        <nav class="nav-wrapper customheader">
-            <a href="#!" class="brand-logo">
-                <img src="./assets/images/009-giftbox.png"></img>
-            </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#dash">Dashboard</a></li>
-                <li><a href="#cdnjs">CDNJS</a></li>
-                <li><a href="#slack">Slack</a></li>
-                <li><a href="#snips">Code Snippets</a></li>
-                <li><a href="#bmarks">Bookmarks</a></li>
+    <main>
+        <nav id="navTabsTop">
+            <ul>
+                <li>
+                    <a href="#dash">Dash</a>
+                </li>
+                <li>
+                    <a href="#slack">Slack</a>
+                </li>
+                <li>
+                    <a href="#notion">Notion</a>
+                </li>
+                <li>
+                    <a href="#cdnjs">CDNJS</a>
+                </li>
             </ul>
-
+        </nav>
+        <nav id="navTabsBottom">
+            <a href="#about">About</a>
+            <a href="#help">Help</a>
         </nav>
 
-    </header>
-    <main id="carouselFirst" class="carousel carousel-slider center">
-        <div id="prvBtn">
-            <a class="btn waves-effect  white-text darken-text-2 button">
-                <<</a>
-        </div>
-        <div id="nxtBtn">
-            <a class="btn waves-effect  white-text darken-text-2 button">
-                    >></a>
-        </div>
-        <div id="dash" class="carousel-item blue-grey white-text center" href="#one!">
+        <div id="dash" class="workspace">
             <h2>Dashboard</h2>
         </div>
-        <div class="carousel-item red white-text" id="slack" href="#two!">
+        <div class="workspace" id="slack">
             <h2>Slack</h2>
             <div class="card">
                 <Form>
@@ -66,7 +63,7 @@
                 </Form>
             </div>
         </div>
-        <div id="cdnjs" class="carousel-item white white-text" href="#three!">
+        <div id="cdnjs" class="workspace">
             <h2>CDNJS Search Tool</h2>
             <div class="card">
                 <div class="uk-margin">
