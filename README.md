@@ -7,6 +7,7 @@ A helpful dashboard for use in a web-development environment. Integrates multipl
 ## Links and Screenshots:
 
 ### Wireframe
+<img src="./assets/images/BootCampBoxWireFrame.jpg" alt="screencap of Whimsical wireframe" />
 
 ### Deployed Application
 
