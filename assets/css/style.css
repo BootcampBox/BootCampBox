@@ -273,3 +273,28 @@ a img {
     margin-bottom: 1rem;
     font-variant: none;
 }
+
+#links {
+    display: none;
+    height: 100%;
+    width: 80%;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 5;
+
+}
+
+#linksCard {
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 3;
+    grid-row-end: 9;
+    text-align: center;
+}
+
+.linksLi {
+    list-style: none;
+    width: 100%;
+    background-color: white;
+}
