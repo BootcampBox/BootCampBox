@@ -77,6 +77,11 @@ $('#navDash').on('click', function() {
     $('#dash').show();
 
 })
+$('#navLinks').on('click', function() {
+    $('#workspace').children().hide();
+    $('#links').show();
+
+})
 
 function check(form) /*function to check userid & password*/ {
 
@@ -146,3 +151,34 @@ $('#cdnjsBtn').on('click', function() {
 
     });
 })
+// Create variables to make <li> and variables to refer to the input fields
+var linksListEl = $('<li>');
+var linksAnchor = $("<a class='scroll linksLi'>")
+var linkInput = $('#linkInput');
+var nameInput = $('#nameInput');
+var linksBtn = $("#linksBtn");
+var linksList = $("#linksList");
+// Add an event listener to the add button, which takes value from link and name input fields, save to localStorage, apply to <li> variable
+linksBtn.on("click", linkMaker)
+function linkMaker() {
+    // TODO: Add name addition functionality
+    // for localStorage, use numbers for the name of the variables so you can iterate thru with a for loop and backtick syntax
+    console.log(linkInput.val());
+    localStorage.setItem("links", linkInput.val());
+    linksAnchor.text(linkInput.val());
+    // Append <li> to <ul>
+    linksList.append(linksListEl);
+    linksListEl.append(linksAnchor);
+
+}
+// On page load, add the values from localStorage to <li>s and add them (hidden) to the <ul>
+var storedLinks = localStorage.getItem("links");
+console.log(storedLinks);
+var storedLinksAnchor = $("<a class='scroll linksLi'>")
+linksList.append(linksListEl);
+storedLinksAnchor.text(storedLinks);
+linksListEl.append(storedLinksAnchor);
+
+
+
+// When the user clicks the Links nav item, populate the page with the standard elements as well as the <li>s with localStorage values if they arent already appended
