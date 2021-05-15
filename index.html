@@ -8,7 +8,6 @@
     <title>BootCampBox</title>
     <meta name="description" content="A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-signin-client_id" content="993767314328-rfm0arijtb8gk5h4irlv9cu4hip82lue.apps.googleusercontent.com">
     <!-- Google fonts cdn -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -24,16 +23,14 @@
     <script defer src="./assets/js/script.js"></script>
     <!--Our Stylesheet-->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!--Google Sign-in-->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
 </head>
 
 <body>
     <main>
         <aside class="navTabs">
             <div id="greeting">
-                <p id="greetPTag">Welcome, User</p>
+                <h2>Welcome <span id="nick" class="nickname"></span></h2>
             </div>
             <section id="navTabsTop">
                 <ul>
@@ -112,6 +109,11 @@
     <footer>
 
     </footer>
+
+    <!--Auth0-->
+    <script src="https://cdn.auth0.com/js/auth0/9.11/auth0.min.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+
     <!-- jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->

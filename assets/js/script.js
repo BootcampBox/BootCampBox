@@ -1,47 +1,13 @@
-/*initialize materialize components*/
-/*Archived Carousel Parts
-// $(document).ready(function() {
-//     M.AutoInit();
-
-//     $('.carousel').carousel().height(650);
-//     $('.carousel.carousel-slider').carousel({
-//         fullWidth: true,
-//         indicators: true
-//     });
-// });
-// $('#snips').on('click', function(e) {
-//     e.preventDefault();
-//     e.stopPropagation();
-//     $('#carouselFirst').carousel('#four!');
-// });
-// /*Carousel Buttons*/
-// $('#nxtBtn').on('click', function(e) {
-//     e.preventDefault();
-//     e.stopPropagation();
-//     $('#carouselFirst').carousel('next');
-// });
-// $('#prvBtn').on('click', function(e) {
-//     e.preventDefault();
-//     e.stopPropagation();
-//     $('#carouselFirst').carousel('prev');
-// });
-
-// // Google Sign-in
-// function onSignIn(googleUser) {
-//     var profile = googleUser.getBasicProfile();
-//     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-//     console.log('Name: ' + profile.getName());
-//     console.log('Image URL: ' + profile.getImageUrl());
-//     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-// } { /* <a href="#" onclick="signOut();">Sign out</a> */ }
-
-// function signOut() {
-//     var auth2 = gapi.auth2.getAuthInstance();
-//     auth2.signOut().then(function() {
-//         console.log('User signed out.');
-//     });
-// }
-
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyAhr03GPm1oGzx4AJstN4C9NFzCOT_kPIg",
+    authDomain: "bootcampbox-1c031.firebaseapp.com",
+    projectId: "bootcampbox-1c031",
+    storageBucket: "bootcampbox-1c031.appspot.com",
+    messagingSenderId: "449681568493",
+    appId: "1:449681568493:web:80039cb38640d7430152e4",
+    measurementId: "G-NSKYB1SJ9P"
+};
 
 
 /*User Login Form*/
@@ -78,22 +44,76 @@ $('#navDash').on('click', function() {
 
 })
 
-function check(form) /*function to check userid & password*/ {
+/* Auth0 Attempt*/
+// Initializing our Auth0Lock
+var lock = new Auth0Lock(
+    'aafb51ab4f2b54c77dd1',
+    '2f6f1d731bd224129d6cb63e79a2dd0885a6d76e'
+);
+var Auth = (function() {
 
-    /*the following code checkes whether the entered userid and password are matching*/
-    if (form.useridinput.value == userList.indexof(username) && form.userpassinput.value == userList.indexof(password)) {
-        window.open('index.html') /*opens the target page while Id & password matches*/
+    var wm = new WeakMap();
+    var privateStore = {};
+    var lock;
 
-        /* Get userSettings from localStorage*/
-
-        /* Load userSettings to correct HTML elements*/
-
-        // initialize();
-    } else {
-
-        alert("Error Password or Username ") /*displays error message*/
+    function Auth() {
+        this.lock = new Auth0Lock(
+            'aafb51ab4f2b54c77dd1',
+            'https://bootcampbox.us.auth0.com/authorize'
+        );
+        wm.set(privateStore, {
+            appName: "BootCampBox"
+        });
     }
-}
+
+    Auth.prototype.getProfile = function() {
+        return wm.get(privateStore).profile;
+    };
+
+    Auth.prototype.authn = function() {
+        // Listening for the authenticated event
+        this.lock.on("authenticated", function(authResult) {
+            // Use the token in authResult to getUserInfo() and save it if necessary
+            this.getUserInfo(authResult.accessToken, function(error, profile) {
+                if (error) {
+                    // Handle error
+                    return;
+                }
+
+                //we recommend not storing Access Tokens unless absolutely necessary
+                wm.set(privateStore, {
+                    accessToken: authResult.accessToken
+                });
+
+                wm.set(privateStore, {
+                    profile: profile
+                });
+
+            });
+        });
+    };
+    return Auth;
+}());
+
+document.getElementById('btn-login').addEventListener('click', function() {
+    lock.show();
+});
+// function check(form) /*function to check userid & password*/ {
+
+//     /*the following code checkes whether the entered userid and password are matching*/
+//     if (form.useridinput.value == userList.indexof(username) && form.userpassinput.value == userList.indexof(password)) {
+//         window.open('index.html') /*opens the target page while Id & password matches*/
+
+//         /* Get userSettings from localStorage*/
+
+//         /* Load userSettings to correct HTML elements*/
+
+//         // initialize();
+//     } else {
+
+//         alert("Error Password or Username ") /*displays error message*/
+//     }
+// }
 
 
 //close modal if popped 
