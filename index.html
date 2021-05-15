@@ -66,16 +66,27 @@
         <section id="workspace">
             <div id="dash">
                 <h2>Dashboard</h2>
-                <div id="dashLinks" class="dashWidget ">
+                <div id="dashLinks" class="dashWidget card">
                     <h2>Links</h2>
                 </div>
-                <div id="dashSnips" class="dashWidget ">
+
+                <div id="dashSnips" class="dashWidget card">
                     <h2>Code Snippets</h2>
+                    <form method="POST" class="uk-input">
+                        <code class="input-snippet">
+                        <input type="text" name="code-snippets" placeholder="Enter Code Snippet Here" />
+                    </code>
+                        <button id="enter-snippet">Enter</button>
+                        <div id="msg">return message here</div>
+                    </form>
                 </div>
-                <div id="dashCal" class="dashWidget ">
+
+                <div id="dashCal" class="dashWidget card">
                     <h2>Calendar</h2>
                 </div>
+
             </div>
+
             <div id="slack">
                 <h2>Slack</h2>
                 <div id="slackCard" class="card">
@@ -84,6 +95,7 @@
                     </Form>
                 </div>
             </div>
+
             <div id="cdnjs">
                 <h2>CDNJS Search Tool</h2>
                 <div id="cdnjsCard" class="card">
@@ -123,7 +135,9 @@
                     <li><a class="scroll linksLi" href="https://jquery.com/download/">Temp</a></li>
                 </ul>
             </div>
-
+            <div id="bmarks">
+                <h2>Web Bookmarks</h2>
+                <p class="white-text">This is your fourth panel</p>
             </div>
         </section>
     </main>
