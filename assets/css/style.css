@@ -67,6 +67,10 @@ h2 {
     width: 90%;
 }
 
+#logoutAnchor {
+    margin-bottom: 2vh;
+}
+
 #navTabsBottom a,
 #navTabsTop a {
     flex: 0 0 100%

@@ -1,36 +1,35 @@
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyAhr03GPm1oGzx4AJstN4C9NFzCOT_kPIg",
-    authDomain: "bootcampbox-1c031.firebaseapp.com",
-    projectId: "bootcampbox-1c031",
-    storageBucket: "bootcampbox-1c031.appspot.com",
-    messagingSenderId: "449681568493",
-    appId: "1:449681568493:web:80039cb38640d7430152e4",
-    measurementId: "G-NSKYB1SJ9P"
-};
+// Setup Materialize Components
+document.addEventListener('DOMContentLoaded', function() {
+    var modals = document.querySelectorAll('.modal');
+    M.Modal.init(modals);
+});
+//Firestore 
+const setupSnips = (data) => {
+    var html = '';
+    data.forEach(doc => {
+        const codesnip = doc.data();
+        // Create template for how to handle data as it returns
+        const li = `<li>
+        <div class="collapsible-header grey lighten-4">${codesnip.title}</div>
+        <div class="collapsible-body white">${codesnip.snippet}</div>
+        </li>`
+        html += li;
+        console.log(codesnip)
+    })
+}
 
 
-/*User Login Form*/
-// Stores CodeSnippets and Bookmarks to localStorage.
-var userList = [{
-        username: "loriculberson",
-        password: "Password1",
-        userSettingsSync: 1,
-    }, {
-        username: "patcorcoran",
-        password: "123456",
-        userSettingsSync: 2,
-
-    }, {
-        username: "test",
-        password: "test",
-        UserSettingssync: 3,
-
-    },
-
-];
-console.log(userList);
-
+//Set Snippets to firestore
+const snipRef = fireStore.collection('codesnippets')
+snipRef.doc(`${newSnip.title}`).set({
+        title: newBook.title,
+        snippet: newBook.snippet,
+    }).then(function(docRef) {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
 //Nav navTabs
 $('#navCdnjs').on('click', function() {
     $('#workspace').children().hide();
@@ -44,81 +43,9 @@ $('#navDash').on('click', function() {
 
 })
 
-/* Auth0 Attempt*/
-// Initializing our Auth0Lock
-var lock = new Auth0Lock(
-    'aafb51ab4f2b54c77dd1',
-    '2f6f1d731bd224129d6cb63e79a2dd0885a6d76e'
-);
-var Auth = (function() {
-
-    var wm = new WeakMap();
-    var privateStore = {};
-    var lock;
-
-    function Auth() {
-        this.lock = new Auth0Lock(
-            'aafb51ab4f2b54c77dd1',
-            'https://bootcampbox.us.auth0.com/authorize'
-        );
-        wm.set(privateStore, {
-            appName: "BootCampBox"
-        });
-    }
-
-    Auth.prototype.getProfile = function() {
-        return wm.get(privateStore).profile;
-    };
-
-    Auth.prototype.authn = function() {
-        // Listening for the authenticated event
-        this.lock.on("authenticated", function(authResult) {
-            // Use the token in authResult to getUserInfo() and save it if necessary
-            this.getUserInfo(authResult.accessToken, function(error, profile) {
-                if (error) {
-                    // Handle error
-                    return;
-                }
-
-                //we recommend not storing Access Tokens unless absolutely necessary
-                wm.set(privateStore, {
-                    accessToken: authResult.accessToken
-                });
-
-                wm.set(privateStore, {
-                    profile: profile
-                });
-
-            });
-        });
-    };
-    return Auth;
-}());
-
-document.getElementById('btn-login').addEventListener('click', function() {
-    lock.show();
-});
-// function check(form) /*function to check userid & password*/ {
-
-//     /*the following code checkes whether the entered userid and password are matching*/
-//     if (form.useridinput.value == userList.indexof(username) && form.userpassinput.value == userList.indexof(password)) {
-//         window.open('index.html') /*opens the target page while Id & password matches*/
-
-//         /* Get userSettings from localStorage*/
-
-//         /* Load userSettings to correct HTML elements*/
-
-//         // initialize();
-//     } else {
-
-//         alert("Error Password or Username ") /*displays error message*/
-//     }
-// }
-
-
 //close modal if popped 
-$('.modal-close').on('click', function() {
-        $('.modal').hide();
+$('#modal-cdnjs--close').on('click', function() {
+        $('#modal-cdnjs').hide();
     })
     //CDNJS Search Button and Results Parsing
 var nameListItemEl;
@@ -139,7 +66,7 @@ $('#cdnjsBtn').on('click', function() {
 
         if (response.results.length == 0) {
             console.log('Nothing in response ')
-            $('.modal').show();
+            $('#modal-cdnjs').show();
         } else {
 
             olEl.addClass('scroll')
