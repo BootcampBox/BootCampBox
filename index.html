@@ -31,61 +31,83 @@
 
 <body>
     <main>
-        <nav id="navTabsTop">
-            <ul>
-                <li>
-                    <a href="#dash">Dash</a>
-                </li>
-                <li>
-                    <a href="#slack">Slack</a>
-                </li>
-                <li>
-                    <a href="#notion">Notion</a>
-                </li>
-                <li>
-                    <a href="#cdnjs">CDNJS</a>
-                </li>
-            </ul>
-        </nav>
-        <nav id="navTabsBottom">
-            <a href="#about">About</a>
-            <a href="#help">Help</a>
-        </nav>
-
-        <div id="dash" class="workspace">
-            <h2>Dashboard</h2>
-        </div>
-        <div class="workspace" id="slack">
-            <h2>Slack</h2>
-            <div class="card">
-                <Form>
-                    <!-- <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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"> -->
-                </Form>
+        <aside class="navTabs">
+            <div id="greeting">
+                <p id="greetPTag">Welcome, User</p>
             </div>
-        </div>
-        <div id="cdnjs" class="workspace">
-            <h2>CDNJS Search Tool</h2>
-            <div class="card">
-                <div class="uk-margin">
-                    <input id="cdnjsInput" type="text" placeholder="Search for a Library">
-                    <input id="cdnjsBtn" type="submit">
+            <section id="navTabsTop">
+                <ul>
+                    <li>
+                        <a id="navDash" href="#dash">Dash</a>
+                    </li>
+                    <li id="navSlack">
+                        <a href="#slack">Slack</a>
+                    </li>
+                    <li id=navNotion>
+                        <a href="#notion">Notion</a>
+                    </li>
+                    <li id="navCdnjs">
+                        <a href="#cdnjs">CDNJS</a>
+                    </li>
+                </ul>
+            </section>
+            <section id="navTabsBottom">
+                <ul>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#help">Help</a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <section id="workspace">
+            <div id="dash">
+                <h2>Dashboard</h2>
+                <div id="dashLinks" class="dashWidget ">
+                    <h2>Links</h2>
                 </div>
-                <!-- Modal Structure -->
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                        <h4>Oh no!</h4>
-                        <p>Your search returned no results, try again.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
-                    </div>
+                <div id="dashSnips" class="dashWidget ">
+                    <h2>Code Snippets</h2>
                 </div>
-                <section id="cdnjsResults">
-                    <ol>
-
-                    </ol>
-                </section>
+                <div id="dashCal" class="dashWidget ">
+                    <h2>Calendar</h2>
+                </div>
             </div>
+            <div id="slack">
+                <h2>Slack</h2>
+                <div id="slackCard" class="card">
+                    <Form>
+                        <!-- <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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"> -->
+                    </Form>
+                </div>
+            </div>
+            <div id="cdnjs">
+                <h2>CDNJS Search Tool</h2>
+                <div id="cdnjsCard" class="card">
+                    <div class="uk-margin">
+                        <input id="cdnjsInput" type="text" placeholder="Search for a Library">
+                        <input id="cdnjsBtn" type="submit">
+                    </div>
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Oh no!</h4>
+                            <p>Your search returned no results, try again.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+                        </div>
+                    </div>
+                    <section id="cdnjsResults">
+                        <ol>
+
+                        </ol>
+                    </section>
+                </div>
+            </div>
+<<<<<<< HEAD
         </div>
         <div id="snips">
             <h2>Code Snippets</h2>
@@ -102,6 +124,9 @@
             <h2>Web Bookmarks</h2>
             <p class="white-text">This is your fourth panel</p>
         </div>
+=======
+        </section>
+>>>>>>> 7f262eeb800b28e3f28c0d671b40b95bcdf73ed3
     </main>
     <footer>
 
