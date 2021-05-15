@@ -3,7 +3,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var modals = document.querySelectorAll('.modal');
     M.Modal.init(modals);
 });
-//Firestore 
+
+/*************************************************************************\
+ **** Appending the DOM with info from Firestore on login******************\
+ *** IF YOU SEE SOMETHING I'M FORGETTING PLEASE ADD THE PSEUDOCODE FOR IT**\
+ **************************************************************************/
+
+
+//Calendar Events(?)
+
+//Links
+
+
+//Code Snippets
 const setupSnips = (data) => {
     var html = '';
     data.forEach(doc => {
@@ -18,7 +30,6 @@ const setupSnips = (data) => {
     })
 }
 
-
 //Set Snippets to firestore
 const snipRef = fireStore.collection('codesnippets')
 snipRef.doc(`${newSnip.title}`).set({
@@ -30,6 +41,8 @@ snipRef.doc(`${newSnip.title}`).set({
     .catch(function(error) {
         console.error("Error adding document: ", error);
     });
+
+
 //Nav navTabs
 $('#navCdnjs').on('click', function() {
     $('#workspace').children().hide();
