@@ -65,16 +65,27 @@
         <section id="workspace">
             <div id="dash">
                 <h2>Dashboard</h2>
-                <div id="dashLinks" class="dashWidget ">
+                <div id="dashLinks" class="dashWidget card">
                     <h2>Links</h2>
                 </div>
-                <div id="dashSnips" class="dashWidget ">
+
+                <div id="dashSnips" class="dashWidget card">
                     <h2>Code Snippets</h2>
+                    <form method="POST" class="uk-input">
+                        <code class="input-snippet">
+                        <input type="text" name="code-snippets" placeholder="Enter Code Snippet Here" />
+                    </code>
+                        <button id="enter-snippet">Enter</button>
+                        <div id="msg">return message here</div>
+                    </form>
                 </div>
-                <div id="dashCal" class="dashWidget ">
+
+                <div id="dashCal" class="dashWidget card">
                     <h2>Calendar</h2>
                 </div>
+
             </div>
+
             <div id="slack">
                 <h2>Slack</h2>
                 <div id="slackCard" class="card">
@@ -83,6 +94,7 @@
                     </Form>
                 </div>
             </div>
+
             <div id="cdnjs">
                 <h2>CDNJS Search Tool</h2>
                 <div id="cdnjsCard" class="card">
@@ -107,26 +119,12 @@
                     </section>
                 </div>
             </div>
-<<<<<<< HEAD
-        </div>
-        <div id="snips">
-            <h2>Code Snippets</h2>
-            <p class="white-text">This is your third panel</p>
-            <form method="POST" class="uk-input">
-                <code class="input-snippet">
-                    <input type="text" name="code-snippets" placeholder="Enter Code Snippet Here" />
-                </code>
-                <div id="msg">return message here</div>
-                <button id="enter-snippet">Enter</button>
-            </form>
-        </div>
-        <div id="bmarks">
-            <h2>Web Bookmarks</h2>
-            <p class="white-text">This is your fourth panel</p>
-        </div>
-=======
+
+            <div id="bmarks">
+                <h2>Web Bookmarks</h2>
+                <p class="white-text">This is your fourth panel</p>
+            </div>
         </section>
->>>>>>> 7f262eeb800b28e3f28c0d671b40b95bcdf73ed3
     </main>
     <footer>
 
