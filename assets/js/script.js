@@ -65,6 +65,18 @@ var userList = [{
 ];
 console.log(userList);
 
+//Nav navTabs
+$('#navCdnjs').on('click', function() {
+    $('#workspace').children().hide();
+    $('#cdnjs').show();
+    $('#cdnjs').addClass('active');
+
+})
+$('#navDash').on('click', function() {
+    $('#workspace').children().hide();
+    $('#dash').show();
+
+})
 
 function check(form) /*function to check userid & password*/ {
 
