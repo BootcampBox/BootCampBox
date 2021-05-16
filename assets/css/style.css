@@ -32,6 +32,27 @@ h2 {
 }
 
 
+/* Conditional formatting and specialzed classes */
+
+
+/*** Disables user from selecting or highlighting text *******
+**** jQuery code $('ELEMENTSELECTOR').addClass('noselect'); */
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+
 /* Nav Menu */
 
 #greeting {
@@ -97,7 +118,8 @@ a img {
     z-index: 2;
 }
 
-
+//conditional classes / specializations
+.loggedin
 /*Main*/
 
 .card {
@@ -301,7 +323,6 @@ a img {
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 5;
-
 }
 
 #linksCard {

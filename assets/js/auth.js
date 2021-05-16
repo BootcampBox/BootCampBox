@@ -4,9 +4,9 @@ fireStore.collection('fsSnips').get().then(snapshot => {
 })
 
 //Listen for login state changes
-auth.onAuthStateChanged(user => {
+auth.onAuthStateChanged(function(user) {
     if (user) {
-        console.log('user logged in: ', user);
+        console.log('user logged in: ', user.email);
     } else {
         console.log('user logged out');
     }
@@ -14,7 +14,7 @@ auth.onAuthStateChanged(user => {
 
 // signup
 const signupForm = document.querySelector('#signup-form');
-signupForm.addEventListener('submit', (e) => {
+signupForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
     // get user info
@@ -33,14 +33,14 @@ signupForm.addEventListener('submit', (e) => {
 
 // logout
 const logout = document.querySelector('#logout');
-logout.addEventListener('click', (e) => {
+logout.addEventListener('click', function(e) {
     e.preventDefault();
     auth.signOut()
 })
 
 // login
 const loginForm = document.querySelector('#login-form');
-loginForm.addEventListener('submit', (e) => {
+loginForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
     // get user info

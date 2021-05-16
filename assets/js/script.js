@@ -30,17 +30,17 @@ const setupSnips = (data) => {
     })
 }
 
-//Set Snippets to firestore
-const snipRef = fireStore.collection('codesnippets')
-snipRef.doc(`${newSnip.title}`).set({
-        title: newBook.title,
-        snippet: newBook.snippet,
-    }).then(function(docRef) {
-        console.log("Document successfully written!");
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
+// //Set Snippets to firestore
+// const snipRef = fireStore.collection('codesnippets')
+// snipRef.doc(`${newSnip.title}`).set({
+//         title: newBook.title,
+//         snippet: newBook.snippet,
+//     }).then(function(docRef) {
+//         console.log("Document successfully written!");
+//     })
+//     .catch(function(error) {
+//         console.error("Error adding document: ", error);
+//     });
 
 
 //Nav navTabs
@@ -68,50 +68,50 @@ $('#modal-cdnjs--close').on('click', function() {
     //CDNJS Search Button and Results Parsing
 var nameListItemEl;
 var cdnListEl;
-var olEl = $('#cdnjsResults ol');
+var cdnOlEl = $('#cdnjsResults ol');
 $('#cdnjsBtn').on('click', function() {
-    /*CDNJS Variables*/
-    var cdnjsBaseUrl = 'https://api.cdnjs.com/libraries';
-    var cdnjsInput = $('#cdnjsInput').val();
-    var searchAdd = '?search=' + cdnjsInput;
-    $('ol li').remove();
+        /*CDNJS Variables*/
+        var cdnjsBaseUrl = 'https://api.cdnjs.com/libraries';
+        var cdnjsInput = $('#cdnjsInput').val();
+        var searchAdd = '?search=' + cdnjsInput;
+        $('ol li').remove();
 
-    console.log(cdnjsBaseUrl + searchAdd)
-    $.ajax({
-        url: cdnjsBaseUrl + searchAdd,
-        method: 'GET',
-    }).then(function(response) {
+        console.log(cdnjsBaseUrl + searchAdd)
+        $.ajax({
+            url: cdnjsBaseUrl + searchAdd,
+            method: 'GET',
+        }).then(function(response) {
 
-        if (response.results.length == 0) {
-            console.log('Nothing in response ')
-            $('#modal-cdnjs').show();
-        } else {
+            if (response.results.length == 0) {
+                console.log('Nothing in response ')
+                $('#modal-cdnjs').show();
+            } else {
 
-            olEl.addClass('scroll')
-                //Iterate through response data
-            for (var x = 0; x < response.results.length; x++) {
-                var respName = response.results[x].name;
-                var respUrl = response.results[x].latest;
-                //create a list item for each name result
-                nameListItemEl = $('<li class="resultLi">' + respName + '</li>');
-                //creat a list item for each url 
-                cdnListEl = $('<li class="cdnLi"><a href="' + respUrl + '">' + respUrl + '</a></li>')
-                    //append them to the page
-                olEl.append(nameListItemEl);
-                nameListItemEl.append(cdnListEl);
-            }
-            /*Not Working yet, revisit
+                cdnOlEl.addClass('scroll')
+                    //Iterate through response data
+                for (var x = 0; x < response.results.length; x++) {
+                    var respName = response.results[x].name;
+                    var respUrl = response.results[x].latest;
+                    //create a list item for each name result
+                    nameListItemEl = $('<li class="resultLi">' + respName + '</li>');
+                    //creat a list item for each url 
+                    cdnListEl = $('<li class="cdnLi"><a href="' + respUrl + '">' + respUrl + '</a></li>')
+                        //append them to the page
+                    cdnOlEl.append(nameListItemEl);
+                    nameListItemEl.append(cdnListEl);
+                }
+                /*Not Working yet, revisit
           cdnListEl.on('click', function() {
                 console.log(this, 'has been clicked')
                 $(this).val().select();
                 document.execCommand("copy");
             })*/
 
-        }
+            }
 
-    });
-})
-// Create variables to make <li> and variables to refer to the input fields
+        });
+    })
+    // Create variables to make <li> and variables to refer to the input fields
 var linksListEl = $('<li>');
 var linksAnchor = $("<a class='scroll linksLi'>")
 var linkInput = $('#linkInput');
@@ -120,6 +120,7 @@ var linksBtn = $("#linksBtn");
 var linksList = $("#linksList");
 // Add an event listener to the add button, which takes value from link and name input fields, save to localStorage, apply to <li> variable
 linksBtn.on("click", linkMaker)
+
 function linkMaker() {
     // TODO: Add name addition functionality
     // for localStorage, use numbers for the name of the variables so you can iterate thru with a for loop and backtick syntax
