@@ -53,6 +53,7 @@
                     <li id="navCdnjs">
                         <a href="#cdnjs">CDNJS</a>
                     </li>
+                    <li id="navLinks"><a href="#links">Links</a></li>
                 </ul>
             </section>
             <section id="navTabsBottom">
@@ -69,17 +70,27 @@
         <section id="workspace">
             <div id="dash">
                 <h2>Dashboard</h2>
-                <div id="dashLinks" class="dashWidget ">
+                <div id="dashLinks" class="dashWidget card">
                     <h2>Links</h2>
                 </div>
-                <div id="dashSnips" class="dashWidget ">
-                    <h2>Code Snippets</h2>
 
+                <div id="dashSnips" class="dashWidget card">
+                    <h2>Code Snippets</h2>
+                    <form method="POST" class="uk-input">
+                        <code class="input-snippet">
+                        <input type="text" name="code-snippets" placeholder="Enter Code Snippet Here" />
+                    </code>
+                        <button id="enter-snippet">Enter</button>
+                        <div id="msg">return message here</div>
+                    </form>
                 </div>
-                <div id="dashCal" class="dashWidget ">
+
+                <div id="dashCal" class="dashWidget card">
                     <h2>Calendar</h2>
                 </div>
+
             </div>
+
             <div id="slack">
                 <h2>Slack</h2>
                 <div id="slackCard" class="card">
@@ -88,6 +99,7 @@
                     </Form>
                 </div>
             </div>
+
             <div id="cdnjs">
                 <h2>CDNJS Search Tool</h2>
                 <div id="cdnjsCard" class="card">
@@ -112,58 +124,78 @@
                     </section>
                 </div>
             </div>
-            <!--Modals-->
-            <!-- Modal Structure -->
-            <!-- SIGN UP MODAL -->
-            <div id="modal-signup" class="modal">
-                <div class="modal-content">
-                    <h4>Sign up</h4><br />
-                    <form id="signup-form">
-                        <div class="input-field">
-                            <input type="email" id="signup-email" required />
-                            <label for="signup-email">Email address</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="password" id="signup-password" required />
-                            <label for="signup-password">Choose password</label>
-                        </div>
-                        <button class="btn grey darken-2 z-depth-0">Sign up</button>
-                    </form>
+            <<<<<<< HEAD <!--Modals-->
+                <!-- Modal Structure -->
+                <!-- SIGN UP MODAL -->
+                <div id="modal-signup" class="modal">
+                    <div class="modal-content">
+                        <h4>Sign up</h4><br />
+                        <form id="signup-form">
+                            <div class="input-field">
+                                <input type="email" id="signup-email" required />
+                                <label for="signup-email">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="signup-password" required />
+                                <label for="signup-password">Choose password</label>
+                            </div>
+                            <button class="btn grey darken-2 z-depth-0">Sign up</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <!-- LOGIN MODAL -->
-            <div id="modal-login" class="modal">
-                <div class="modal-content">
-                    <h4>Login</h4><br />
-                    <form id="login-form">
-                        <div class="input-field">
-                            <input type="email" id="login-email" required />
-                            <label for="login-email">Email address</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="password" id="login-password" required />
-                            <label for="login-password">Your password</label>
-                        </div>
-                        <button class="btn grey darken-2 z-depth-0">Login</button>
-                    </form>
+                <!-- LOGIN MODAL -->
+                <div id="modal-login" class="modal">
+                    <div class="modal-content">
+                        <h4>Login</h4><br />
+                        <form id="login-form">
+                            <div class="input-field">
+                                <input type="email" id="login-email" required />
+                                <label for="login-email">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="login-password" required />
+                                <label for="login-password">Your password</label>
+                            </div>
+                            <button class="btn grey darken-2 z-depth-0">Login</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <!-- ACCOUNT MODAL -->
-            <div id="modal-account" class="modal">
-                <div class="modal-content center-align">
-                    <h4>Account details</h4><br />
-                    <div class="account-details"></div>
+                <!-- ACCOUNT MODAL -->
+                <div id="modal-account" class="modal">
+                    <div class="modal-content center-align">
+                        <h4>Account details</h4><br />
+                        <div class="account-details"></div>
+                    </div>
                 </div>
-            </div>
-            <!--Save MODAL -->
-            <div id="modal-save" class="modal">
-                <div class="modal-content center-align">
-                    <h4>Save</h4><br />
-                    <p> Congratulations your stuff has been saved.</p>
-                    <button class="btn grey darken-2 z-depth-0">Close</button>
+                <!--Save MODAL -->
+                <div id="modal-save" class="modal">
+                    <div class="modal-content center-align">
+                        <h4>Save</h4><br />
+                        <p> Congratulations your stuff has been saved.</p>
+                        <button class="btn grey darken-2 z-depth-0">Close</button>
+                    </div>
                 </div>
-            </div>
-            </div>
+                =======
+                <div id="links" class="card">
+                    <div id="linksCard">
+                        <h2>Links</h2>
+                        <input type="text" id="linkInput" placeholder="Add a Link">
+                        <input type="text" id="nameInput" placeholder="Add a Name">
+                        <input id="linksBtn" type="submit">
+                        <ul id="linksList">
+                            <li><a class="scroll linksLi" href="https://github.com/public-apis/public-apis">Temp</a></li>
+                            <li><a class="scroll linksLi" href="https://unicode.org/emoji/charts/full-emoji-list.html">Temp</a></li>
+                            <li><a class="scroll linksLi" href="https://www.w3schools.com/">Temp</a></li>
+                            <li><a class="scroll linksLi" href="https://developer.mozilla.org/en-US/">Temp</a></li>
+                            <li><a class="scroll linksLi" href="https://devhints.io/">Temp</a></li>
+                            <li><a class="scroll linksLi" href="https://jquery.com/download/">Temp</a></li>
+                        </ul>
+                    </div>
+                    <div id="bmarks">
+                        <h2>Web Bookmarks</h2>
+                        <p class="white-text">This is your fourth panel</p>
+                        >>>>>>> 098f2be4253ebfc5351f4febef8cbce3231b6181
+                    </div>
         </section>
     </main>
     <footer>
