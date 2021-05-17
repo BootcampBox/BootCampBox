@@ -1,13 +1,20 @@
 //Get Data
-fireStore.collection('fsSnips').get().then(snapshot => {
-    setupSnips(snapshot.docs)
-})
+// fireStore.collection('fsSnips').get().then(snapshot => {
+//     setupSnips(snapshot.docs)
+// })
 
 //Listen for login state changes
 auth.onAuthStateChanged(function(user) {
     if (user) {
+        $('.logged-in').show();
+        $('.logged-out').hide();
+        $('#greeting').show();
+        $('#emailDisplay').text(user.email);
         console.log('user logged in: ', user.email);
     } else {
+        $('.logged-in').hide();
+        $('.logged-out').show();
+        $('#greeting').hide();
         console.log('user logged out');
     }
 })

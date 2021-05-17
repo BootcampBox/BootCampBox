@@ -15,20 +15,20 @@ document.addEventListener('DOMContentLoaded', function() {
 //Links
 
 
-//Code Snippets
-const setupSnips = (data) => {
-    var html = '';
-    data.forEach(doc => {
-        const codesnip = doc.data();
-        // Create template for how to handle data as it returns
-        const li = `<li>
-        <div class="collapsible-header grey lighten-4">${codesnip.title}</div>
-        <div class="collapsible-body white">${codesnip.snippet}</div>
-        </li>`
-        html += li;
-        console.log(codesnip)
-    })
-}
+// //Code Snippets
+// const setupSnips = (data) => {
+//     var html = '';
+//     data.forEach(doc => {
+//         const codesnip = doc.data();
+//         // Create template for how to handle data as it returns
+//         const li = `<li>
+//         <div class="collapsible-header grey lighten-4">${codesnip.title}</div>
+//         <div class="collapsible-body white">${codesnip.snippet}</div>
+//         </li>`
+//         html += li;
+//         console.log(codesnip)
+//     })
+// }
 
 // //Set Snippets to firestore
 // const snipRef = fireStore.collection('codesnippets')
@@ -44,12 +44,6 @@ const setupSnips = (data) => {
 
 
 //Nav navTabs
-$('#navCdnjs').on('click', function() {
-    $('#workspace').children().hide();
-    $('#cdnjs').show();
-    $('#cdnjs').addClass('active');
-
-})
 $('#navDash').on('click', function() {
     $('#workspace').children().hide();
     $('#dash').show();
@@ -60,12 +54,42 @@ $('#navLinks').on('click', function() {
     $('#links').show();
 
 })
+$('#navSlack').on('click', function() {
+    $('#workspace').children().hide();
+    $('#links').show();
+
+})
+$('#navNotion').on('click', function() {
+    $('#workspace').children().hide();
+    $('#Notion').show();
+
+})
+
+$('#navCdnjs').on('click', function() {
+    $('#workspace').children().hide();
+    $('#cdnjs').show();
+    $('#cdnjs').addClass('active');
+
+})
+
+$('#navLinks').on('click', function() {
+    $('#workspace').children().hide();
+    $('#links').show();
+
+})
 
 //close modal if popped 
 $('#modal-cdnjs--close').on('click', function() {
-        $('#modal-cdnjs').hide();
-    })
-    //CDNJS Search Button and Results Parsing
+    $('#modal-cdnjs').hide();
+})
+
+//Calendar
+
+
+
+
+
+//CDNJS Search Button and Results Parsing
 var nameListItemEl;
 var cdnListEl;
 var cdnOlEl = $('#cdnjsResults ol');

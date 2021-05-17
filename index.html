@@ -28,20 +28,24 @@
 </head>
 
 <body>
+    <header class="center">
+        <div id="greeting">
+            <img src="./assets/images/009-giftbox.png">
+            <h2 class="flow-text">Welcome <br /><span id="emailDisplay"></span></h2>
+        </div>
+    </header>
     <main>
         <aside class="navTabs">
-            <div id="greeting">
-                <h2 class="hidden">Welcome <span id="nick" class="nickname"></span></h2>
-            </div>
+
             <section id="navTabsTop">
                 <ul>
                     <li class="logged-in"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
                     <li class="logged-out"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
                     <li class="logged-out"><a href="#modal-login" class="grey-text modal-trigger" data-target="modal-login">Login</a></li>
                     <li class="logged-in"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
-                    <li class="logged-in" id="logoutAnchor"><a href="#" class="grey-text" id="logout">Logout</a></li>
-                    <li>
-                        <a id="navDash" href="#dash">Dash</a>
+                    <li class="logged-in"><a href="#" class="grey-text" id="logout">Logout</a></li>
+                    <li id="navDash">
+                        <a href="#dash">Dash</a>
                     </li>
                     <li id="navSlack">
                         <a href="#slack">Slack</a>
@@ -57,20 +61,33 @@
             </section>
             <section id="navTabsBottom">
                 <ul>
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li>
-                        <a href="#help">Help</a>
+                    <li><a href="#modal-about" class="grey-text modal-trigger" data-target="modal-about">About</a></li>
+                    <li><a href="#modal-help" class="grey-text modal-trigger" data-target="modal-help">Help</a>
                     </li>
                 </ul>
             </section>
         </aside>
-        <section id="workspace">
+        <section id="workspace" class="grey">
             <div id="dash">
                 <h2>Dashboard</h2>
                 <div id="dashLinks" class="dashWidget card">
                     <h2>Links</h2>
+                    <div id="links" class="card">
+                        <div id="linksCard">
+                            <h2>Links</h2>
+                            <input type="text" id="linkInput" placeholder="Add a Link">
+                            <input type="text" id="nameInput" placeholder="Add a Name">
+                            <input id="linksBtn" type="submit">
+                            <ul id="linksList">
+                                <li><a class="scroll linksLi" href="https://github.com/public-apis/public-apis">Temp</a></li>
+                                <li><a class="scroll linksLi" href="https://unicode.org/emoji/charts/full-emoji-list.html">Temp</a></li>
+                                <li><a class="scroll linksLi" href="https://www.w3schools.com/">Temp</a></li>
+                                <li><a class="scroll linksLi" href="https://developer.mozilla.org/en-US/">Temp</a></li>
+                                <li><a class="scroll linksLi" href="https://devhints.io/">Temp</a></li>
+                                <li><a class="scroll linksLi" href="https://jquery.com/download/">Temp</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div id="dashSnips" class="dashWidget card">
                     <h2>Code Snippets</h2>
@@ -83,7 +100,8 @@
                     </form>
                 </div>
                 <div id="dashCal" class="dashWidget card">
-                    <h2>Calendar</h2>
+                    <div id="calendar">
+                    </div>
                 </div>
             </div>
             <div id="slack">
@@ -99,7 +117,7 @@
                 <div id="cdnjsCard" class="card">
                     <!-- <div class="uk-margin"> -->
                     <input id="cdnjsInput" type="text" placeholder="Search for a Library">
-                    <input id="cdnjsBtn" type="submit">
+                    <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0"></button>
                     <!-- </div> -->
                     <!-- Modal Structure -->
                     <div id="modal-cdnjs" class="modal">
@@ -118,22 +136,7 @@
                     </section>
                 </div>
             </div>
-            <div id="links" class="card">
-                <div id="linksCard">
-                    <h2>Links</h2>
-                    <input type="text" id="linkInput" placeholder="Add a Link">
-                    <input type="text" id="nameInput" placeholder="Add a Name">
-                    <input id="linksBtn" type="submit">
-                    <ul id="linksList">
-                        <li><a class="scroll linksLi" href="https://github.com/public-apis/public-apis">Temp</a></li>
-                        <li><a class="scroll linksLi" href="https://unicode.org/emoji/charts/full-emoji-list.html">Temp</a></li>
-                        <li><a class="scroll linksLi" href="https://www.w3schools.com/">Temp</a></li>
-                        <li><a class="scroll linksLi" href="https://developer.mozilla.org/en-US/">Temp</a></li>
-                        <li><a class="scroll linksLi" href="https://devhints.io/">Temp</a></li>
-                        <li><a class="scroll linksLi" href="https://jquery.com/download/">Temp</a></li>
-                    </ul>
-                </div>
-            </div>
+
             <!--Modals-->
             <!-- Modal Structure -->
             <!-- SIGN UP MODAL -->
@@ -175,6 +178,8 @@
                 <div class="modal-content center-align">
                     <h4>Account details</h4><br />
                     <div class="account-details"></div>
+                    <button class="btn grey darken-2 z-depth-0btn-close">Close</button>
+
                 </div>
             </div>
             <!--Save MODAL -->
@@ -182,9 +187,18 @@
                 <div class="modal-content center-align">
                     <h4>Save</h4><br />
                     <p> Congratulations your stuff has been saved.</p>
-                    <button class="btn grey darken-2 z-depth-0">Close</button>
+                    <button class="btn grey darken-2 z-depth-0 btn-close">Close</button>
                 </div>
             </div>
+            <!--ABOUT MODAL -->
+            <div id="modal-about" class="modal">
+                <div id="modal-about-content" class="modal-content  grey center-align">
+                    <h1>About</h1><br />
+                    <p class="flow-text">Bootcampbox is a helpful dashboard for use in a web-development environment. Integrating multiple links, sites, and tools that are frequently used within a web-development lifestyle. </p>
+                    <h2 id="about-header" class="center">BootCamp Box Authors</h2>
+                    <div class="row">
+                        <button class="btn grey darken-2 z-depth-0btn-close">Close</button>
+                    </div>
         </section>
     </main>
     <footer>
@@ -220,8 +234,11 @@
             timestampsinsnapshots: true
         });
     </script>
+    <!--calendar-->
+
     <!--requireJS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
     <!-- jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
