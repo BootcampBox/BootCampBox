@@ -63,3 +63,4 @@ Place in head tag.
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
   </div>
+```

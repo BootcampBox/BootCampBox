@@ -32,6 +32,27 @@ h2 {
 }
 
 
+/* Conditional formatting and specialzed classes */
+
+
+/*** Disables user from selecting or highlighting text *******
+**** jQuery code $('ELEMENTSELECTOR').addClass('noselect'); */
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+
 /* Nav Menu */
 
 #greeting {
@@ -67,6 +88,10 @@ h2 {
     width: 90%;
 }
 
+#logoutAnchor {
+    margin-bottom: 2vh;
+}
+
 #navTabsBottom a,
 #navTabsTop a {
     flex: 0 0 100%
@@ -93,18 +118,18 @@ a img {
     z-index: 2;
 }
 
-
+//conditional classes / specializations
+.loggedin
 /*Main*/
 
 .card {
     background: rgb(8, 8, 8);
     text-decoration: none;
-    /* transform: translateX(-50%); */
     color: #444;
     box-shadow: 1px 4px 11px 4px rgba(0, 0, 0, 0.34);
     display: flex;
     flex-direction: column;
-    height: 75%;
+    height: 100%;
     position: relative;
     top: 0;
     transition: all .1s ease-in;
@@ -198,6 +223,7 @@ a img {
     grid-column-start: 2;
     grid-column-end: 10;
     text-align: center;
+    max-height: 100px;
 }
 
 #cdnjs {
@@ -211,31 +237,44 @@ a img {
 }
 
 #cdnjsCard {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+    margin-bottom: 0;
     grid-column-start: 2;
     grid-column-end: 10;
-    grid-row-start: 3;
-    grid-row-end: 9;
+    grid-row-start: 2;
+    grid-row-end: 10;
 }
 
-.uk-margin {
-    display: flex;
+#cdnjsResults {
+    margin-bottom: 0;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 2;
+    grid-row-end: 10;
 }
 
 #cdnjsInput {
-    flex: 0 0 90%;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 9;
     margin-left: 5%;
-    width: 50%;
     height: 25px;
+    color: white;
 }
 
 #cdnjsBtn {
-    margin-left: -20%;
+    grid-column-start: 8;
+    grid-column-end: 10;
+    grid-row-start: 1;
     height: 26px;
     width: fit-content;
     background: rgb(176, 4, 228);
     color: white;
     border: 0;
     -webkit-appearance: none;
+    z-index: 1;
 }
 
 #cdnjsInput:hover {
@@ -244,11 +283,11 @@ a img {
 }
 
 .scroll {
-    margin: 0 2.5%;
+    max-height: 525px;
+    margin: -1rem 1rem;
     wrap: none;
     padding: 4px;
-    background-color: rgba(255, 255, 255, 0.85);
-    width: 95%;
+    background-color: rgba(255, 255, 255, 0.25);
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify;
@@ -284,7 +323,6 @@ a img {
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 5;
-
 }
 
 #linksCard {
