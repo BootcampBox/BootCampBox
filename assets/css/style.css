@@ -94,8 +94,8 @@ header {
     min-height: 100%;
     gap: 1vh;
     margin: 0 0 0 1vw;
-    grid-template-columns: repeat(3, 33%);
-    grid-template-rows: 6vw 3fr 3fr 1fr 2fr;
+    /* grid-template-columns: repeat(3, 33%); */
+    grid-template-rows: repeat(10, 10%);
     font-size: 1.25vw;
 }
 
@@ -107,19 +107,23 @@ header {
 #navTabsTop {
     text-align: left;
     margin-top: 0;
-    display: flex;
+    /* display: flex; */
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 2;
+    /* grid-row-end: 2; */
 }
 
 #navTabsTop ul {
     width: 90%;
 }
 
-#navDash {
-    margin-top: 3vh;
+#navTabsMid {
+    text-align: left;
+    /* margin-top: 0; */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
 }
 
 #navTabsBottom a,
@@ -128,10 +132,8 @@ header {
 }
 
 #navTabsBottom {
-    display: flex;
     grid-column: 1;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 5;
 }
 
 li {

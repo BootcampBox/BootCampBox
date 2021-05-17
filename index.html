@@ -37,34 +37,34 @@
     <main>
         <aside class="navTabs">
 
-            <section id="navTabsTop">
-                <ul>
-                    <li class="logged-in"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
-                    <li class="logged-out"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
-                    <li class="logged-out"><a href="#modal-login" class="grey-text modal-trigger" data-target="modal-login">Login</a></li>
-                    <li class="logged-in"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
-                    <li class="logged-in"><a href="#" class="grey-text" id="logout">Logout</a></li>
-                    <li id="navDash">
-                        <a href="#dash">Dash</a>
-                    </li>
-                    <li id="navSlack">
-                        <a href="#slack">Slack</a>
-                    </li>
-                    <li id=navNotion>
-                        <a href="#notion">Notion</a>
-                    </li>
-                    <li id="navCdnjs">
-                        <a href="#cdnjs">CDNJS</a>
-                    </li>
-                    <li id="navLinks"><a href="#links">Links</a></li>
-                </ul>
-            </section>
-            <section id="navTabsBottom">
-                <ul>
-                    <li><a href="#modal-about" class="grey-text modal-trigger" data-target="modal-about">About</a></li>
-                    <li><a href="#modal-help" class="grey-text modal-trigger" data-target="modal-help">Help</a>
-                    </li>
-                </ul>
+            <ul id="navTabsTop">
+                <li class="logged-in"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
+                <li class="logged-out"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
+                <li class="logged-out"><a href="#modal-login" class="grey-text modal-trigger" data-target="modal-login">Login</a></li>
+                <li class="logged-in"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
+                <li class="logged-in"><a href="#" class="grey-text" id="logout">Logout</a></li>
+            </ul>
+            <ul id="navTabsMid">
+                <li id="navDash">
+                    <a href="#dash">Dash</a>
+                </li>
+                <li id="navSlack">
+                    <a href="#slack">Slack</a>
+                </li>
+                <li id=navNotion>
+                    <a href="#notion">Notion</a>
+                </li>
+                <li id="navCdnjs">
+                    <a href="#cdnjs">CDNJS</a>
+                </li>
+                <li id="navLinks"><a href="#links">Links</a></li>
+            </ul>
+            <ul id="navTabsBottom">
+
+                <li><a href="#modal-about" class="grey-text modal-trigger" data-target="modal-about">About</a></li>
+                <li><a href="#modal-help" class="grey-text modal-trigger" data-target="modal-help">Help</a>
+                </li>
+            </ul>
             </section>
         </aside>
         <section id="workspace" class="grey">
@@ -89,13 +89,12 @@
                         </div>
                     </div>
                 </div>
+                <!-- Code Snippet button causes 405 error on click WHY!?!?! -->
                 <div id="dashSnips" class="dashWidget card">
                     <h2>Code Snippets</h2>
-                    <form method="POST" class="uk-input">
-                        <code class="input-snippet">
+                    <form method="POST" class="</section>">
                         <input type="text" name="code-snippets" placeholder="Enter Code Snippet Here" />
-                    </code>
-                        <button id="enter-snippet">Enter</button>
+                        <button id="enter-snippet" type="button">Enter</button>
                         <div id="msg">return message here</div>
                     </form>
                 </div>
@@ -136,69 +135,70 @@
                     </section>
                 </div>
             </div>
-
-            <!--Modals-->
-            <!-- Modal Structure -->
-            <!-- SIGN UP MODAL -->
-            <div id="modal-signup" class="modal">
-                <div class="modal-content">
-                    <h4>Sign up</h4><br />
-                    <form id="signup-form">
-                        <div class="input-field">
-                            <input type="email" id="signup-email" required />
-                            <label for="signup-email">Email address</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="password" id="signup-password" required />
-                            <label for="signup-password">Choose password</label>
-                        </div>
-                        <button class="btn grey darken-2 z-depth-0">Sign up</button>
-                    </form>
-                </div>
-            </div>
-            <!-- LOGIN MODAL -->
-            <div id="modal-login" class="modal">
-                <div class="modal-content">
-                    <h4>Login</h4><br />
-                    <form id="login-form">
-                        <div class="input-field">
-                            <input type="email" id="login-email" required />
-                            <label for="login-email">Email address</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="password" id="login-password" required />
-                            <label for="login-password">Your password</label>
-                        </div>
-                        <button class="btn grey darken-2 z-depth-0">Login</button>
-                    </form>
-                </div>
-            </div>
-            <!-- ACCOUNT MODAL -->
-            <div id="modal-account" class="modal">
-                <div class="modal-content center-align">
-                    <h4>Account details</h4><br />
-                    <div class="account-details"></div>
-                    <button class="btn grey darken-2 z-depth-0btn-close">Close</button>
-
-                </div>
-            </div>
-            <!--Save MODAL -->
-            <div id="modal-save" class="modal">
-                <div class="modal-content center-align">
-                    <h4>Save</h4><br />
-                    <p> Congratulations your stuff has been saved.</p>
-                    <button class="btn grey darken-2 z-depth-0 btn-close">Close</button>
-                </div>
-            </div>
-            <!--ABOUT MODAL -->
-            <div id="modal-about" class="modal">
-                <div id="modal-about-content" class="modal-content  grey center-align">
-                    <h1>About</h1><br />
-                    <p class="flow-text">Bootcampbox is a helpful dashboard for use in a web-development environment. Integrating multiple links, sites, and tools that are frequently used within a web-development lifestyle. </p>
-                    <h2 id="about-header" class="center">BootCamp Box Authors</h2>
-                    <div class="row">
-                        <button class="btn grey darken-2 z-depth-0btn-close">Close</button>
+            <section>
+                <!--Modals-->
+                <!-- Modal Structure -->
+                <!-- SIGN UP MODAL -->
+                <div id="modal-signup" class="modal">
+                    <div class="modal-content">
+                        <h4>Sign up</h4><br />
+                        <form id="signup-form">
+                            <div class="input-field">
+                                <input type="email" id="signup-email" required />
+                                <label for="signup-email">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="signup-password" required />
+                                <label for="signup-password">Choose password</label>
+                            </div>
+                            <button class="btn grey darken-2 z-depth-0">Sign up</button>
+                        </form>
                     </div>
+                </div>
+                <!-- LOGIN MODAL -->
+                <div id="modal-login" class="modal">
+                    <div class="modal-content">
+                        <h4>Login</h4><br />
+                        <form id="login-form">
+                            <div class="input-field">
+                                <input type="email" id="login-email" required />
+                                <label for="login-email">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="login-password" required />
+                                <label for="login-password">Your password</label>
+                            </div>
+                            <button class="btn grey darken-2 z-depth-0">Login</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- ACCOUNT MODAL -->
+                <div id="modal-account" class="modal">
+                    <div class="modal-content center-align">
+                        <h4>Account details</h4><br />
+                        <div class="account-details"></div>
+                        <button class="btn grey darken-2 z-depth-0 modal-close">Close</button>
+
+                    </div>
+                </div>
+                <!--Save MODAL -->
+                <div id="modal-save" class="modal">
+                    <div class="modal-content center-align">
+                        <h4>Save</h4><br />
+                        <p> Congratulations your stuff has been saved.</p>
+                        <button class="btn grey darken-2 z-depth-0 modal-close">Close</button>
+                    </div>
+                </div>
+                <!--ABOUT MODAL -->
+                <div id="modal-about" class="modal">
+                    <div id="modal-about-content" class="modal-content  grey center-align">
+                        <h1>About</h1><br />
+                        <p class="flow-text">Bootcampbox is a helpful dashboard for use in a web-development environment. Integrating multiple links, sites, and tools that are frequently used within a web-development lifestyle. </p>
+                        <h2 id="about-header" class="center">BootCamp Box Authors</h2>
+                        <div class="row">
+                            <button class="btn grey darken-2 z-depth-0 modal-close">Close</button>
+                        </div>
+            </section>
         </section>
     </main>
     <footer>
