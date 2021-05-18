@@ -7,6 +7,10 @@ body {
     min-height: 800px;
 }
 
+p {
+    font-weight: 300;
+}
+
 main {
     min-width: 90%;
     min-height: 90%;
@@ -153,6 +157,31 @@ a img {
 
 /* Modal Stuff */
 
+#signup-user[placeholder] {
+    text-align: center;
+}
+
+#acctInfoEl {
+    width: 50%;
+    right: 100%;
+    transform: translateX(50%);
+    margin: -4vh 0 4vh 0;
+    text-align: left;
+    /* background-color: white; */
+    border: none;
+    padding: 2vw 0;
+}
+
+#acctInfoEl span {
+    font-weight: 800;
+}
+
+#acctInfoEl p {
+    margin: 0;
+    padding: 0;
+    font-variant: small-caps;
+}
+
 
 /* conditional classes / specializations */
 
@@ -295,7 +324,9 @@ a img {
     grid-column-start: 1;
     grid-column-end: 9;
     margin-left: 5%;
-    height: 25px;
+    font-size: 1.75vw;
+    min-height: 25px;
+    max-height: 36px;
     color: gray;
 }
 
@@ -303,10 +334,12 @@ a img {
     grid-column-start: 8;
     grid-column-end: 10;
     grid-row-start: 1;
-    height: 26px;
-    width: fit-content;
+    min-height: 41px;
+    transform: translateY(-3px);
+    width: 10vw;
     border: 0;
-    -webkit-appearance: none;
+    font-size: 1.5vw;
+    color: white;
     z-index: 1;
 }
 

@@ -116,16 +116,16 @@
                 <div id="cdnjsCard" class="card">
                     <!-- <div class="uk-margin"> -->
                     <input id="cdnjsInput" type="text" placeholder="Search for a Library">
-                    <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0"></button>
+                    <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0">Search</button>
                     <!-- </div> -->
                     <!-- Modal Structure -->
                     <div id="modal-cdnjs" class="modal">
-                        <div class="modal modal-content">
+                        <div class="modal-content">
                             <h4>Oh no!</h4>
                             <p>Your search returned no results, try again.</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="#!" id="modal-cdnjs--close" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+                            <a href="#!" id="modal-cdnjs--close" class="modal-close waves-effect white-text waves-green btn-flat">Ok</a>
                         </div>
                     </div>
                     <section id="cdnjsResults">
@@ -137,12 +137,27 @@
             </div>
             <section>
                 <!--Modals-->
+                <!--Error Modal-->
+                <div id="modal-error" class="modal">
+                    <div class="modal-content">
+                        <h4>Sorry . . . </h4>
+                        <p id="errmsg"></p>
+                        <p id="posSolution"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Try Again</a>
+                    </div>
+                </div>
                 <!-- Modal Structure -->
                 <!-- SIGN UP MODAL -->
                 <div id="modal-signup" class="modal">
                     <div class="modal-content">
                         <h4>Sign up</h4><br />
                         <form id="signup-form">
+                            <div class="input-field">
+                                <input type="text" id="signup-user" placeholder="What would you like to be called. . ." required>
+                                <label for="signupUserID">Full Name</label>
+                            </div>
                             <div class="input-field">
                                 <input type="email" id="signup-email" required />
                                 <label for="signup-email">Email address</label>
@@ -171,6 +186,7 @@
                             <button class="btn grey darken-2 z-depth-0">Login</button>
                         </form>
                     </div>
+
                 </div>
                 <!-- ACCOUNT MODAL -->
                 <div id="modal-account" class="modal">
@@ -198,6 +214,8 @@
                         <div class="row">
                             <button class="btn grey darken-2 z-depth-0 modal-close">Close</button>
                         </div>
+                    </div>
+                </div>
             </section>
         </section>
     </main>

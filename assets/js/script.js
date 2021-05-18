@@ -8,27 +8,55 @@ document.addEventListener('DOMContentLoaded', function() {
  **** Appending the DOM with info from Firestore on login******************\
  *** IF YOU SEE SOMETHING I'M FORGETTING PLEASE ADD THE PSEUDOCODE FOR IT**\
  **************************************************************************/
+// const userDBget
+const accountDetails = $('.account-details');
 
+const setupUI = function(user) {
+    console.log('setupUI Fired');
+    if (user) {
+        //toggle UI elements
+        $('.logged-in').show();
+        $('.logged-out').hide();
+        $('#greeting').show();
+        $('#emailDisplay').text(user.email);
+        //account info 
+        fireStore.collection('users').doc(user.uid).get().then(function(doc) {
+            const userInfo = `
+        <div id="acctInfoEl">
+        <p><span>Username:</span>${doc.data().username}</p>
+        <p><span>Email:</span>${user.email}</p>
+        </div>`;
+            accountDetails.append(userInfo);
+        });
+    } else {
+        //hide account info
+        accountDetails.innerHTML = '';
+        $('.logged-in').hide();
+        $('.logged-out').show();
+        $('#greeting').hide();
+    };
+
+}
 
 //Calendar Events(?)
 
 //Links
 
 
-// //Code Snippets
-// const setupSnips = (data) => {
-//     var html = '';
-//     data.forEach(doc => {
-//         const codesnip = doc.data();
-//         // Create template for how to handle data as it returns
-//         const li = `<li>
-//         <div class="collapsible-header grey lighten-4">${codesnip.title}</div>
-//         <div class="collapsible-body white">${codesnip.snippet}</div>
-//         </li>`
-//         html += li;
-//         console.log(codesnip)
-//     })
-// }
+//Code Snippets
+const setupSnips = function(data) {
+    data.forEach(function(doc) {
+        var html = '';
+        const codesnip = doc.data();
+        // Create template for how to handle data as it returns
+        const li = `<li>
+        <div class="collapsible-header grey lighten-4">${codesnip.title}</div>
+        <div class="collapsible-body white">${codesnip.snippet}</div>
+        </li>`;
+        html += li;
+        console.log(codesnip)
+    })
+}
 
 // //Set Snippets to firestore
 // const snipRef = fireStore.collection('codesnippets')
@@ -80,7 +108,10 @@ $('#navLinks').on('click', function() {
 
 //close modal if popped 
 $('#modal-cdnjs--close').on('click', function() {
-    $('#modal-cdnjs').hide();
+    $('#cdnjsInput').val('');
+    $('#modal-cdnjs').modal('close');
+
+
 })
 
 //Calendar
@@ -105,10 +136,10 @@ $('#cdnjsBtn').on('click', function() {
             url: cdnjsBaseUrl + searchAdd,
             method: 'GET',
         }).then(function(response) {
-
+            console.log(response);
             if (response.results.length == 0) {
                 console.log('Nothing in response ')
-                $('#modal-cdnjs').show();
+                $('#modal-cdnjs').modal('open');
             } else {
 
                 cdnOlEl.addClass('scroll')
@@ -119,17 +150,18 @@ $('#cdnjsBtn').on('click', function() {
                     //create a list item for each name result
                     nameListItemEl = $('<li class="resultLi">' + respName + '</li>');
                     //creat a list item for each url 
-                    cdnListEl = $('<li class="cdnLi"><a href="' + respUrl + '">' + respUrl + '</a></li>')
+                    cdnListEl = $('<li class="cdnLi">' + respUrl + '</li>')
                         //append them to the page
                     cdnOlEl.append(nameListItemEl);
                     nameListItemEl.append(cdnListEl);
                 }
-                /*Not Working yet, revisit
-          cdnListEl.on('click', function() {
-                console.log(this, 'has been clicked')
-                $(this).val().select();
-                document.execCommand("copy");
-            })*/
+                /*Not Working yet, revisit*/
+                $('#cdnjsResults').children().children('.resultLi').on('click', function() {
+                    console.log(this.children[0].innerText, 'has been clicked');
+                    var cdnjsScriptCopy = '<script>this.children[0].innerText</script>';
+                    select(cdnjsScriptCopy);
+                    document.execCommand("copy");
+                })
 
             }
 
