@@ -201,22 +201,7 @@ if (!localStorage.getItem("stored-links") == null || localStorage.getItem("store
         "https://devhints.io/", 
         "https://jquery.com/download/"
     ]}));
-}
-console.log(localStorage.getItem("stored-links"));
-var storedLinks = JSON.parse(localStorage.getItem("stored-links"));
-for (i= 0; i < storedLinks.links.length; i++) {
-    var linksListEl = $('<li>');
-    var linksAnchor = $("<a class='scroll linksLi'>");
-    linksAnchor.text(storedLinks.links[i]);
-    linksList.append(linksListEl);
-    linksListEl.append(linksAnchor);
-}
 
-            }
-
-        });
-    })
-    // Create variables to make <li> and variables to refer to the input fields
 var linkInput = $('#linkInput');
 var nameInput = $('#nameInput');
 var linksBtn = $("#linksBtn");
