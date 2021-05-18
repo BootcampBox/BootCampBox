@@ -142,7 +142,7 @@ $('#cdnjsBtn').on('click', function() {
                 $('#modal-cdnjs').modal('open');
             } else {
 
-                cdnOlEl.addClass('scroll')
+                cdnOlEl.addClass('scroll-cdnjs')
                     //Iterate through response data
                 for (var x = 0; x < response.results.length; x++) {
                     var respName = response.results[x].name;
