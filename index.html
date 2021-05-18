@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-
 <html lang='en-us'>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>BootCampBox</title>
-    <meta name="description" content="A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.">
+    <meta name="description"
+        content="A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google fonts cdn -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Favicon Link-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!--DayPilot Functions-->
+    <script defer src="./assets/js/daypilot.js"></script>
     <!--Our Script-->
     <script defer src="./assets/js/script.js"></script>
     <!--Auth Script-->
@@ -36,12 +39,15 @@
     </header>
     <main>
         <aside class="navTabs">
-
             <ul id="navTabsTop">
-                <li class="logged-in"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
-                <li class="logged-out"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
-                <li class="logged-out"><a href="#modal-login" class="grey-text modal-trigger" data-target="modal-login">Login</a></li>
-                <li class="logged-in"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
+                <li class="logged-in"><a href="#modal-account" class="grey-text modal-trigger"
+                        data-target="modal-account">Account</a></li>
+                <li class="logged-out"><a href="#modal-signup" class="grey-text modal-trigger"
+                        data-target="modal-signup">Sign Up</a></li>
+                <li class="logged-out"><a href="#modal-login" class="grey-text modal-trigger"
+                        data-target="modal-login">Login</a></li>
+                <li class="logged-in"><a href="#modal-save" class="grey-text modal-trigger"
+                        data-target="modal-save">Save</a></li>
                 <li class="logged-in"><a href="#" class="grey-text" id="logout">Logout</a></li>
             </ul>
             <ul id="navTabsMid">
@@ -60,7 +66,6 @@
                 <li id="navLinks"><a href="#links">Links</a></li>
             </ul>
             <ul id="navTabsBottom">
-
                 <li><a href="#modal-about" class="grey-text modal-trigger" data-target="modal-about">About</a></li>
                 <li><a href="#modal-help" class="grey-text modal-trigger" data-target="modal-help">Help</a>
                 </li>
@@ -72,25 +77,21 @@
                 <h2>Dashboard</h2>
                 <div id="dashLinks" class="dashWidget card">
                     <h2>Links</h2>
-                    <div id="links" class="card">
-                        <div id="linksCard">
-                            <h2>Links</h2>
-                            <input type="text" id="linkInput" placeholder="Add a Link">
-                            <input type="text" id="nameInput" placeholder="Add a Name">
-                            <input id="linksBtn" type="submit">
-                            <ul id="linksList">
-                                <li><a class="scroll linksLi" href="https://github.com/public-apis/public-apis">Temp</a></li>
-                                <li><a class="scroll linksLi" href="https://unicode.org/emoji/charts/full-emoji-list.html">Temp</a></li>
-                                <li><a class="scroll linksLi" href="https://www.w3schools.com/">Temp</a></li>
-                                <li><a class="scroll linksLi" href="https://developer.mozilla.org/en-US/">Temp</a></li>
-                                <li><a class="scroll linksLi" href="https://devhints.io/">Temp</a></li>
-                                <li><a class="scroll linksLi" href="https://jquery.com/download/">Temp</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <input type="text" id="linkInput" placeholder="Add a Link">
+                    <input type="text" id="nameInput" placeholder="Add a Name">
+                    <input id="linksBtn" type="submit">
+                    <ul id="linksList">
+                        <li><a class="scroll linksLi" href="https://github.com/public-apis/public-apis">Temp</a></li>
+                        <li><a class="scroll linksLi"
+                                href="https://unicode.org/emoji/charts/full-emoji-list.html">Temp</a></li>
+                        <li><a class="scroll linksLi" href="https://www.w3schools.com/">Temp</a></li>
+                        <li><a class="scroll linksLi" href="https://developer.mozilla.org/en-US/">Temp</a></li>
+                        <li><a class="scroll linksLi" href="https://devhints.io/">Temp</a></li>
+                        <li><a class="scroll linksLi" href="https://jquery.com/download/">Temp</a></li>
+                    </ul>
                 </div>
                 <!-- Code Snippet button causes 405 error on click WHY!?!?! -->
-                <div id="dashSnips" class="dashWidget card">
+                <div id="dashSnips" class="dashWidget card ">
                     <h2>Code Snippets</h2>
                     <form method="POST" class="</section>">
                         <input type="text" name="code-snippets" placeholder="Enter Code Snippet Here" />
@@ -98,10 +99,16 @@
                         <div id="msg">return message here</div>
                     </form>
                 </div>
-                <div id="dashCal" class="dashWidget card">
+                <div id="dashCal" class="dashWidget card  container">
                     <div id="calendar">
+                        <div class="main">
+                            <div id="dp"></div>
+                            <div class="generated">Generated using <a href="https://builder.daypilot.org/">DayPilot UI
+                                    Builder</a>.</div>
+                        </div>
                     </div>
                 </div>
+            </div>
             </div>
             <div id="slack">
                 <h2>Slack</h2>
@@ -125,12 +132,12 @@
                             <p>Your search returned no results, try again.</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="#!" id="modal-cdnjs--close" class="modal-close waves-effect white-text waves-green btn-flat">Ok</a>
+                            <a href="#!" id="modal-cdnjs--close"
+                                class="modal-close waves-effect white-text waves-green btn-flat">Ok</a>
                         </div>
                     </div>
                     <section id="cdnjsResults">
                         <ol>
-
                         </ol>
                     </section>
                 </div>
@@ -155,7 +162,8 @@
                         <h4>Sign up</h4><br />
                         <form id="signup-form">
                             <div class="input-field">
-                                <input type="text" id="signup-user" placeholder="What would you like to be called. . ." required>
+                                <input type="text" id="signup-user" placeholder="What would you like to be called. . ."
+                                    required>
                                 <label for="signupUserID">Full Name</label>
                             </div>
                             <div class="input-field">
@@ -186,7 +194,6 @@
                             <button class="btn grey darken-2 z-depth-0">Login</button>
                         </form>
                     </div>
-
                 </div>
                 <!-- ACCOUNT MODAL -->
                 <div id="modal-account" class="modal">
@@ -194,7 +201,6 @@
                         <h4>Account details</h4><br />
                         <div class="account-details"></div>
                         <button class="btn grey darken-2 z-depth-0 modal-close">Close</button>
-
                     </div>
                 </div>
                 <!--Save MODAL -->
@@ -209,7 +215,9 @@
                 <div id="modal-about" class="modal">
                     <div id="modal-about-content" class="modal-content  grey center-align">
                         <h1>About</h1><br />
-                        <p class="flow-text">Bootcampbox is a helpful dashboard for use in a web-development environment. Integrating multiple links, sites, and tools that are frequently used within a web-development lifestyle. </p>
+                        <p class="flow-text">Bootcampbox is a helpful dashboard for use in a web-development
+                            environment. Integrating multiple links, sites, and tools that are frequently used within a
+                            web-development lifestyle. </p>
                         <h2 id="about-header" class="center">BootCamp Box Authors</h2>
                         <div class="row">
                             <button class="btn grey darken-2 z-depth-0 modal-close">Close</button>
@@ -223,10 +231,8 @@
     </footer>
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-
     <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
@@ -253,17 +259,20 @@
         });
     </script>
     <!--calendar-->
-
+    <script src="./assets/js/daypilot-all.min.js"></script>
     <!--requireJS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+        integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
+        crossorigin="anonymous"></script>
     <!-- jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
+    </div>
 </body>
 
 </html>
