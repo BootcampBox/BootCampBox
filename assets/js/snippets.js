@@ -47,7 +47,6 @@ enterBtn.on('click', function() {
         console.log(errMessage)
     } else {
         var codeResult = $('<pre class="snippet"><strong>' + snipTitle.val() + ': </strong><br/>' + snipInput.val() + '</pre>');
-        var codeHTML = codeResult.innerHTML;
         snippetsListEl.append(codeResult);
         snipLocalStoreTitle.push(snipTitle.val());
         snipLocalStoreText.push(snipInput.val());

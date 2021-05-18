@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*************************************************************************\
  **** Appending the DOM with info from Firestore on login******************\
- *** IF YOU SEE SOMETHING I'M FORGETTING PLEASE ADD THE PSEUDOCODE FOR IT**\
+ *** IF YOU SEE SOMETHING I'M FORGETTING PLEASE ADD THE PSEUDOCODE FOR IT *\
  **************************************************************************/
 // const userDBget
 const accountDetails = $('.account-details');
@@ -177,13 +177,13 @@ function linkMaker() {
     localStorage.setItem("stored-links", JSON.stringify(storedLinks));
     console.log(storedLinks);
     linkInput.val("");
-    localStorage.setItem("stored-links", JSON.stringify(storedLinks));
+    // localStorage.setItem("stored-links", JSON.stringify(storedLinks));
 }
 // On page load, add the values from localStorage to <li>s and add them (hidden) to the <ul>
 if (!localStorage.getItem("stored-links") == null || localStorage.getItem("stored-links") == undefined) {
     localStorage.setItem("stored-links", JSON.stringify({
         links: [
-            "https://github.com/public-apis/public-apis", i "https://unicode.org/emoji/charts/full-emoji-list.html",
+            "https://github.com/public-apis/public-apis", "https://unicode.org/emoji/charts/full-emoji-list.html",
             "https://www.w3schools.com/",
             "https://developer.mozilla.org/en-US/",
             "https://devhints.io/",
