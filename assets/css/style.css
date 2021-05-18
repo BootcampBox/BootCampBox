@@ -275,6 +275,10 @@ a img {
     max-height: 3.25vh;
 }
 
+#dashSnips input {
+    color: rgb(255, 255, 255) !important;
+}
+
 
 /*Snippets*/
 
