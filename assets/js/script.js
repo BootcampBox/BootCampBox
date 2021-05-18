@@ -46,12 +46,9 @@ const setupUI = function(user) {
 //Code Snippets
 const setupSnips = function(data) {
     data.forEach(function(doc) {
-        var html = '';
         const codesnip = doc.data();
         // Create template for how to handle data as it returns
-        const li = `<li>
-        <div class="collapsible-header grey lighten-4">${codesnip.title}</div>
-        <div class="collapsible-body white">${codesnip.snippet}</div>
+        const li = `<pre class="snippet"
         </li>`;
         html += li;
         console.log(codesnip)
@@ -84,12 +81,12 @@ $('#navLinks').on('click', function() {
 })
 $('#navSlack').on('click', function() {
     $('#workspace').children().hide();
-    $('#links').show();
+    $('#slack').show();
 
 })
 $('#navNotion').on('click', function() {
     $('#workspace').children().hide();
-    $('#Notion').show();
+    $('#notion').show();
 
 })
 
@@ -97,12 +94,6 @@ $('#navCdnjs').on('click', function() {
     $('#workspace').children().hide();
     $('#cdnjs').show();
     $('#cdnjs').addClass('active');
-
-})
-
-$('#navLinks').on('click', function() {
-    $('#workspace').children().hide();
-    $('#links').show();
 
 })
 
@@ -163,13 +154,12 @@ $('#cdnjsBtn').on('click', function() {
                     document.execCommand("copy");
                 })
 
+
             }
 
         });
     })
     // Create variables to make <li> and variables to refer to the input fields
-var linksListEl = $('<li>');
-var linksAnchor = $("<a class='scroll linksLi'>")
 var linkInput = $('#linkInput');
 var nameInput = $('#nameInput');
 var linksBtn = $("#linksBtn");
@@ -178,24 +168,35 @@ var linksList = $("#linksList");
 linksBtn.on("click", linkMaker)
 
 function linkMaker() {
-    // TODO: Add name addition functionality
-    // for localStorage, use numbers for the name of the variables so you can iterate thru with a for loop and backtick syntax
-    console.log(linkInput.val());
-    localStorage.setItem("links", linkInput.val());
-    linksAnchor.text(linkInput.val());
-    // Append <li> to <ul>
-    linksList.append(linksListEl);
-    linksListEl.append(linksAnchor);
-
+    var linksInputAnchor = $("<a class='scroll linksLi'>");
+    var linksListInputEl = $('<li>');
+    linksInputAnchor.text(linkInput.val());
+    linksList.append(linksListInputEl);
+    linksListInputEl.append(linksInputAnchor);
+    storedLinks.links.push(linkInput.val());
+    localStorage.setItem("stored-links", JSON.stringify(storedLinks));
+    console.log(storedLinks);
+    linkInput.val("");
+    localStorage.setItem("stored-links", JSON.stringify(storedLinks));
 }
 // On page load, add the values from localStorage to <li>s and add them (hidden) to the <ul>
-var storedLinks = localStorage.getItem("links");
-console.log(storedLinks);
-var storedLinksAnchor = $("<a class='scroll linksLi'>")
-linksList.append(linksListEl);
-storedLinksAnchor.text(storedLinks);
-linksListEl.append(storedLinksAnchor);
-
-
-
-// When the user clicks the Links nav item, populate the page with the standard elements as well as the <li>s with localStorage values if they arent already appended
+if (!localStorage.getItem("stored-links") == null || localStorage.getItem("stored-links") == undefined) {
+    localStorage.setItem("stored-links", JSON.stringify({
+        links: [
+            "https://github.com/public-apis/public-apis", i "https://unicode.org/emoji/charts/full-emoji-list.html",
+            "https://www.w3schools.com/",
+            "https://developer.mozilla.org/en-US/",
+            "https://devhints.io/",
+            "https://jquery.com/download/"
+        ]
+    }));
+}
+console.log(localStorage.getItem("stored-links"));
+var storedLinks = JSON.parse(localStorage.getItem("stored-links"));
+for (i = 0; i < storedLinks.links.length; i++) {
+    var linksListEl = $('<li>');
+    var linksAnchor = $("<a class='scroll linksLi'>");
+    linksAnchor.text(storedLinks.links[i]);
+    linksList.append(linksListEl);
+    linksListEl.append(linksAnchor);
+}

@@ -17,6 +17,7 @@
     <!--DayPilot Functions-->
     <script defer src="./assets/js/daypilot.js"></script>
     <!--Our Script-->
+    <script defer src="./assets/js/snippets.js"></script>
     <script defer src="./assets/js/script.js"></script>
     <!--Auth Script-->
     <script defer src="./assets/js/auth.js"></script>
@@ -88,11 +89,10 @@
                 <!-- Code Snippet button causes 405 error on click WHY!?!?! -->
                 <div id="dashSnips" class="dashWidget card ">
                     <h2>Code Snippets</h2>
-                    <form method="POST" class="</section>">
-                        <input type="text" name="code-snippets" placeholder="Enter Code Snippet Here" />
-                        <button id="enter-snippet" type="button">Enter</button>
-                        <div id="msg">return message here</div>
-                    </form>
+                    <input id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
+                    <input id="input-snippet" type="text" name="code-snippets" placeholder="Enter Code Snippet" />
+                    <button id="enter-btn" type="button">Enter</button>
+                    <div id="snippets-list" class="snipResults"></div>
                 </div>
                 <div id="dashCal" class="dashWidget card">
                     <div id="calendar">
@@ -249,6 +249,9 @@
             timestampsinsnapshots: true
         });
     </script>
+
+    </script>
+
     <!--calendar-->
     <script src="./assets/js/daypilot-all.min.js"></script>
     <!--requireJS-->
