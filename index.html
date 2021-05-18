@@ -16,9 +16,11 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!--DayPilot Functions-->
     <script defer src="./assets/js/daypilot.js"></script>
-    <!--Our Script-->
+    <!--Our Scripts-->
     <script defer src="./assets/js/snippets.js"></script>
     <script defer src="./assets/js/script.js"></script>
+    <script defer src="./assets/js/links.js"></script>
+    <script defer src="./assets/js/CDNJS.js"></script>
     <!--Auth Script-->
     <script defer src="./assets/js/auth.js"></script>
     <!-- Materialize CSS Compiled and minified CSS -->
@@ -67,24 +69,15 @@
             </ul>
             </section>
         </aside>
-        <section id="workspace" class="grey">
+        <section id="workspace" class="black">
             <div id="dash">
-                <h2>Dashboard</h2>
+                <h2 id="dashHead">Dashboard</h2>
                 <div id="dashLinks" class="dashWidget card">
                     <h2>Links</h2>
                     <input type="text" id="linkInput" placeholder="Add a Link">
                     <input type="text" id="nameInput" placeholder="Add a Name">
                     <input id="linksBtn" type="submit">
-                    <ul id="linksList">
-
-                        
-                        <li><a class="scroll linksLi" href="https://github.com/public-apis/public-apis">Temp</a></li>
-                        <li><a class="scroll linksLi" href="https://unicode.org/emoji/charts/full-emoji-list.html">Temp</a></li>
-                        <li><a class="scroll linksLi" href="https://www.w3schools.com/">Temp</a></li>
-                        <li><a class="scroll linksLi" href="https://developer.mozilla.org/en-US/">Temp</a></li>
-                        <li><a class="scroll linksLi" href="https://devhints.io/">Temp</a></li>
-                        <li><a class="scroll linksLi" href="https://jquery.com/download/">Temp</a></li>
-                    </ul>
+                    <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
                 </div>
                 <!-- Code Snippet button causes 405 error on click WHY!?!?! -->
                 <div id="dashSnips" class="dashWidget card ">
@@ -94,7 +87,7 @@
                     <button id="enter-btn" type="button">Enter</button>
                     <div id="snippets-list" class="snipResults"></div>
                 </div>
-                <div id="dashCal" class="dashWidget card  container">
+                <!-- <div id="dashCal" class="dashWidget card  container">
                     <div id="calendar">
                         <div class="main">
                             <div id="dp"></div>
@@ -102,7 +95,7 @@
                                     Builder</a>.</div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             </div>
             <div id="slack">
@@ -248,11 +241,7 @@
         ({
             timestampsinsnapshots: true
         });
-
     </script>  
-
-    </script>
-
     <!--calendar-->
     <script src="./assets/js/daypilot-all.min.js"></script>
     <!--requireJS-->
