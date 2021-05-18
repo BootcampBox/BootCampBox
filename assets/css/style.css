@@ -1,13 +1,16 @@
 html {
     background-color: black
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     min-height: 800px;
 }
+
 p {
     font-weight: 300;
 }
+
 main {
     min-width: 90%;
     min-height: 90%;
@@ -16,6 +19,7 @@ main {
     grid-template-rows: repeat(10, 10%);
     gap: .5rem;
 }
+
 aside {
     padding-left: 1rem;
     height: 100%;
@@ -24,14 +28,20 @@ aside {
     grid-row-start: 1;
     grid-row-end: 10;
 }
+
 h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 800 !important;
     margin-top: 1rem;
 }
+
+
 /* Conditional formatting and specialzed classes */
+
+
 /*** Disables user from selecting or highlighting text *******
 **** jQuery code $('ELEMENTSELECTOR').addClass('noselect'); */
+
 .noselect {
     -webkit-touch-callout: none;
     /* iOS Safari */
@@ -45,15 +55,20 @@ h2 {
     /* Internet Explorer/Edge */
     user-select: none;
 }
+
+
 /*Header*/
+
 header {
     min-height: 10vh;
 }
+
 #greeting {
     text-align: right;
     height: fit-content;
     /* background-color: rgba(255, 255, 255, 0.25); */
 }
+
 #greeting img {
     position: absolute;
     top: 0;
@@ -62,17 +77,22 @@ header {
     transform: translateX(-50%);
     max-height: 10vh;
 }
+
 #greeting h2 {
     color: white;
     margin: 2vh !important;
     padding: 0 !important;
     font-size: 1.5vw;
 }
+
 #greeting span {
     font-weight: 300;
     text-align: right;
 }
+
+
 /* Nav Menu */
+
 .navTabs {
     display: grid;
     min-height: 100%;
@@ -82,10 +102,12 @@ header {
     grid-template-rows: repeat(10, 10%);
     font-size: 1.25vw;
 }
+
 .navTabs a {
     text-decoration: none;
     color: white;
 }
+
 #navTabsTop {
     text-align: left;
     margin-top: 0;
@@ -95,9 +117,11 @@ header {
     grid-row-start: 1;
     /* grid-row-end: 2; */
 }
+
 #navTabsTop ul {
     width: 90%;
 }
+
 #navTabsMid {
     text-align: left;
     /* margin-top: 0; */
@@ -105,29 +129,38 @@ header {
     grid-column-end: 3;
     grid-row-start: 2;
 }
+
 #navTabsBottom a,
 #navTabsTop a {
     flex: 0 0 100%
 }
+
 #navTabsBottom {
     grid-column: 1;
     grid-row-start: 5;
 }
+
 li {
     list-style: none;
 }
+
 a {
     text-decoration: none;
 }
+
 a img {
     margin-left: 1rem;
     max-height: 60px;
     z-index: 2;
 }
+
+
 /* Modal Stuff */
+
 #signup-user[placeholder] {
     text-align: center;
 }
+
 #acctInfoEl {
     width: 50%;
     right: 100%;
@@ -138,15 +171,20 @@ a img {
     border: none;
     padding: 2vw 0;
 }
+
 #acctInfoEl span {
     font-weight: 800;
 }
+
 #acctInfoEl p {
     margin: 0;
     padding: 0;
     font-variant: small-caps;
 }
+
+
 /* conditional classes / specializations */
+
 .card {
     background: rgb(8, 8, 8);
     text-decoration: none;
@@ -160,7 +198,10 @@ a img {
     transition: all .1s ease-in;
     border: solid black;
 }
+
+
 /*Workspace Options*/
+
 #workspace {
     display: grid;
     padding: 1vw;
@@ -172,16 +213,21 @@ a img {
     grid-row-start: 1;
     grid-row-end: 10;
 }
+
+
 /*Dashboard Slide*/
+
 .active {
     display: grid !important;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(10, 10%);
     height: 100%;
 }
+
 .deactive {
     display: none;
 }
+
 #dash {
     display: grid;
     grid-column-start: 1;
@@ -192,11 +238,13 @@ a img {
     grid-template-rows: repeat(10, 10%);
     height: 100% !important;
 }
+
 #dash h2 {
     text-align: center;
     grid-column-start: 5;
     grid-column-end: 7;
 }
+
 #dashLinks {
     background-color: violet;
     grid-column-start: 8;
@@ -204,30 +252,64 @@ a img {
     grid-row-start: 2;
     grid-row-end: 4;
 }
+
 #dashSnips {
-    background-color: blue;
+    box-shadow: 1px 4px 11px 4px rgba(64, 69, 204, 0.562);
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 6;
     grid-row-start: 2;
-    grid-row-end: 5;
+    grid-row-end: 6;
     margin: 0;
 }
+
+#dashSnips h2 {
+    color: rgba(64, 69, 204);
+    -webkit-text-stroke: .25px rgb(255, 255, 255);
+    font-size: 3vw;
+    margin-bottom: 0;
+}
+
+#input-title,
+#input-snippet {
+    font-size: 1.5vw;
+    max-height: 3.25vh;
+}
+
+
+/*Snippets*/
+
+#snippets-list {
+    max-height: 525px;
+    margin: 0 2vw;
+    padding: 4px;
+    /* background-color: rgba(255, 255, 255, 0.25); */
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+
 /*Calendar*/
+
 #calendar .main {
     height: 50% !important;
     width: 100% !important;
 }
+
 #calendar p,
 #calendar td {
     font-family: 'Roboto', sans-serif;
     font-size: 10pt;
 }
+
 #calendar a {
     color: #1192A3;
 }
+
 #calendar .space {
     margin: 10px 0px 10px 0px;
 }
+
 #calendar .header {
     background: #003267;
     background: linear-gradient(to right, #011329 0%, #00639E 44%, #011329 100%);
@@ -235,27 +317,34 @@ a img {
     color: white;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
 }
+
 #calendar .header a {
     color: white;
 }
+
 #calendar .header h1 a {
     text-decoration: none;
 }
+
 #calendar .header h1 {
     padding: 0px;
     margin: 0px;
 }
+
 #calendar .main {
     padding: 10px;
     margin-top: 10px;
 }
+
 #calendar .generated {
     color: #999;
     margin-top: 10px;
 }
+
 #calendar .generated a {
     color: #999;
 }
+
 #dashCal {
     grid-column-start: 7;
     grid-column-end: 11;
@@ -264,21 +353,31 @@ a img {
     background-color: grey;
     margin: 0 !important;
 }
+
+
 /* Slack Slide */
+
 #slack {
     display: none;
 }
+
+
 /*Notion Slide*/
+
 #notion {
     display: none;
 }
+
+
 /*CDNJS Slide*/
+
 #cdnjs h2 {
     grid-column-start: 2;
     grid-column-end: 10;
     text-align: center;
     max-height: 100px;
 }
+
 #cdnjs {
     display: none;
     height: 100%;
@@ -288,6 +387,7 @@ a img {
     grid-row-start: 1;
     grid-row-end: 10;
 }
+
 #cdnjsCard {
     display: grid;
     grid-template-columns: repeat(10, 10%);
@@ -298,6 +398,7 @@ a img {
     grid-row-start: 2;
     grid-row-end: 10;
 }
+
 #cdnjsResults {
     margin-bottom: 0;
     grid-column-start: 1;
@@ -305,6 +406,7 @@ a img {
     grid-row-start: 2;
     grid-row-end: 10;
 }
+
 #cdnjsInput {
     grid-row-start: 1;
     grid-column-start: 1;
@@ -315,6 +417,7 @@ a img {
     max-height: 36px;
     color: gray;
 }
+
 #cdnjsBtn {
     grid-column-start: 8;
     grid-column-end: 10;
@@ -327,10 +430,12 @@ a img {
     color: white;
     z-index: 1;
 }
+
 #cdnjsInput:hover {
     box-shadow: inset 0px 0px 48px 1px rgba(224, 140, 255, 0.1), -webkit-box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
     box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
 }
+
 .scroll {
     max-height: 525px;
     margin: -1rem 1rem;
@@ -341,6 +446,7 @@ a img {
     overflow-y: auto;
     text-align: justify;
 }
+
 .resultLi {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
@@ -350,16 +456,20 @@ a img {
     font-variant: small-caps;
     text-align: center;
 }
+
 .resultLi,
 .cdnLi {
     list-style: none;
     width: 100%;
     background-color: white;
 }
+
 .cdnLi {
     margin-bottom: 1rem;
     font-variant: none;
 }
+
+
 /* #links {
 height: 100%;
 width: 80%;
@@ -368,6 +478,7 @@ grid-column-end: 5;
 grid-row-start: 1;
 grid-row-end: 5;
 }*/
+
 #dashLinks {
     grid-column-start: 2;
     grid-column-end: 6;
@@ -375,6 +486,7 @@ grid-row-end: 5;
     grid-row-end: 9;
     text-align: center;
 }
+
 .linksLi {
     list-style: none;
     width: 100%;

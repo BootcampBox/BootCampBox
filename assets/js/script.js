@@ -46,12 +46,9 @@ const setupUI = function(user) {
 //Code Snippets
 const setupSnips = function(data) {
     data.forEach(function(doc) {
-        var html = '';
         const codesnip = doc.data();
         // Create template for how to handle data as it returns
-        const li = `<li>
-        <div class="collapsible-header grey lighten-4">${codesnip.title}</div>
-        <div class="collapsible-body white">${codesnip.snippet}</div>
+        const li = `<pre class="snippet"
         </li>`;
         html += li;
         console.log(codesnip)
