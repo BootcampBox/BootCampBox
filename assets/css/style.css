@@ -251,10 +251,10 @@ a img {
 
 #dashLinks {
     box-shadow: 1px 4px 11px 4px rgba(64, 69, 204, 0.562);
-    grid-column-start: 8;
-    grid-column-end: 10;
-    grid-row-start: 1;
-    grid-row-end: 4;
+    grid-column-start: 7;
+    grid-column-end: 11;
+    grid-row-start: 2;
+    grid-row-end: 7;
     text-align: center;
 }
 
@@ -263,11 +263,11 @@ a img {
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 2;
-    grid-row-end: 6;
-    margin: 0;
+    grid-row-end: 7;
 }
 
-#dashSnips h2 {
+#dashSnips h2,
+#dashLinks h2 {
     color: rgba(64, 69, 204);
     -webkit-text-stroke: .25px rgb(255, 255, 255);
     font-size: 3vw;
@@ -488,6 +488,12 @@ grid-column-end: 5;
 grid-row-start: 1;
 grid-row-end: 5;
 }*/
+
+#linkInput,
+#nameInput {
+    font-size: 1.5vw;
+    max-height: 3.25vh;
+}
 
 .linksLi {
     list-style: none;
