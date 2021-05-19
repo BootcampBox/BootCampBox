@@ -6,12 +6,16 @@ A helpful dashboard for use in a web-development environment. Integrates multipl
 
 ## User Story:
 
-## Links and Screenshots:
+## GitHub URL:
+https://github.com/BootcampBox/BootCampBox.git
+
+Screenshots:
 
 ### Wireframe
 <img src="./assets/images/BootCampBoxWireFrame.jpg" alt="screencap of Whimsical wireframe" />
 
-### Deployed Application
+### Deployed Application URL:
+https://bootcampbox.github.io/BootCampBox/
 
 ## Works Cited:
 
