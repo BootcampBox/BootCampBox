@@ -60,7 +60,9 @@
                 <li id="navCdnjs">
                     <a href="#cdnjs">CDNJS</a>
                 </li>
-                <li id="navLinks"><a href="#links">Links</a></li>
+                <li id="navCal">
+                    <a href="#calendar">Calendar</a>
+                </li>
             </ul>
             <ul id="navTabsBottom">
                 <li><a href="#modal-about" class="grey-text modal-trigger noselect" data-target="modal-about">About</a></li>
@@ -74,10 +76,10 @@
                 <h2 class="noselect" id=" dashHead ">Dashboard</h2>
                 <div id="dashLinks " class="dashWidget card noselect">
                     <h2>Links</h2>
-                    <input type="text " id="linkInput " placeholder="Add a Link ">
-                    <input type="text " id="nameInput " placeholder="Add a Name ">
-                    <input class="noselect" id=" linksBtn " type="submit ">
-                    <ul id="linksList " class="scroll-links uk-text-truncate noselect"></ul>
+                  <input type="text" id="linkInput" class="white-text" placeholder="Add a Link">
+                    <input type="text" id="nameInput" class="white-text" placeholder="Add a Name">
+                    <input id="linksBtn" type="submit">
+                  <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
                 </div>
                 <!-- Code Snippet button causes 405 error on click WHY!?!?! -->
                 <div id="dashSnips " class="dashWidget card noselect ">
@@ -87,16 +89,12 @@
                     <button id="enter-btn " class="noselect " type="button ">Enter</button>
                     <div id="snippets-list " class="snipResults noselect"></div>
                 </div>
-                <!-- <div id="dashCal " class="dashWidget card container ">
-                    <div id="calendar ">
-                        <div class="main ">
-                            <div id="dp "></div>
-                            <div class="generated ">Generated using <a href="https://builder.daypilot.org/ ">DayPilot UI
-                                    Builder</a>.</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
+            <div id="calendar" class="card container">
+                <div class="main">
+                    <div id="dp"></div>
+                    <div class="generated"></div>
+                </div>
             </div>
             <div id="slack ">
                 <h2>Slack</h2>
@@ -108,11 +106,10 @@
             </div>
             <div class="noselect " id="cdnjs ">
                 <h2>CDNJS Search Tool</h2>
-                <div id="cdnjsCard " class="card noselect ">
-                    <!-- <div class="uk-margin "> -->
-                    <input id="cdnjsInput " type="text " placeholder="Search for a Library ">
-                    <button id="cdnjsBtn " class="btn grey darken-2 z-depth-0 noselect ">Search</button>
-                    <!-- </div> -->
+                <div id="cdnjsCard" class="card noselect">
+                    <input id="cdnjsInput" type="text" placeholder="Search for a Library">
+                    <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0">Search</button>
+                    <div id="cdnjsInstructions">Click on a link to send it to your links dashboard widget!</div>
                     <!-- Modal Structure -->
                     <div id="modal-cdnjs " class="modal noselect ">
                         <div class="modal-content ">
@@ -124,7 +121,8 @@
                         </div>
                     </div>
                     <section id="cdnjsResults ">
-                        <ol>
+                        <ol id="cdnOl">
+
                         </ol>
                     </section>
                 </div>

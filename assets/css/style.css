@@ -4,7 +4,7 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    min-height: 800px;
+    min-height: 100vh;
 }
 
 p {
@@ -124,7 +124,7 @@ header {
 
 #navTabsMid {
     text-align: left;
-    /* margin-top: 0; */
+    margin-top: 5vh;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -136,6 +136,7 @@ header {
 }
 
 #navTabsBottom {
+    margin-top: 5vh;
     grid-column: 1;
     grid-row-start: 5;
 }
@@ -206,7 +207,7 @@ a img {
     display: grid;
     padding: 1vw;
     background-color: white;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     grid-column-start: 2;
     grid-column-end: 10;
@@ -218,21 +219,25 @@ a img {
 /*Dashboard Slide*/
 
 #dashHead {
-    color:white;
+    color: white;
 }
 
+
+/* Unused -- Delete(?)
 .active {
     display: grid !important;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(10, 10%);
     height: 100%;
-}
+} 
 
 .deactive {
     display: none;
 }
+*/
 
 #dash {
+    background: rgb(36, 35, 35);
     display: grid;
     grid-column-start: 1;
     grid-column-end: 11;
@@ -251,12 +256,11 @@ a img {
 
 #dashLinks {
     box-shadow: 1px 4px 11px 4px rgba(64, 69, 204, 0.562);
-    grid-column-start: 8;
-    grid-column-end: 10;
-    grid-row-start: 1;
-    grid-row-end: 4;
+    grid-column-start: 7;
+    grid-column-end: 11;
+    grid-row-start: 2;
+    grid-row-end: 7;
     text-align: center;
-    
 }
 
 #dashSnips {
@@ -264,11 +268,11 @@ a img {
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 2;
-    grid-row-end: 6;
-    margin: 0;
+    grid-row-end: 7;
 }
 
-#dashSnips h2 {
+#dashSnips h2,
+#dashLinks h2 {
     color: rgba(64, 69, 204);
     -webkit-text-stroke: .25px rgb(255, 255, 255);
     font-size: 3vw;
@@ -279,6 +283,10 @@ a img {
 #input-snippet {
     font-size: 1.5vw;
     max-height: 3.25vh;
+}
+
+#dashSnips input {
+    color: rgb(255, 255, 255) !important;
 }
 
 
@@ -297,8 +305,16 @@ a img {
 
 /*Calendar*/
 
+#calendar {
+    display: none;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 11;
+}
+
 #calendar .main {
-    height: 50% !important;
+    height: 100% !important;
     width: 100% !important;
 }
 
@@ -438,14 +454,23 @@ a img {
 }
 
 #cdnjsInput:hover {
-    box-shadow: inset 0px 0px 48px 1px rgba(224, 140, 255, 0.1), -webkit-box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
+    box-shadow: c inset 0px 0px 48px 1px rgba(224, 140, 255, 0.1);
+    -webkit-box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
     box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
+}
+
+#cdnjsInstructions {
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 2;
+    transform: translateY(-50%);
+    text-align: center;
 }
 
 .scroll {
     max-height: 525px;
     margin: -1rem 1rem;
-    wrap: none;
+    word-wrap: none;
     padding: 4px;
     background-color: rgba(255, 255, 255, 0.25);
     overflow-x: hidden;
@@ -458,9 +483,11 @@ a img {
     font-size: 1rem;
     font-weight: 800;
     user-select: none;
-    text-decoration: underline;
-    font-variant: small-caps;
-    text-align: center;
+}
+
+.tooltipped {
+    z-index: 100;
+    text-decoration: none;
 }
 
 .resultLi,
@@ -468,6 +495,9 @@ a img {
     list-style: none;
     width: 100%;
     background-color: white;
+    text-decoration: underline;
+    font-variant: small-caps;
+    text-align: center;
 }
 
 .cdnLi {
@@ -485,6 +515,12 @@ grid-row-start: 1;
 grid-row-end: 5;
 }*/
 
+#linkInput,
+#nameInput {
+    font-size: 1.5vw;
+    max-height: 3.25vh;
+}
+
 .linksLi {
     list-style: none;
     width: 100%;
@@ -492,10 +528,14 @@ grid-row-end: 5;
 }
 
 .scroll-links {
-    wrap: none;
+    word-wrap: none;
     padding: 4px;
     background-color: rgba(255, 255, 255, 0.25);
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify;
+}
+
+.white-text {
+    color: rgb(255, 255, 255) !important;
 }

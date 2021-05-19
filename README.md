@@ -6,7 +6,10 @@ A helpful dashboard for use in a web-development environment. Integrates multipl
 
 ## User Story:
 
-## Links and Screenshots:
+## GitHub URL:
+https://github.com/BootcampBox/BootCampBox.git
+
+Screenshots:
 
 ### Wireframe
 <img src="./assets/images/DashWF.png" alt="screencap of Whimsical Dash wireframe" />
@@ -21,7 +24,8 @@ A helpful dashboard for use in a web-development environment. Integrates multipl
 
 <img src="./assets/images/NotionWF.png" alt="screencap of Whimsical Notion wireframe" />
 
-### Deployed Application
+### Deployed Application URL:
+https://bootcampbox.github.io/BootCampBox/
 
 ## Works Cited:
 

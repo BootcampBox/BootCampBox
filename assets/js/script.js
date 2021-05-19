@@ -93,14 +93,11 @@ $('#navNotion').on('click', function() {
 $('#navCdnjs').on('click', function() {
     $('#workspace').children().hide();
     $('#cdnjs').show();
-    $('#cdnjs').addClass('active');
-
 })
 
 $('#navLinks').on('click', function() {
     $('#workspace').children().hide();
     $('#links').show();
-
 })
 
 //close modal if popped 
