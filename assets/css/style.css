@@ -240,6 +240,7 @@ a img {
     grid-row-end: 11;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(10, 10%);
+    width: 100% !important;
     height: 100% !important;
 }
 
@@ -261,7 +262,7 @@ a img {
 #dashSnips {
     box-shadow: 1px 4px 11px 4px rgba(64, 69, 204, 0.562);
     grid-column-start: 1;
-    grid-column-end: 6;
+    grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 7;
 }
@@ -288,14 +289,22 @@ a img {
 /*Snippets*/
 
 #snippets-list {
-    max-height: 525px;
-    margin: 0 2vw;
+    max-height: 425px;
+    max-width: 400px;
+    margin: 0 10px;
     padding: 4px;
     /* background-color: rgba(255, 255, 255, 0.25); */
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify;
 }
+
+
+/* #snippets-list pre {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+} */
 
 
 /*Calendar*/
@@ -354,6 +363,8 @@ a img {
     color: #999;
 }
 
+
+/* 
 #dashCal {
     grid-column-start: 7;
     grid-column-end: 11;
@@ -361,7 +372,7 @@ a img {
     grid-row-end: 7;
     background-color: grey;
     margin: 0 !important;
-}
+} */
 
 
 /* Slack Slide */
@@ -409,6 +420,7 @@ a img {
 }
 
 #cdnjsResults {
+    margin-top: 5vh;
     margin-bottom: 0;
     grid-column-start: 1;
     grid-column-end: 11;
@@ -446,6 +458,17 @@ a img {
     box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
 }
 
+#cdnjsInstructions {
+    color: violet;
+    height: 50px;
+    margin: 1vh;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 2;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
 .scroll {
     max-height: 525px;
     margin: -1rem 1rem;
@@ -480,14 +503,7 @@ a img {
 }
 
 
-/* #links {
-height: 100%;
-width: 80%;
-grid-column-start: 2;
-grid-column-end: 5;
-grid-row-start: 1;
-grid-row-end: 5;
-}*/
+/*Links Widget Style*/
 
 #linkInput,
 #nameInput {
@@ -502,9 +518,11 @@ grid-row-end: 5;
 }
 
 .scroll-links {
-    word-wrap: none;
+    max-height: 75%;
+    max-width: 400px;
+    margin: 0 10px;
     padding: 4px;
-    background-color: rgba(255, 255, 255, 0.25);
+    /* background-color: rgba(255, 255, 255, 0.25); */
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify;
