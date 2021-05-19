@@ -93,8 +93,6 @@ $('#navNotion').on('click', function() {
 $('#navCdnjs').on('click', function() {
     $('#workspace').children().hide();
     $('#cdnjs').show();
-    $('#cdnjs').addClass('active');
-
 })
 
 $('#navLinks').on('click', function() {
