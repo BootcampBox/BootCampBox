@@ -40,15 +40,19 @@ var enterBtn = $("#enter-btn");
 
 enterBtn.on('click', function() {
     if (snipTitle.val() == '' || snipInput.val() == '') {
+        console.log(snipTitle.value)
+        console.log(snipInput.value)
         var errMessage = "We couldn't save that one.";
         $('#modal-error').modal('open');
         $('#errmsg').text(errMessage);
         $('#posSolution').text('Try typing something . . . you dunce.');
         console.log(errMessage)
     } else {
-        var codeResult = $('<pre class="snippet"><strong>' + snipTitle.val() + ': </strong><br/>' + snipInput.val() + '</pre>');
+        var codeResult = $('<div> <pre class="snippet"><strong>' + snipTitle.val() + ': </strong><br/>' + snipInput.val() + '</pre></div>');
         var codeHTML = codeResult.innerHTML;
+        var removeBtn = $('<button type=button class="btn teal darken-2">Remove Aforementioned Snippy</button>')
         snippetsListEl.append(codeResult);
+        snippetsListEl.append(removeBtn);
         snipLocalStoreTitle.push(snipTitle.val());
         snipLocalStoreText.push(snipInput.val());
         localStorage.setItem('Local Snippets Titles', snipLocalStoreTitle);

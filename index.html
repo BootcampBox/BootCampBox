@@ -73,21 +73,23 @@
         </aside>
         <section id="workspace" class="black noselect">
             <div id="dash">
-                <h2 class="noselect" id=" dashHead ">Dashboard</h2>
-                <div id="dashLinks " class="dashWidget card noselect">
+
+                <h2 class="noselect" id="dashHead">Dashboard</h2>
+                <div id="dashLinks" class="dashWidget">
                     <h2>Links</h2>
-                  <input type="text" id="linkInput" class="white-text" placeholder="Add a Link">
-                    <input type="text" id="nameInput" class="white-text" placeholder="Add a Name">
+                    <input class="white-text" type="text" id="linkInput" placeholder="Add a Link">
+                    <input class="white-text" type="text" id="nameInput" placeholder="Add a Name">
                     <input id="linksBtn" type="submit">
                   <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
                 </div>
                 <!-- Code Snippet button causes 405 error on click WHY!?!?! -->
-                <div id="dashSnips " class="dashWidget card noselect ">
+
+                <div id="dashSnips" class="dashWidget noselect">
                     <h2>Code Snippets</h2>
-                    <input id="input-title " type="text " name="snippets-title " placeholder="Enter Snippet Title " />
-                    <input id="input-snippet " type="text " name="code-snippets " placeholder="Enter Code Snippet " />
-                    <button id="enter-btn " class="noselect " type="button ">Enter</button>
-                    <div id="snippets-list " class="snipResults noselect"></div>
+                    <input class="white-text" id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
+                    <input class="white-text" id="input-snippet" type="text" name="code-snippets" placeholder="Enter Code Snippet" />
+                    <button id="enter-btn" type="button">Enter</button>
+                    <div id="snippets-list" class="snipResults"></div>
                 </div>
             </div>
             <div id="calendar" class="card container">
@@ -120,9 +122,8 @@
                             <a href="#! " id="modal-cdnjs--close " class="modal-close waves-effect white-text waves-green btn-flat noselect ">Ok</a>
                         </div>
                     </div>
-                    <section id="cdnjsResults ">
+                    <section id="cdnjsResults">
                         <ol id="cdnOl">
-
                         </ol>
                     </section>
                 </div>

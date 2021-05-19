@@ -34,31 +34,34 @@ $('#cdnjsBtn').on('click', function() {
 
                 //append them to the page
                 cdnOlEl.append(nameListItemEl);
-                nameListItemEl.append(tooltipCDNLi);
+
+                nameListItemEl.append(cdnListEl);
+
                 // tooltipCDNLi.append(cdnListEl);
 
 
             }
             /*Not Working yet, revisit*/
             $('#cdnjsResults').children().children('.resultLi').on('click', function() {
-                console.log(this.children[0].textContent, 'has been clicked');
-                var cdnjsScriptCopy = ''
-                select(cdnjsScriptCopy);
-                document.execCommand("copy");
+
+
+                var cdnjsScriptCopy = this.children[0].textContent;
+                var linksInputAnchor = $("<a class='scroll linksLi'>");
+                var linksListInputEl = $('<li>');
+                linksInputAnchor.text(cdnjsScriptCopy);
+                linksList.append(linksListInputEl);
+                linksListInputEl.append(linksInputAnchor);
+                storedLinks.links.push(cdnjsScriptCopy);
+                localStorage.setItem("stored-links", JSON.stringify(storedLinks));
+                console.log(storedLinks);
+                linkInput.val("");
+                $(this).hide();
+
             })
 
 
         }
 
     });
-
-
-})
-
-$('#cdnOl').children().children('.copyToSnips').on('click', function() {
-    var cdnTitle = $(this).siblings('.resultLi').text();
-    var cdnSnip = $(this).siblings('.cdnli').text();
-    console.log(cdnTitle, ':', cdnSnip)
-
 
 })
