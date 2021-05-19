@@ -40,8 +40,18 @@ const setupUI = function(user) {
 
 //Calendar Events(?)
 
-//Links
+//LinksClock
 
+var renderClock = function() {
+    $("#currentTime").text(dayjs().format("h:mm: a"));
+    var now = dayjs().format("dddd, MMM / D / YYYY");
+    $("#currentDay").text(now)
+}
+
+//Render clock every second
+$(function() {
+    setInterval(renderClock, 1000);
+});
 
 //Code Snippets
 const setupSnips = function(data) {
