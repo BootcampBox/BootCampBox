@@ -4,7 +4,7 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    min-height: 800px;
+    min-height: 100vh;
 }
 
 p {
@@ -124,7 +124,7 @@ header {
 
 #navTabsMid {
     text-align: left;
-    /* margin-top: 0; */
+    margin-top: 5vh;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -136,6 +136,7 @@ header {
 }
 
 #navTabsBottom {
+    margin-top: 5vh;
     grid-column: 1;
     grid-row-start: 5;
 }
@@ -206,7 +207,7 @@ a img {
     display: grid;
     padding: 1vw;
     background-color: white;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     grid-column-start: 2;
     grid-column-end: 10;
@@ -221,18 +222,22 @@ a img {
     color: white;
 }
 
+
+/* Unused -- Delete(?)
 .active {
     display: grid !important;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(10, 10%);
     height: 100%;
-}
+} 
 
 .deactive {
     display: none;
 }
+*/
 
 #dash {
+    background: rgb(36, 35, 35);
     display: grid;
     grid-column-start: 1;
     grid-column-end: 11;
@@ -309,8 +314,16 @@ a img {
 
 /*Calendar*/
 
+#calendar {
+    display: none;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 11;
+}
+
 #calendar .main {
-    height: 50% !important;
+    height: 100% !important;
     width: 100% !important;
 }
 
@@ -462,6 +475,7 @@ a img {
     color: violet;
     height: 50px;
     margin: 1vh;
+
     grid-column-start: 1;
     grid-column-end: 11;
     grid-row-start: 2;
@@ -485,9 +499,11 @@ a img {
     font-size: 1rem;
     font-weight: 800;
     user-select: none;
-    text-decoration: underline;
-    font-variant: small-caps;
-    text-align: center;
+}
+
+.tooltipped {
+    z-index: 100;
+    text-decoration: none;
 }
 
 .resultLi,
@@ -495,6 +511,9 @@ a img {
     list-style: none;
     width: 100%;
     background-color: white;
+    text-decoration: underline;
+    font-variant: small-caps;
+    text-align: center;
 }
 
 .cdnLi {

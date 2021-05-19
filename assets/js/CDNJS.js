@@ -34,13 +34,16 @@ $('#cdnjsBtn').on('click', function() {
 
                 //append them to the page
                 cdnOlEl.append(nameListItemEl);
+
                 nameListItemEl.append(cdnListEl);
+
                 // tooltipCDNLi.append(cdnListEl);
 
 
             }
             /*Not Working yet, revisit*/
             $('#cdnjsResults').children().children('.resultLi').on('click', function() {
+
 
                 var cdnjsScriptCopy = this.children[0].textContent;
                 var linksInputAnchor = $("<a class='scroll linksLi'>");
@@ -53,12 +56,12 @@ $('#cdnjsBtn').on('click', function() {
                 console.log(storedLinks);
                 linkInput.val("");
                 $(this).hide();
+
             })
 
 
         }
 
     });
-
 
 })

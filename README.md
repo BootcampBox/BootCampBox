@@ -12,7 +12,17 @@ https://github.com/BootcampBox/BootCampBox.git
 Screenshots:
 
 ### Wireframe
-<img src="./assets/images/BootCampBoxWireFrame.jpg" alt="screencap of Whimsical wireframe" />
+<img src="./assets/images/DashWF.png" alt="screencap of Whimsical Dash wireframe" />
+
+<img src="./assets/images/SlackWF.png" alt="screencap of Whimsical Slack wireframe" />
+
+<img src="./assets/images/CalendarWF.png" alt="screencap of Whimsical Calander wireframe" />
+
+<img src="./assets/images/BookmarksWF.png" alt="screencap of Whimsical Bookmarks wireframe" />
+
+<img src="./assets/images/CDNJSWF.png" alt="screencap of Whimsical CDNJS wireframe" />
+
+<img src="./assets/images/NotionWF.png" alt="screencap of Whimsical Notion wireframe" />
 
 ### Deployed Application URL:
 https://bootcampbox.github.io/BootCampBox/
@@ -26,6 +36,8 @@ https://bootcampbox.github.io/BootCampBox/
 [Link to Materialize](https://www.materializecss.com)
 
 [Link to UIKit](https://getuikit.com)
+
+[Link to DayPilot.js](https://www.daypilot.org/)
 
 ---
 

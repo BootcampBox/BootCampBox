@@ -98,7 +98,6 @@ $('#navCdnjs').on('click', function() {
 $('#navLinks').on('click', function() {
     $('#workspace').children().hide();
     $('#links').show();
-
 })
 
 //close modal if popped 
