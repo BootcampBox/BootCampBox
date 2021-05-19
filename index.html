@@ -60,7 +60,9 @@
                 <li id="navCdnjs">
                     <a href="#cdnjs">CDNJS</a>
                 </li>
-                <li id="navLinks"><a href="#links">Links</a></li>
+                <li id="navCal">
+                    <a href="#calendar">Calendar</a>
+                </li>
             </ul>
             <ul id="navTabsBottom">
                 <li><a href="#modal-about" class="grey-text modal-trigger" data-target="modal-about">About</a></li>
@@ -87,16 +89,12 @@
                     <button id="enter-btn" type="button">Enter</button>
                     <div id="snippets-list" class="snipResults"></div>
                 </div>
-                <!-- <div id="dashCal" class="dashWidget card  container">
-                    <div id="calendar">
-                        <div class="main">
-                            <div id="dp"></div>
-                            <div class="generated">Generated using <a href="https://builder.daypilot.org/">DayPilot UI
-                                    Builder</a>.</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
+            <div id="calendar" class="card container">
+                <div class="main">
+                    <div id="dp"></div>
+                    <div class="generated"></div>
+                </div>
             </div>
             <div id="slack">
                 <h2>Slack</h2>
@@ -109,10 +107,9 @@
             <div id="cdnjs">
                 <h2>CDNJS Search Tool</h2>
                 <div id="cdnjsCard" class="card">
-                    <!-- <div class="uk-margin"> -->
                     <input id="cdnjsInput" type="text" placeholder="Search for a Library">
                     <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0">Search</button>
-                    <!-- </div> -->
+                    <div id="cdnjsInstructions">Click on a link to send it to your links dashboard widget!</div>
                     <!-- Modal Structure -->
                     <div id="modal-cdnjs" class="modal">
                         <div class="modal-content">
@@ -124,7 +121,7 @@
                         </div>
                     </div>
                     <section id="cdnjsResults">
-                        <ol>
+                        <ol id="cdnOl">
                         </ol>
                     </section>
                 </div>
@@ -242,10 +239,6 @@
             timestampsinsnapshots: true
         });
     </script>
-
-    =======
-    </script>
-    >>>>>>> 306f57c244e68d34ae7a24923abd6300182b8e1b
     <!--calendar-->
     <script src="./assets/js/daypilot-all.min.js"></script>
     <!--requireJS-->
