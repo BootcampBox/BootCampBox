@@ -218,7 +218,7 @@ a img {
 /*Dashboard Slide*/
 
 #dashHead {
-    color:white;
+    color: white;
 }
 
 .active {
@@ -256,7 +256,6 @@ a img {
     grid-row-start: 1;
     grid-row-end: 4;
     text-align: center;
-    
 }
 
 #dashSnips {
@@ -442,14 +441,15 @@ a img {
 }
 
 #cdnjsInput:hover {
-    box-shadow: inset 0px 0px 48px 1px rgba(224, 140, 255, 0.1), -webkit-box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
+    box-shadow: c inset 0px 0px 48px 1px rgba(224, 140, 255, 0.1);
+    -webkit-box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
     box-shadow: 0px 4px 50px -1px rgba(224, 140, 255, 0.42);
 }
 
 .scroll {
     max-height: 525px;
     margin: -1rem 1rem;
-    wrap: none;
+    word-wrap: none;
     padding: 4px;
     background-color: rgba(255, 255, 255, 0.25);
     overflow-x: hidden;
@@ -496,10 +496,14 @@ grid-row-end: 5;
 }
 
 .scroll-links {
-    wrap: none;
+    word-wrap: none;
     padding: 4px;
     background-color: rgba(255, 255, 255, 0.25);
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify;
+}
+
+.white-text {
+    color: rgb(255, 255, 255) !important;
 }
