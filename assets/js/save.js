@@ -29,9 +29,9 @@ $('#saveBtn').on('click', function(user) {
     sun
   }]
   console.log(calendar_LS)
-
   var snips_LS = localStorage.getItem('stored-snips');
   // var snipI_LS = localStorage.getItem('Local Snippets Inputs');
+
   var links_LS = localStorage.getItem('stored-links');
   // User is signed in. uid is now available to use
   fireStore.collection('users')

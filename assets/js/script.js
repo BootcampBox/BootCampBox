@@ -64,7 +64,6 @@ function setupUI(user) {
   }
   setupData(user);
 }
-
 function setupData(user) {
   console.log('setupData has fired');
   //Go retireve the user data from Firestore
@@ -142,8 +141,6 @@ var renderClock = function() {
 $(function() {
   setInterval(renderClock, 1000);
 });
-
-
 //Nav navTabs
 $('#navDash').on('click', function() {
   $('#workspace').children().hide();

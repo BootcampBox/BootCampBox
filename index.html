@@ -14,8 +14,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Favicon Link-->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <!--DayPilot Functions-->
-  <!-- <script defer src="./assets/js/daypilot.js"></script> -->
 
   <!--Our Scripts-->
   <script defer type="text/javascript" src="./assets/js/snippets.js"></script>
@@ -40,8 +38,10 @@
     <div id="greeting">
       <img src="./assets/images/009-giftbox.png">
       <h2 class="flow-text noselect">Welcome <br /><span id="emailDisplay"></span></h2>
+
       <p id="currentDay"></p>
       <p id="currentTime"></p>
+
     </div>
   </header>
   <main>
@@ -79,7 +79,6 @@
     </aside>
     <section id="workspace" class="black noselect">
       <div id="dash">
-
         <h2 class="noselect" id="dashHead">Dashboard</h2>
         <div id="dashLinks" class="dashWidget">
           <h2>Links</h2>
@@ -88,8 +87,6 @@
           <input id="linksBtn" type="submit">
           <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
         </div>
-        <!-- Code Snippet button causes 405 error on click WHY!?!?! -->
-
         <div id="dashSnips" class="dashWidget noselect">
           <h2>Code Snippets</h2>
           <input class="white-text" id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
@@ -265,6 +262,7 @@
           </div>
         </div>
       </div>
+
     </section>
   </main>
   <footer>
@@ -300,8 +298,7 @@
   </script>
   <!-- Dayjs -->
   <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-  <!-- calendar
-    <script src="./assets/js/daypilot-all.min.js"></script> -->
+ 
   <!--requireJS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin=" anonymous"></script>
   <!-- jquery cdn -->

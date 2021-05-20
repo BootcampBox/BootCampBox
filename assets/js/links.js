@@ -5,10 +5,12 @@ var linksBtn = $("#linksBtn");
 var linksList = $("#linksList");
 // Add an event listener to the add button, which takes value from link and name input fields, save to localStorage, apply to <li> variable
 linksBtn.on("click", linkMaker)
+
 var storedLinks = JSON.parse(localStorage.getItem("stored-links"));
 
 function appendlsLinks(lsLinks) {
   console.log('appendlslinks has fired')
+
   for (i = 0; i < storedLinks.links.length; i++) {
     var linksListEl = $('<li>');
     var linksAnchor = $("<a class='scroll linksLi'>");
@@ -17,7 +19,6 @@ function appendlsLinks(lsLinks) {
     linksListEl.append(linksAnchor);
   }
 }
-
 function appendfsLinks(fsLinks) {
   console.log('appendfslinks has fired');
   var fsLinks = JSON.parse(localStorage.getItem("fs-links"));
@@ -30,8 +31,6 @@ function appendfsLinks(fsLinks) {
     linksListEl.append(linksAnchor);
   }
 }
-
-
 function linkMaker(user) {
   var linksInputAnchor = $("<a class='scroll linksLi'>");
   var linksListInputEl = $('<li>');
@@ -70,3 +69,4 @@ function linkMaker(user) {
 //         linksListEl.append(linksAnchor);
 //     }
 // }
+}

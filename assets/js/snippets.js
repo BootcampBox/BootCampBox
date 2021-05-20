@@ -1,3 +1,4 @@
+
             $(function() {
   //process contents of snippets
   $("pre.snippet").each(function() {
@@ -75,8 +76,6 @@ function appendlsSnips() {
     // console.log('stored snipTitles ', storedSnips.snippetText, 'stored snippets', storedSnips.snippetTitle);
   }
 }
-
-
 function appendfsSnips(fsSnips) {
   console.log('appendfsSnips has fired')
   for (var i = 0, n = 1; i <= fsSnips.snippets.length; i += 2, n += 2) {
@@ -91,3 +90,4 @@ function appendfsSnips(fsSnips) {
 
 
 }
+

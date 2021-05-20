@@ -20,6 +20,7 @@ auth.onAuthStateChanged(function(user) {
         ]
       }))
     }
+
     setupUI(user);
     console.log('user logged in: ', user.email);
     console.log('uid is: ', user.uid);
@@ -34,6 +35,7 @@ auth.onAuthStateChanged(function(user) {
     localStorage.clear();
   };
   console.log('user logged out');
+
 });
 
 // signup
@@ -54,6 +56,7 @@ signupForm.addEventListener('submit', function(e) {
   }).then(function() {
     placeholderItems();
     // close the signup modal & reset form
+
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
     signupForm.reset();
