@@ -122,23 +122,23 @@ $('#navDash').on('click', function() {
 
 })
 
-$('#navLinks').on('click', function() {
-    $('#workspace').children().hide();
-    $('#links').show();
+// $('#navLinks').on('click', function() {
+//     $('#workspace').children().hide();
+//     $('#links').show();
 
-})
+// })
 
-$('#navSlack').on('click', function() {
-    $('#workspace').children().hide();
-    $('#slack').show();
+// $('#navSlack').on('click', function() {
+//     $('#workspace').children().hide();
+//     $('#slack').show();
 
-})
+// })
 
-$('#navNotion').on('click', function() {
-    $('#workspace').children().hide();
-    $('#Notion').show();
+// $('#navNotion').on('click', function() {
+//     $('#workspace').children().hide();
+//     $('#Notion').show();
 
-})
+// })
 
 $('#navCdnjs').on('click', function() {
     $('#workspace').children().hide();
