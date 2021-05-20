@@ -576,4 +576,5 @@ a img {
 .inputField {
     border-style: none;
     color: white;
+    box-shadow: inset 0.5px 2px 5.5px 1px rgba(64, 69, 204, 0.562);
 }
