@@ -41,7 +41,7 @@ if (!localStorage.getItem("stored-links") == null || localStorage.getItem("store
             "https://jquery.com/download/"
         ]
     }));
-    fsLinks();
+    // fsLinks();
 }
 console.log(localStorage.getItem("stored-links"));
 
