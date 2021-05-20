@@ -43,7 +43,7 @@ const setupUI = function(user) {
 //LinksClock
 
 var renderClock = function() {
-    $("#currentTime").text(dayjs().format("h:mm: a"));
+    $("#currentTime").text(dayjs().format("h:mm a"));
     var now = dayjs().format("dddd, MMM / D / YYYY");
     $("#currentDay").text(now)
 }
@@ -91,7 +91,7 @@ $('#navLinks').on('click', function() {
 })
 $('#navSlack').on('click', function() {
     $('#workspace').children().hide();
-    $('#links').show();
+    $('#slack').show();
 
 })
 $('#navNotion').on('click', function() {
@@ -105,13 +105,34 @@ $('#navCdnjs').on('click', function() {
     $('#cdnjs').show();
 })
 
-$('#navLinks').on('click', function() {
+$('#navCal').on('click', function() {
     $('#workspace').children().hide();
-    $('#links').show();
+    $('#calendar').show();
 })
 
 //close modal if popped 
 $('#modal-cdnjs--close').on('click', function() {
     $('#cdnjsInput').val('');
     $('#modal-cdnjs').modal('close');
+});
+
+// Week Planner
+
+function getEventText() {
+    var eventText = $(this).next(".inputField").val();
+    console.log($(this).next(".inputField").attr("id"))
+    var eventID = $(this).next(".inputField").attr("id");
+    localStorage.setItem(eventID, eventText);
+}
+$('.saveBtn').on('click', getEventText);
+$(function() {
+    var dayList = $(".inputField");
+    console.log(dayList.length);
+    for (var i = 0; i < dayList.length; i++) {
+        console.log(dayList[i]);
+        var dayStorage = dayList[i].id;
+        var setEventText = localStorage.getItem(dayStorage);
+        console.log(setEventText);
+        $(`#${dayStorage}`).val(setEventText);
+    };
 })
