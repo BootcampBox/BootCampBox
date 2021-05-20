@@ -31,8 +31,6 @@ $(function() {
 
 var snippetsFormEl = $('#snippets-form');
 var snippetsListEl = $('#snippets-list');
-var snipLocalStoreTitle = [];
-var snipLocalStoreText = [];
 var snipTitle = $('#input-title');
 var snipInput = $('#input-snippet');
 
@@ -46,24 +44,50 @@ enterBtn.on('click', function() {
     $('#modal-error').modal('open');
     $('#errmsg').text(errMessage);
     $('#posSolution').text('Try typing something . . . you dunce.');
-    console.log(errMessage)
   } else {
     var codeResult = $('<div> <pre class="snippet"><strong>' + snipTitle.val() + ': </strong><br/>' + snipInput.val() + '</pre></div>');
     var codeHTML = codeResult.innerHTML;
     var removeBtn = $('<button type=button class="btn teal darken-2">Remove Aforementioned Snippy</button>')
     snippetsListEl.append(codeResult);
     snippetsListEl.append(removeBtn);
-    snipLocalStoreTitle.push(snipTitle.val());
-    snipLocalStoreText.push(snipInput.val());
-    localStorage.setItem("stored-snips", JSON.stringify({
-      snippets: [{
-        snipLocalStoreTitle,
-        snipLocalStoreText
-      }]
-    }))
-    // localStorage.setItem('Local Snippets Titles', snipLocalStoreTitle); localStorage.setItem('Local Snippets Inputs', snipLocalStoreText); console.log(snipTitle.val()); console.log(snipInput.val());
+    snipTitleVal = snipTitle.val();
+    snipInputVal = snipInput.val();
+    var storedSnips = localStorage.setItem("stored-snips", JSON.stringify({
+      snippets: [
+        snipTitleVal,
+        snipInputVal
+      ]
+    }));
 
-    snipTitle.val('');
-    snipInput.val('');
+
   }
 })
+
+function appendlsSnips() {
+  console.log('appendlsSnips has fired')
+  var storedSnips = JSON.parse(localStorage.getItem("ls-snippets"));
+  for (var i = 0, n = 1; i < storedSnips.snippets.length; i += 2, n += 2) {
+    var codeResultForLoop = $('<div> <pre class="snippet"><strong>' + storedSnips.snippets[i] + ': </strong><br/>' + storedSnips.snippets[n] + '</pre></div>');
+    var codeHTMLForLoop = codeResultForLoop.innerHTML;
+    var removeBtnForLoop = $('<button type=button class="btn teal darken-2">Remove Aforementioned Snippy</button>')
+    snippetsListEl.append(codeResultForLoop);
+    snippetsListEl.append(removeBtnForLoop);
+    // console.log('stored snipTitles ', storedSnips.snippetText, 'stored snippets', storedSnips.snippetTitle);
+  }
+}
+
+
+function appendfsSnips(fsSnips) {
+  console.log('appendfsSnips has fired')
+  for (var i = 0, n = 1; i <= fsSnips.snippets.length; i += 2, n += 2) {
+    console.log(i)
+    console.log(n)
+    var codeResultForLoop = $('<div> <pre class="snippet"><strong>' + fsSnips.snippets[i] + ': </strong><br/>' + fsSnips.snippets[n] + '</pre></div>');
+    var codeHTMLForLoop = codeResultForLoop.innerHTML;
+    var removeBtnForLoop = $('<button type=button class="btn teal darken-2">Remove Aforementioned Snippy</button>')
+    snippetsListEl.append(codeResultForLoop);
+    snippetsListEl.append(removeBtnForLoop);
+  };
+
+
+}

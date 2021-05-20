@@ -2,316 +2,316 @@
 <html lang='en-us'>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BootCampBox</title>
-    <meta name="description" content="A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Google fonts cdn -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Favicon Link-->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <!--DayPilot Functions-->
-    <!-- <script defer src="./assets/js/daypilot.js"></script> -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>BootCampBox</title>
+  <meta name="description" content="A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google fonts cdn -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Favicon Link-->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <!--DayPilot Functions-->
+  <!-- <script defer src="./assets/js/daypilot.js"></script> -->
 
-    <!--Our Scripts-->
-    <script defer type="text/javascript" src="./assets/js/snippets.js"></script>
-    <script defer type="text/javascript" src="./assets/js/script.js"></script>
-    <script defer type="text/javascript" src="./assets/js/links.js"></script>
-    <script defer type="text/javascript" src="./assets/js/CDNJS.js"></script>
-    <!-- Auth Script -->
-    <script defer type="text/javascript" src="./assets/js/auth.js"></script>
-    <!--Save Script-->
-    <script defer type="text/javascript" src="./assets/js/save.js"></script>
+  <!--Our Scripts-->
+  <script defer type="text/javascript" src="./assets/js/snippets.js"></script>
+  <script defer type="text/javascript" src="./assets/js/script.js"></script>
+  <script defer type="text/javascript" src="./assets/js/links.js"></script>
+  <script defer type="text/javascript" src="./assets/js/CDNJS.js"></script>
+  <!-- Auth Script -->
+  <script defer type="text/javascript" src="./assets/js/auth.js"></script>
+  <!--Save Script-->
+  <script defer type="text/javascript" src="./assets/js/save.js"></script>
 
-    <!-- Materialize CSS Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
-    <!--Our Stylesheet-->
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Materialize CSS Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
+  <!--Our Stylesheet-->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <header class="noselect center">
-        <div id="greeting">
-            <img src="./assets/images/009-giftbox.png">
-            <h2 class="flow-text noselect">Welcome <br /><span id="emailDisplay"></span></h2>
-            <p id="currentDay"></p>
-            <p id="currentTime"></p>
-        </div>
-    </header>
-    <main>
-        <aside class="navTabs noselect">
-            <ul id="navTabsTop">
-                <li class="logged-in noselect"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
-                <li class="logged-out noselect"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
-                <li class="logged-out noselect"><a href="#modal-login" class="grey-text modal-trigger" data-target="modal-login">Login</a></li>
-                <li class="logged-in noselect"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
-                <li class="logged-in noselect"><a href="#" class="grey-text" id="logout">Logout</a></li>
-            </ul>
-            <ul id="navTabsMid">
-                <li id="navDash">
-                    <a href="#dash">Dash</a>
-                </li>
-                <li id="navSlack">
-                    <a href="#slack">Slack</a>
-                </li>
-                <li id=navNotion>
-                    <a href="#notion">Notion</a>
-                </li>
-                <li id="navCdnjs">
-                    <a href="#cdnjs">CDNJS</a>
-                </li>
-                <li id="navCal">
-                    <a href="#calendar">Calendar</a>
-                </li>
-            </ul>
-            <ul id="navTabsBottom">
-                <li><a href="#modal-about" class="grey-text modal-trigger noselect" data-target="modal-about">About</a></li>
-                <li><a href="#modal-help" class="grey-text modal-trigger noselect" data-target="modal-help">Help</a>
-                </li>
-            </ul>
-            </section>
-        </aside>
-        <section id="workspace" class="black noselect">
-            <div id="dash">
-
-                <h2 class="noselect" id="dashHead">Dashboard</h2>
-                <div id="dashLinks" class="dashWidget">
-                    <h2>Links</h2>
-                    <input class="white-text" type="text" id="linkInput" placeholder="Add a Link">
-                    <input class="white-text" type="text" id="nameInput" placeholder="Add a Name">
-                    <input id="linksBtn" type="submit">
-                    <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
-                </div>
-                <!-- Code Snippet button causes 405 error on click WHY!?!?! -->
-
-                <div id="dashSnips" class="dashWidget noselect">
-                    <h2>Code Snippets</h2>
-                    <input class="white-text" id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
-                    <input class="white-text" id="input-snippet" type="text" name="code-snippets" placeholder="Enter Code Snippet" />
-                    <button id="enter-btn" type="button">Enter</button>
-                    <div id="snippets-list" class="snipResults"></div>
-                </div>
-            </div>
-            <div id="calendar" class="card container">
-                <div id="mainContainer">
-                    <div>
-                        <ul>
-                            <li class="weekday">
-                                <p class="day">Monday</p>
-                                <button class="saveBtn">
-                            Save
-                          </button>
-                                <input type="text" class="inputField" id="Monday">
-                            </li>
-                            <li class="weekday">
-                                <p class="day">Tuesday</p>
-                                <button class="saveBtn">
-                            Save
-                          </button>
-                                <input type="text" class="inputField" id="Tuesday">
-                            </li>
-                            <li class="weekday">
-                                <p class="day">Wednesday</p>
-                                <button class="saveBtn">
-                            Save
-                          </button>
-                                <input type="text" class="inputField" id="Wednesday">
-                            </li>
-                            <li class="weekday">
-                                <p class="day">Thursday</p>
-                                <button class="saveBtn">
-                            Save
-                          </button>
-                                <input type="text" class="inputField" id="Thursday">
-                            </li>
-                            <li class="weekday">
-                                <p class="day">Friday</p>
-                                <button class="saveBtn">
-                            Save
-                          </button>
-                                <input type="text" class="inputField" id="fri">
-                            </li>
-                            <li class="weekday">
-                                <p class="day">Saturday</p>
-                                <button class="saveBtn">
-                            Save
-                          </button>
-                                <input type="text" class="inputField" id="sat">
-                            </li>
-                            <li class="weekday">
-                                <p class="day">Sunday</p>
-                                <button class="saveBtn">
-                            Save
-                          </button>
-                                <input type="text" class="inputField" id="sun">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div id="slack">
-                <h2>Slack</h2>
-                <div id="slackCard" class="card noselect">
-                    <Form>
-                        <!-- <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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"> -->
-                    </Form>
-                </div>
-            </div>
-            <div class="noselect" id="cdnjs">
-                <h2>CDNJS Search Tool</h2>
-                <div id="cdnjsCard" class="card noselect">
-                    <input id="cdnjsInput" type="text" placeholder="Search for a Library">
-                    <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0">Search</button>
-                    <div id="cdnjsInstructions">Click on a link to send it to your links dashboard widget!</div>
-                    <!-- Modal Structure -->
-                    <div id="modal-cdnjs" class="modal noselect">
-                        <div class="modal-content">
-                            <h4>Oh no!</h4>
-                            <p>Your search returned no results, try again.</p>
-                        </div>
-                        <div class="modal-footer noselect">
-                            <a href="#!" id="modal-cdnjs--close" class="modal-close waves-effect white-text waves-green btn-flat noselect">Ok</a>
-                        </div>
-                    </div>
-                    <section id="cdnjsResults">
-                        <ol id="cdnOl">
-                        </ol>
-                    </section>
-                </div>
-            </div>
-        </section>
-        <section>
-            <!--Modals-->
-            <!--Error Modal-->
-            <div id="modal-error" class="modal noselect">
-                <div class="modal-content noselect">
-                    <h4>Sorry . . . </h4>
-                    <p id="errmsg"></p>
-                    <p id="posSolution"></p>
-                </div>
-                <div class="modal-footer noselect">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat noselect">Try Again</a>
-                </div>
-            </div>
-            <!-- Modal Structure -->
-            <!-- SIGN UP MODAL -->
-            <div id="modal-signup" class="modal noselect">
-                <div class="modal-content noselect">
-                    <h4>Sign up</h4><br />
-                    <form id="signup-form">
-                        <div class="input-field noselect">
-                            <input type="text" id="signup-user" placeholder="What would you like to be called. . ." required>
-                            <label for="signupUserID">Full Name</label>
-                        </div>
-                        <div class="input-field noselect">
-                            <input type="email" id="signup-email" required />
-                            <label for="signup-email">Email address</label>
-                        </div>
-                        <div class="input-field noselect">
-                            <input type="password" id="signup-password" required />
-                            <label for="signup-password">Choose password</label>
-                        </div>
-                        <button class="btn grey darken-2 z-depth-0 noselect">Sign up</button>
-                    </form>
-                </div>
-            </div>
-            <!-- LOGIN MODAL -->
-            <div id="modal-login" class="modal noselect">
-                <div class="modal-content noselect">
-                    <h4>Login</h4><br />
-                    <form id="login-form">
-                        <div class="input-field noselect">
-                            <input type="email" id="login-email" required />
-                            <label for="login-email">Email address</label>
-                        </div>
-                        <div class="input-field noselect">
-                            <input type="password" id="login-password" required />
-                            <label for="login-password">Your password</label>
-                        </div>
-                        <button class="btn grey darken-2 z-depth-0 noselect">Login</button>
-                    </form>
-                </div>
-            </div>
-            <!-- ACCOUNT MODAL -->
-            <div id="modal-account" class="modal noselect">
-                <div class="modal-content center-align noselect">
-                    <h4>Account details</h4><br />
-                    <div class="account-details noselect"></div>
-                    <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
-                </div>
-            </div>
-            <!--Save MODAL -->
-            <div id="modal-save" class="modal noselect">
-                <div class="modal-content center-align noselect">
-                    <h4>Save</h4><br />
-                    <p> Congratulations your stuff has been saved.</p>
-                    <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
-                </div>
-            </div>
-            <!--ABOUT MODAL -->
-            <div id="modal-about" class="modal noselect">
-                <div id="modal-about-content" class="modal-content grey center-align noselect">
-                    <h1>About</h1><br />
-                    <p class="flow-text noselect">Bootcampbox is a helpful dashboard for use in a web-development environment. Integrating multiple links, sites, and tools that are frequently used within a web-development lifestyle. </p>
-                    <h2 id="about-header" class="center noselect">BootCamp Box Authors</h2>
-                    <div class="row noselect">
-                        <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-    </footer>
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyAhr03GPm1oGzx4AJstN4C9NFzCOT_kPIg",
-            authDomain: "bootcampbox-1c031.firebaseapp.com",
-            databaseURL: "https://bootcampbox-1c031-default-rtdb.firebaseio.com",
-            projectId: "bootcampbox-1c031",
-            storageBucket: "bootcampbox-1c031.appspot.com",
-            messagingSenderId: "449681568493",
-            appId: "1:449681568493:web:80039cb38640d7430152e4",
-            measurementId: "G-NSKYB1SJ9P"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        //Make Auth and firestore refences
-        const auth = firebase.auth();
-        const fireStore = firebase.firestore(); //Update firestore settings db.settings
-        ({
-            timestampsinsnapshots: true
-        });
-    </script>
-    <!-- Dayjs -->
-    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <!-- calendar
-    <script src="./assets/js/daypilot-all.min.js"></script> -->
-    <!--requireJS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin=" anonymous"></script>
-    <!-- jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin=" anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
+  <header class="noselect center">
+    <div id="greeting">
+      <img src="./assets/images/009-giftbox.png">
+      <h2 class="flow-text noselect">Welcome <br /><span id="emailDisplay"></span></h2>
+      <p id="currentDay"></p>
+      <p id="currentTime"></p>
     </div>
+  </header>
+  <main>
+    <aside class="navTabs noselect">
+      <ul id="navTabsTop">
+        <li class="logged-in noselect"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
+        <li class="logged-out noselect"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
+        <li class="logged-out noselect"><a href="#modal-login" class="grey-text modal-trigger" data-target="modal-login">Login</a></li>
+        <li id='saveBtn' class="logged-in noselect"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
+        <li class="logged-in noselect"><a href="#" class="grey-text" id="logout">Logout</a></li>
+      </ul>
+      <ul id="navTabsMid">
+        <li id="navDash">
+          <a href="#dash">Dash</a>
+        </li>
+        <li id="navSlack">
+          <a href="#slack">Slack</a>
+        </li>
+        <li id=navNotion>
+          <a href="#notion">Notion</a>
+        </li>
+        <li id="navCdnjs">
+          <a href="#cdnjs">CDNJS</a>
+        </li>
+        <li id="navCal">
+          <a href="#calendar">Calendar</a>
+        </li>
+      </ul>
+      <ul id="navTabsBottom">
+        <li><a href="#modal-about" class="grey-text modal-trigger noselect" data-target="modal-about">About</a></li>
+        <li><a href="#modal-help" class="grey-text modal-trigger noselect" data-target="modal-help">Help</a>
+        </li>
+      </ul>
+      </section>
+    </aside>
+    <section id="workspace" class="black noselect">
+      <div id="dash">
+
+        <h2 class="noselect" id="dashHead">Dashboard</h2>
+        <div id="dashLinks" class="dashWidget">
+          <h2>Links</h2>
+          <input class="white-text" type="text" id="linkInput" placeholder="Add a Link">
+          <input class="white-text" type="text" id="nameInput" placeholder="Add a Name">
+          <input id="linksBtn" type="submit">
+          <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
+        </div>
+        <!-- Code Snippet button causes 405 error on click WHY!?!?! -->
+
+        <div id="dashSnips" class="dashWidget noselect">
+          <h2>Code Snippets</h2>
+          <input class="white-text" id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
+          <input class="white-text" id="input-snippet" type="text" name="code-snippets" placeholder="Enter Code Snippet" />
+          <button id="enter-btn" type="button">Enter</button>
+          <div id="snippets-list" class="snipResults"></div>
+        </div>
+      </div>
+      <div id="calendar" class="card container">
+        <div id="mainContainer">
+          <div>
+            <ul>
+              <li class="weekday">
+                <p class="day">Monday</p>
+                <button class="saveBtn">
+                  Save
+                </button>
+                <input type="text" class="inputField" id="Monday">
+              </li>
+              <li class="weekday">
+                <p class="day">Tuesday</p>
+                <button class="saveBtn">
+                  Save
+                </button>
+                <input type="text" class="inputField" id="Tuesday">
+              </li>
+              <li class="weekday">
+                <p class="day">Wednesday</p>
+                <button class="saveBtn">
+                  Save
+                </button>
+                <input type="text" class="inputField" id="Wednesday">
+              </li>
+              <li class="weekday">
+                <p class="day">Thursday</p>
+                <button class="saveBtn">
+                  Save
+                </button>
+                <input type="text" class="inputField" id="Thursday">
+              </li>
+              <li class="weekday">
+                <p class="day">Friday</p>
+                <button class="saveBtn">
+                  Save
+                </button>
+                <input type="text" class="inputField" id="fri">
+              </li>
+              <li class="weekday">
+                <p class="day">Saturday</p>
+                <button class="saveBtn">
+                  Save
+                </button>
+                <input type="text" class="inputField" id="sat">
+              </li>
+              <li class="weekday">
+                <p class="day">Sunday</p>
+                <button class="saveBtn">
+                  Save
+                </button>
+                <input type="text" class="inputField" id="sun">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="slack">
+        <h2>Slack</h2>
+        <div id="slackCard" class="card noselect">
+          <Form>
+            <!-- <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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"> -->
+          </Form>
+        </div>
+      </div>
+      <div class="noselect" id="cdnjs">
+        <h2>CDNJS Search Tool</h2>
+        <div id="cdnjsCard" class="card noselect">
+          <input id="cdnjsInput" type="text" placeholder="Search for a Library">
+          <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0">Search</button>
+          <div id="cdnjsInstructions">Click on a link to send it to your links dashboard widget!</div>
+          <!-- Modal Structure -->
+          <div id="modal-cdnjs" class="modal noselect">
+            <div class="modal-content">
+              <h4>Oh no!</h4>
+              <p>Your search returned no results, try again.</p>
+            </div>
+            <div class="modal-footer noselect">
+              <a href="#!" id="modal-cdnjs--close" class="modal-close waves-effect white-text waves-green btn-flat noselect">Ok</a>
+            </div>
+          </div>
+          <section id="cdnjsResults">
+            <ol id="cdnOl">
+            </ol>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section>
+      <!--Modals-->
+      <!--Error Modal-->
+      <div id="modal-error" class="modal noselect">
+        <div class="modal-content noselect">
+          <h4>Sorry . . . </h4>
+          <p id="errmsg"></p>
+          <p id="posSolution"></p>
+        </div>
+        <div class="modal-footer noselect">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat noselect">Try Again</a>
+        </div>
+      </div>
+      <!-- Modal Structure -->
+      <!-- SIGN UP MODAL -->
+      <div id="modal-signup" class="modal noselect">
+        <div class="modal-content noselect">
+          <h4>Sign up</h4><br />
+          <form id="signup-form">
+            <div class="input-field noselect">
+              <input type="text" id="signup-user" placeholder="What would you like to be called. . ." required>
+              <label for="signupUserID">Full Name</label>
+            </div>
+            <div class="input-field noselect">
+              <input type="email" id="signup-email" required />
+              <label for="signup-email">Email address</label>
+            </div>
+            <div class="input-field noselect">
+              <input type="password" id="signup-password" required />
+              <label for="signup-password">Choose password</label>
+            </div>
+            <button class="btn grey darken-2 z-depth-0 noselect">Sign up</button>
+          </form>
+        </div>
+      </div>
+      <!-- LOGIN MODAL -->
+      <div id="modal-login" class="modal noselect">
+        <div class="modal-content noselect">
+          <h4>Login</h4><br />
+          <form id="login-form">
+            <div class="input-field noselect">
+              <input type="email" id="login-email" required />
+              <label for="login-email">Email address</label>
+            </div>
+            <div class="input-field noselect">
+              <input type="password" id="login-password" required />
+              <label for="login-password">Your password</label>
+            </div>
+            <button class="btn grey darken-2 z-depth-0 noselect">Login</button>
+          </form>
+        </div>
+      </div>
+      <!-- ACCOUNT MODAL -->
+      <div id="modal-account" class="modal noselect">
+        <div class="modal-content center-align noselect">
+          <h4>Account details</h4><br />
+          <div class="account-details noselect"></div>
+          <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
+        </div>
+      </div>
+      <!--Save MODAL -->
+      <div id="modal-save" class="modal noselect">
+        <div class="modal-content center-align noselect">
+          <h4>Save</h4><br />
+          <p> Congratulations your stuff has been saved.</p>
+          <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
+        </div>
+      </div>
+      <!--ABOUT MODAL -->
+      <div id="modal-about" class="modal noselect">
+        <div id="modal-about-content" class="modal-content grey center-align noselect">
+          <h1>About</h1><br />
+          <p class="flow-text noselect">Bootcampbox is a helpful dashboard for use in a web-development environment. Integrating multiple links, sites, and tools that are frequently used within a web-development lifestyle. </p>
+          <h2 id="about-header" class="center noselect">BootCamp Box Authors</h2>
+          <div class="row noselect">
+            <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+  </footer>
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyAhr03GPm1oGzx4AJstN4C9NFzCOT_kPIg",
+      authDomain: "bootcampbox-1c031.firebaseapp.com",
+      databaseURL: "https://bootcampbox-1c031-default-rtdb.firebaseio.com",
+      projectId: "bootcampbox-1c031",
+      storageBucket: "bootcampbox-1c031.appspot.com",
+      messagingSenderId: "449681568493",
+      appId: "1:449681568493:web:80039cb38640d7430152e4",
+      measurementId: "G-NSKYB1SJ9P"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //Make Auth and firestore refences
+    const auth = firebase.auth();
+    const fireStore = firebase.firestore(); //Update firestore settings db.settings
+    ({
+      timestampsinsnapshots: true
+    });
+  </script>
+  <!-- Dayjs -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <!-- calendar
+    <script src="./assets/js/daypilot-all.min.js"></script> -->
+  <!--requireJS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin=" anonymous"></script>
+  <!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin=" anonymous"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
+  </div>
 </body>
 
 </html>
