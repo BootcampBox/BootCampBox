@@ -316,7 +316,7 @@ a img {
 
 #calendar {
     display: none;
-    grid-column-start: 1;
+    grid-column-start: 3;
     grid-column-end: 11;
     grid-row-start: 1;
     grid-row-end: 11;
@@ -327,7 +327,7 @@ a img {
     width: 100% !important;
 }
 
-#calendar p,
+/* #calendar p,
 #calendar td {
     font-family: 'Roboto', sans-serif;
     font-size: 10pt;
@@ -374,7 +374,7 @@ a img {
 
 #calendar .generated a {
     color: #999;
-}
+} */
 
 
 /* 
@@ -549,4 +549,31 @@ a img {
 
 .white-text {
     color: rgb(255, 255, 255) !important;
+}
+
+/* Week Planner */
+
+.day {
+    display: inline;
+}
+
+.saveBtn {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background: none;
+    box-shadow: 0.5px 2px 5.5px 1px rgba(64, 69, 204, 0.562);
+    color: white;
+    margin-bottom: 1rem;
+    display: inline;
+    float: right;
+}
+  
+.saveBtn i:hover {
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+}
+  
+.inputField {
+    border-style: none;
+    color: white;
 }

@@ -66,8 +66,18 @@ const setupData = function(user) {
 var now = dayjs()
 console.log(dayjs(now).format('dddd'))
 
-//Links
+//LinksClock
 
+var renderClock = function() {
+    $("#currentTime").text(dayjs().format("h:mm a"));
+    var now = dayjs().format("dddd, MMM / D / YYYY");
+    $("#currentDay").text(now)
+}
+
+//Render clock every second
+$(function() {
+    setInterval(renderClock, 1000);
+});
 
 // //Set Snippets to firestore
 // const snipRef = fireStore.collection('codesnippets')
@@ -96,9 +106,8 @@ $('#navLinks').on('click', function() {
 })
 
 $('#navSlack').on('click', function() {
-  $('#workspace').children().hide();
-  $('#links').show();
-
+    $('#workspace').children().hide();
+    $('#slack').show();
 })
 
 $('#navNotion').on('click', function() {
@@ -112,13 +121,34 @@ $('#navCdnjs').on('click', function() {
   $('#cdnjs').show();
 })
 
-$('#navLinks').on('click', function() {
-  $('#workspace').children().hide();
-  $('#links').show();
+$('#navCal').on('click', function() {
+    $('#workspace').children().hide();
+    $('#calendar').show();
 })
 
 //close modal if popped
 $('#modal-cdnjs--close').on('click', function() {
   $('#cdnjsInput').val('');
   $('#modal-cdnjs').modal('close');
+});
+
+// Week Planner
+
+function getEventText() {
+    var eventText = $(this).next(".inputField").val();
+    console.log($(this).next(".inputField").attr("id"))
+    var eventID = $(this).next(".inputField").attr("id");
+    localStorage.setItem(eventID, eventText);
+}
+$('.saveBtn').on('click', getEventText);
+$(function() {
+    var dayList = $(".inputField");
+    console.log(dayList.length);
+    for (var i = 0; i < dayList.length; i++) {
+        console.log(dayList[i]);
+        var dayStorage = dayList[i].id;
+        var setEventText = localStorage.getItem(dayStorage);
+        console.log(setEventText);
+        $(`#${dayStorage}`).val(setEventText);
+    };
 })
