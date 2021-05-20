@@ -169,10 +169,10 @@ $(function() {
     var dayList = $(".inputField");
     console.log(dayList.length);
     for (var i = 0; i < dayList.length; i++) {
-        console.log(dayList[i]);
+        // console.log(dayList[i]);
         var dayStorage = dayList[i].id;
         var setEventText = localStorage.getItem(dayStorage);
-        console.log(setEventText);
+        // console.log(setEventText);
         $(`#${dayStorage}`).val(setEventText);
     };
 })
