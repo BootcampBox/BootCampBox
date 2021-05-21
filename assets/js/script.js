@@ -212,5 +212,6 @@ $("#clearBtn").on("click", function() {
     console.log(dayList[i]);
     console.log(`${dayList[i].id}`);
     $(`#${dayList[i].id}`).val(""); 
+    localStorage.removeItem(`${dayList[i].id}`) 
   }
 })
