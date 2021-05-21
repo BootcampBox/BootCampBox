@@ -36,7 +36,7 @@
 <body>
     <header class="noselect center">
         <div id="greeting">
-            <img src="./assets/images/009-giftbox.png">
+            <img src="./assets/images/BcB_Logo.png">
             <h2 class="flow-text noselect">Welcome <br /><span id="emailDisplay"></span></h2>
 
             <p id="currentDay"></p>
@@ -245,19 +245,99 @@
                     <div class="account-details noselect"></div>
                     <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
                 </div>
-                <!--ABOUT MODAL -->
-                <div id="modal-about " class="modal noselect">
+            </div>
+            <!--ABOUT MODAL -->
+            <div id="modal-about" class="modal noselect">
+                <div id="aboutGrid">
                     <div id="modal-about-content " class="modal-content grey center-align noselect">
                         <h1><strong>About</strong></h1><br />
                         <p class="flow-text noselect">Bootcampbox is a helpful dashboard for use in a web-development environment. Integrating multiple links, sites, and tools that are frequently used within a web-development lifestyle. </p>
                         <h2 id="about-header " class="center noselect">BootCamp Box Authors</h2>
-                        <div class="row noselect">
-                            <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
+                        <p><a href="#aboutJoe">Joe Sumis</a> | <a href="#aboutRudie">Rauol Moore</a> | <a href="#aboutGerald">Gerald Plotke</a> | <a href="#aboutPeter">Peter Roto</a></p>
+                    </div>
+                    <!--About Contibutors Cards-->
+                    <div id="aboutJoe" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
+                        <div class="uk-card-header">
+                            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                    <img alt="Joe's Profile Picture" class="uk-border-rounded" width="150" height="150" src="images/avatar.jpg">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h3 class="uk-card-title uk-margin-remove-bottom">Joe Sumis</h3>
+                                    <p class="uk-text-meta uk-margin-remove-top">HTML | CSS | Markdown</p>
+                                </div>
+                            </div>
+                            <div class="uk-card-body">
+                                <p>Joe likes puppies, fuzzy socks, and long walks on the beach.</p>
+                            </div>
+                            <div class="uk-card-footer">
+                                <a href="http://github.com/Jsumis" class="uk-button uk-button-text">Check out Joe's Github</a>
+                            </div>
                         </div>
+                    </div>
+                    <div id="aboutRudie" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
+                        <div class="uk-card-header">
+                            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                    <img alt="Rauol's Profile Picture" class="uk-border-rounded" width="150" height="150" src="images/avatar.jpg">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h3 class="uk-card-title uk-margin-remove-bottom">Rauol Moore</h3>
+                                    <p class="uk-text-meta uk-margin-remove-top">JS | CSS | Project Management</p>
+                                </div>
+                            </div>
+                            <div class="uk-card-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                            <div class="uk-card-footer">
+                                <a href="https://github.com/rudie-g" class="uk-button uk-button-text">Check out Rauol's Github</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="aboutGerald" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
+                        <div class="uk-card-header">
+                            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                    <img alt="Gerald's Profile Picture" class="uk-border-rounded" width="150" height="150" src="images/avatar.jpg">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h3 class="uk-card-title uk-margin-remove-bottom">Gerald Plotke</h3>
+                                    <p class="uk-text-meta uk-margin-remove-top">CSS | JS | HTML | API Handling </p>
+                                </div>
+                            </div>
+
+                            <div class="uk-card-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                            <div class="uk-card-footer">
+                                <a href="https://www.github.com/GPLOTKE" class="uk-button uk-button-text">Check out Gerald's Github</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="aboutPeter" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
+                        <div class="uk-card-header">
+                            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                    <img alt="Peter's Profile Picture" class="uk-border-rounded" width="150" height="150" src="./assets/images/about/Ntbg.png">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h3 class="uk-card-title uk-margin-remove-bottom">Peter Roto</h3>
+                                    <p class="uk-text-meta uk-margin-remove-top">HTML | CSS | JS/Project Management</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card-body">
+                            <p>Peter loves his family. His wife and two kids help drive him to always be growing and becoming better.</p>
+                        </div>
+                        <div class="uk-card-footer">
+                            <a href="https://www.github.com/Proto133" class="uk-button uk-button-text">Check out Peter's Github</a>
+                        </div>
+                    </div>
+                    <div class="row center noselect">
+                        <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
                     </div>
                 </div>
             </div>
-
         </section>
     </main>
     <footer>
