@@ -40,7 +40,10 @@ var enterBtn = $("#enter-btn");
 
 // Remove button function
 function theSnipsRemover(event) {
-  console.log($(this));
+    //Add functionality to remove Snippet buttons
+    $(this).prev().remove();
+    $(this).remove();
+
 }
 
 enterBtn.on('click', function() {
