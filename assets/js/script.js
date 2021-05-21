@@ -193,3 +193,13 @@ $(function() {
         $(`#${dayStorage}`).val(setEventText);
     };
 })
+$("#clearBtn").on("click", function() {
+  var dayList = $(".inputField");
+  console.log(dayList);
+  for (var i = 0; i < dayList.length; i++) {
+    console.log(dayList[i]);
+    console.log(`${dayList[i].id}`);
+    $(`#${dayList[i].id}`).val(""); 
+    localStorage.removeItem(`${dayList[i].id}`) 
+  }
+})

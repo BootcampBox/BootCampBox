@@ -737,6 +737,18 @@ a img {
     transition: all 0.3s ease-in-out;
 }
 
+
+
+#clearBtn {
+    background: none;
+    box-shadow: 0.5px 2px 5.5px 1px rgba(64, 69, 204, 0.562);
+    color: white;
+    margin-bottom: 1rem;
+    display: inline;
+    float: right;
+}
+  
+
 .inputField {
     border-style: none;
     color: white;
