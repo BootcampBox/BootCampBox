@@ -14,15 +14,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Favicon Link-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <!--DayPilot Functions-->
-    <script defer src="./assets/js/daypilot.js"></script>
+
     <!--Our Scripts-->
-    <script defer src="./assets/js/snippets.js"></script>
-    <script defer src="./assets/js/script.js"></script>
-    <script defer src="./assets/js/links.js"></script>
-    <script defer src="./assets/js/CDNJS.js"></script>
-    <!--Auth Script-->
-    <script defer src="./assets/js/auth.js"></script>
+    <script defer type="text/javascript" src="./assets/js/snippets.js"></script>
+    <script defer type="text/javascript" src="./assets/js/script.js"></script>
+    <script defer type="text/javascript" src="./assets/js/links.js"></script>
+    <script defer type="text/javascript" src="./assets/js/CDNJS.js"></script>
+    <!-- Auth Script -->
+    <script defer type="text/javascript" src="./assets/js/auth.js"></script>
+    <!--Save Script-->
+    <script defer type="text/javascript" src="./assets/js/save.js"></script>
+
     <!-- Materialize CSS Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- UIkit CSS -->
@@ -36,6 +38,10 @@
         <div id="greeting">
             <img src="./assets/images/009-giftbox.png">
             <h2 class="flow-text noselect">Welcome <br /><span id="emailDisplay"></span></h2>
+
+            <p id="currentDay"></p>
+            <p id="currentTime"></p>
+
         </div>
     </header>
     <main>
@@ -44,7 +50,7 @@
                 <li class="logged-in noselect"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
                 <li class="logged-out noselect"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
                 <li class="logged-out noselect"><a href="#modal-login" class="grey-text modal-trigger" data-target="modal-login">Login</a></li>
-                <li class="logged-in noselect"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
+                <li id='saveBtn' class="logged-in noselect"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
                 <li class="logged-in noselect"><a href="#" class="grey-text" id="logout">Logout</a></li>
             </ul>
             <ul id="navTabsMid">
@@ -73,7 +79,6 @@
         </aside>
         <section id="workspace" class="black noselect">
             <div id="dash">
-
                 <h2 class="noselect" id="dashHead">Dashboard</h2>
                 <div id="dashLinks" class="dashWidget">
                     <h2>Links</h2>
@@ -82,8 +87,6 @@
                     <input id="linksBtn" type="submit">
                     <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
                 </div>
-                <!-- Code Snippet button causes 405 error on click WHY!?!?! -->
-
                 <div id="dashSnips" class="dashWidget noselect">
                     <h2>Code Snippets</h2>
                     <input class="white-text" id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
@@ -93,33 +96,87 @@
                 </div>
             </div>
             <div id="calendar" class="card container">
-                <div class="main">
-                    <div id="dp"></div>
-                    <div class="generated"></div>
+                <div id="mainContainer">
+                    <div>
+                        <ul>
+                            <li class="weekday">
+                                <p class="day">Monday</p>
+                                <button class="saveBtn">
+                  Save
+                </button>
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Monday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Tuesday</p>
+                                <button class="saveBtn">
+                  Save
+                </button>
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Tuesday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Wednesday</p>
+                                <button class="saveBtn">
+                  Save
+                </button>
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Wednesday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Thursday</p>
+                                <button class="saveBtn">
+                  Save
+                </button>
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Thursday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Friday</p>
+                                <button class="saveBtn">
+                  Save
+                </button>
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Friday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Saturday</p>
+                                <button class="saveBtn">
+                  Save
+                </button>
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Saturday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Sunday</p>
+                                <button class="saveBtn">
+                  Save
+                </button>
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Sunday">
+                            </li>
+                        </ul>
+                        <button id="clearBtn">
+                          Clear
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div id="slack ">
+            <div id="slack">
                 <h2>Slack</h2>
-                <div id="slackCard " class="card noselect ">
+                <div id="slackCard" class="card noselect">
                     <Form>
-                        <!-- <input name="formto_slack " type="hidden " value="https://hooks.slack.com/services/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 "> -->
+                        <!-- <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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"> -->
                     </Form>
                 </div>
             </div>
-            <div class="noselect " id="cdnjs ">
+            <div class="noselect" id="cdnjs">
                 <h2>CDNJS Search Tool</h2>
                 <div id="cdnjsCard" class="card noselect">
                     <input id="cdnjsInput" type="text" placeholder="Search for a Library">
                     <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0">Search</button>
                     <div id="cdnjsInstructions">Click on a link to send it to your links dashboard widget!</div>
                     <!-- Modal Structure -->
-                    <div id="modal-cdnjs " class="modal noselect ">
-                        <div class="modal-content ">
+                    <div id="modal-cdnjs" class="modal noselect">
+                        <div class="modal-content">
                             <h4>Oh no!</h4>
                             <p>Your search returned no results, try again.</p>
                         </div>
-                        <div class="modal-footer noselect ">
-                            <a href="#! " id="modal-cdnjs--close " class="modal-close waves-effect white-text waves-green btn-flat noselect ">Ok</a>
+                        <div class="modal-footer noselect">
+                            <a href="#!" id="modal-cdnjs--close" class="modal-close waves-effect white-text waves-green btn-flat noselect">Ok</a>
                         </div>
                     </div>
                     <section id="cdnjsResults">
@@ -128,73 +185,65 @@
                     </section>
                 </div>
             </div>
-            <section>
-                <!--Modals-->
-                <!--Error Modal-->
-                <div id="modal-error " class="modal noselect ">
-                    <div class="modal-content noselect ">
-                        <h4>Sorry . . . </h4>
-                        <p id="errmsg "></p>
-                        <p id="posSolution "></p>
-                    </div>
-                    <div class="modal-footer noselect ">
-                        <a href="#! " class="modal-close waves-effect waves-green btn-flat noselect">Try Again</a>
-                    </div>
+        </section>
+        <section>
+            <!--Modals-->
+            <!--Error Modal-->
+            <div id="modal-error" class="modal noselect">
+                <div class="modal-content noselect">
+                    <h4>Sorry . . . </h4>
+                    <p id="errmsg"></p>
+                    <p id="posSolution"></p>
                 </div>
-                <!-- Modal Structure -->
-                <!-- SIGN UP MODAL -->
-                <div id="modal-signup " class="modal noselect">
-                    <div class="modal-content noselect">
-                        <h4>Sign up</h4><br />
-                        <form id="signup-form ">
-                            <div class="input-field noselect">
-                                <input type="text " id="signup-user " placeholder="What would you like to be called. . . " required>
-                                <label for="signupUserID ">Full Name</label>
-                            </div>
-                            <div class="input-field noselect">
-                                <input type="email " id="signup-email " required />
-                                <label for="signup-email ">Email address</label>
-                            </div>
-                            <div class="input-field noselect">
-                                <input type="password " id="signup-password " required />
-                                <label for="signup-password ">Choose password</label>
-                            </div>
-                            <button class="btn grey darken-2 z-depth-0 noselect">Sign up</button>
-                        </form>
-                    </div>
+                <div class="modal-footer noselect">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat noselect">Try Again</a>
                 </div>
-                <!-- LOGIN MODAL -->
-                <div id="modal-login " class="modal noselect">
-                    <div class="modal-content noselect">
-                        <h4>Login</h4><br />
-                        <form id="login-form ">
-                            <div class="input-field noselect">
-                                <input type="email " id="login-email " required />
-                                <label for="login-email ">Email address</label>
-                            </div>
-                            <div class="input-field noselect">
-                                <input type="password " id="login-password " required />
-                                <label for="login-password ">Your password</label>
-                            </div>
-                            <button class="btn grey darken-2 z-depth-0 noselect">Login</button>
-                        </form>
-                    </div>
+            </div>
+            <!-- Modal Structure -->
+            <!-- SIGN UP MODAL -->
+            <div id="modal-signup" class="modal noselect">
+                <div class="modal-content noselect">
+                    <h4>Sign up</h4><br />
+                    <form id="signup-form">
+                        <div class="input-field noselect">
+                            <input type="text" id="signup-user" placeholder="What would you like to be called. . ." required>
+                            <label for="signupUserID">Full Name</label>
+                        </div>
+                        <div class="input-field noselect">
+                            <input type="email" id="signup-email" required />
+                            <label for="signup-email">Email address</label>
+                        </div>
+                        <div class="input-field noselect">
+                            <input type="password" id="signup-password" required />
+                            <label for="signup-password">Choose password</label>
+                        </div>
+                        <button class="btn grey darken-2 z-depth-0 noselect">Sign up</button>
+                    </form>
                 </div>
-                <!-- ACCOUNT MODAL -->
-                <div id="modal-account " class="modal noselect">
-                    <div class="modal-content center-align noselect">
-                        <h4>Account details</h4><br />
-                        <div class="account-details noselect"></div>
-                        <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
-                    </div>
+            </div>
+            <!-- LOGIN MODAL -->
+            <div id="modal-login" class="modal noselect">
+                <div class="modal-content noselect">
+                    <h4>Login</h4><br />
+                    <form id="login-form">
+                        <div class="input-field noselect">
+                            <input type="email" id="login-email" required />
+                            <label for="login-email">Email address</label>
+                        </div>
+                        <div class="input-field noselect">
+                            <input type="password" id="login-password" required />
+                            <label for="login-password">Your password</label>
+                        </div>
+                        <button class="btn grey darken-2 z-depth-0 noselect">Login</button>
+                    </form>
                 </div>
-                <!--Save MODAL -->
-                <div id="modal-save " class="modal noselect">
-                    <div class="modal-content center-align noselect">
-                        <h4>Save</h4><br />
-                        <p> Congratulations your stuff has been saved.</p>
-                        <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
-                    </div>
+            </div>
+            <!-- ACCOUNT MODAL -->
+            <div id="modal-account" class="modal noselect">
+                <div class="modal-content center-align noselect">
+                    <h4>Account details</h4><br />
+                    <div class="account-details noselect"></div>
+                    <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
                 </div>
                 <!--ABOUT MODAL -->
                 <div id="modal-about " class="modal noselect">
@@ -207,30 +256,31 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+
         </section>
     </main>
     <footer>
     </footer>
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
     <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js "></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
     <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         var firebaseConfig = {
-            apiKey: "AIzaSyAhr03GPm1oGzx4AJstN4C9NFzCOT_kPIg ",
-            authDomain: "bootcampbox-1c031.firebaseapp.com ",
-            databaseURL: "https://bootcampbox-1c031-default-rtdb.firebaseio.com ",
-            projectId: "bootcampbox-1c031 ",
-            storageBucket: "bootcampbox-1c031.appspot.com ",
-            messagingSenderId: "449681568493 ",
-            appId: "1:449681568493:web:80039cb38640d7430152e4 ",
-            measurementId: "G-NSKYB1SJ9P "
+            apiKey: "AIzaSyAhr03GPm1oGzx4AJstN4C9NFzCOT_kPIg",
+            authDomain: "bootcampbox-1c031.firebaseapp.com",
+            databaseURL: "https://bootcampbox-1c031-default-rtdb.firebaseio.com",
+            projectId: "bootcampbox-1c031",
+            storageBucket: "bootcampbox-1c031.appspot.com",
+            messagingSenderId: "449681568493",
+            appId: "1:449681568493:web:80039cb38640d7430152e4",
+            measurementId: "G-NSKYB1SJ9P"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
@@ -241,17 +291,18 @@
             timestampsinsnapshots: true
         });
     </script>
-    <!--calendar-->
-    <script src="./assets/js/daypilot-all.min.js "></script>
+    <!-- Dayjs -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
     <!--requireJS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js " integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin=" anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin=" anonymous"></script>
     <!-- jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js " integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin=" anonymous "></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin=" anonymous"></script>
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js "></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
     </div>
 </body>
 
