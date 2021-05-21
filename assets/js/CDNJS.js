@@ -42,18 +42,19 @@ $('#cdnjsBtn').on('click', function() {
 
             }
             /*Not Working yet, revisit*/
-            $('#cdnjsResults').children().children('.resultLi').on('click', function() {
+            $('#cdnjsResults').children().children('.resultLi').on('click', function(lsLinks) {
 
-
+                var lsLinks = localStorage.getItem('stored-links');
                 var cdnjsScriptCopy = this.children[0].textContent;
                 var linksInputAnchor = $("<a class='scroll linksLi'>");
                 var linksListInputEl = $('<li>');
                 linksInputAnchor.text(cdnjsScriptCopy);
                 linksList.append(linksListInputEl);
                 linksListInputEl.append(linksInputAnchor);
-                storedLinks.links.push(cdnjsScriptCopy);
-                localStorage.setItem("stored-links", JSON.stringify(storedLinks));
-                console.log(storedLinks);
+                lsLinks.push(cdnjsScriptCopy);
+                // console.log(lsLinks);
+                localStorage.setItem("stored-links", JSON.stringify(lsLinks));
+                console.log(lsLinks);
                 linkInput.val("");
                 $(this).hide();
 
