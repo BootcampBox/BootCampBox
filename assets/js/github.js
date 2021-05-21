@@ -35,7 +35,7 @@ $('#gitBtn').on('click', function() {
                     // resultDiv =$('<div class="gitResultDiv"></div>'))
                     nameListItemEl = $('<li class="gitResultLi">' + respName + '</li>');
                     avatarIMGEl = $('<a href="' + resURL + '" target="_blank"><img src="' + respAvatar + 'alt="Github user avatar"></a>');
-                    gitDivEl = $('<div class="gitResCard"></div>');
+                    gitDivEl = $('<div class="gitResCard wrapper"></div>');
                     repoUrlLiEL = $('<li class="repoURL">' + resRepoUrl + '</li>');
 
                     //append them to the page

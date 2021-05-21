@@ -35,10 +35,6 @@ var snipInput = $('#input-snippet');
 
 var enterBtn = $("#enter-btn");
 
-
-enterBtn.on('click', function(user) {
-
-
 enterBtn.on('click', function() {
     if (snipTitle.val() == '' || snipInput.val() == '') {
         console.log(snipTitle.value)
@@ -48,9 +44,23 @@ enterBtn.on('click', function() {
         $('#errmsg').text(errMessage);
         $('#posSolution').text('Try typing something... you dunce. ');
     } else {
-        var codeResult = $('<div> <pre class="snippet"><strong>' + snipTitle.val() + ': </strong><br/>' + snipInput.val() + '</pre></div>');
+        var codeResult = $(`<div> <pre class="snippet"><p><strong>${snipTitle.val().replace(/[<>&\n]/g, function(x) {
+            return {
+                '<': '&lt;',
+                '>': '&gt;',
+                '&': '&amp;',
+               '\n': '<br />'
+            }[x];
+        })}: </strong></p><br/><p>${snipInput.val().replace(/[<>&\n]/g, function(x) {
+            return {
+                '<': '&lt;',
+                '>': '&gt;',
+                '&': '&amp;',
+               '\n': '<br />'
+            }[x];
+        })}</p></pre></div>`);
         var removeBtn = $('<button type=button class="btn teal darken-2">Remove Aforementioned Snippy</button>')
-        removeBtn.on("click", theSnipsRemover);
+        // removeBtn.on("click", theSnipsRemover);
         snippetsListEl.append(codeResult);
         snippetsListEl.append(removeBtn);
         snippets.push(snipTitle.val(), snipInput.val());

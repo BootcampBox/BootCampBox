@@ -10,6 +10,8 @@ linksBtn.on("click", linkMaker)
 
 function appendlsLinks(lsLinks) {
     console.log('appendlslinks has fired')
+    var lsLinks = JSON.parse(localStorage.getItem("stored-links"))
+    console.log(lsLinks);
     for (i = 0; i < lsLinks.links.length; i++) {
         var linksListEl = $('<li>');
         var linksAnchor = $("<a class='scroll linksLi'>");
@@ -38,6 +40,7 @@ function linkMaker(user) {
     linksInputAnchor.text(linkInput.val());
     linksList.append(linksListInputEl);
     linksListInputEl.append(linksInputAnchor);
+    console.log(lsLinks.links);
     lsLinks.links.push(linkInput.val());
     localStorage.setItem("stored-links", JSON.stringify(lsLinks));
     console.log(lsLinks);
