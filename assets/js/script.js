@@ -151,23 +151,11 @@ $('#navDash').on('click', function() {
 
 })
 
-// $('#navLinks').on('click', function() {
-//     $('#workspace').children().hide();
-//     $('#links').show();
+$('#navGit').on('click', function() {
+    $('#workspace').children().hide();
+    $('#git').show();
 
-// })
-
-// $('#navSlack').on('click', function() {
-//     $('#workspace').children().hide();
-//     $('#slack').show();
-
-// })
-
-// $('#navNotion').on('click', function() {
-//     $('#workspace').children().hide();
-//     $('#Notion').show();
-
-// })
+})
 
 $('#navCdnjs').on('click', function() {
     $('#workspace').children().hide();

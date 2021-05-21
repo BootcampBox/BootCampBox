@@ -28,9 +28,6 @@ $(function() {
         list.appendTo(currentItem);
     });
 });
-
-
-var snipArray = [];
 var snippetsFormEl = $('#snippets-form');
 var snippetsListEl = $('#snippets-list');
 var snipTitle = $('#input-title');
@@ -38,7 +35,7 @@ var snipInput = $('#input-snippet');
 
 var enterBtn = $("#enter-btn");
 
-enterBtn.on('click', function() {
+enterBtn.on('click', function(user) {
     if (snipTitle.val() == '' || snipInput.val() == '') {
         console.log(snipTitle.value)
         console.log(snipInput.value)
@@ -48,17 +45,15 @@ enterBtn.on('click', function() {
         $('#posSolution').text('Try typing something . . . you dunce.');
     } else {
         var codeResult = $('<div> <pre class="snippet"><strong>' + snipTitle.val() + ': </strong><br/>' + snipInput.val() + '</pre></div>');
-        var codeHTML = codeResult.innerHTML;
         var removeBtn = $('<button type=button class="btn teal darken-2">Remove Aforementioned Snippy</button>')
         snippetsListEl.append(codeResult);
         snippetsListEl.append(removeBtn);
-        snipArray.push(snipTitle.val(), snipInput.val());
+        snippets.push(snipTitle.val(), snipInput.val());
 
         localStorage.setItem("ls-snippets", JSON.stringify({
-            snippets: [
-                snipArray
-            ]
+            snippets
         }));
+        // firebase.firestore().collections('users').doc(user.uid).update({ snippets: JSONStringify({ snipArray }) });
         snipTitle.val("");
         snipInput.val("");
 
@@ -73,7 +68,7 @@ function appendlsSnips() {
             // Do the first name at index 0
             var snipsTitle = lsSnips.snippets[i]
             console.log(snipsTitle);
-        } else if (i % 2 === 0) {
+        } else if (i % 2 === 0 && i !== 0) {
             // Do the even number one, concatenating to the previous
             snipsTitle = lsSnips.snippets[i]
             console.log(lsSnips.snippets[i]);
@@ -97,7 +92,7 @@ function appendfsSnips(fsSnips) {
         if (i === 0) {
             // Do the first name at index 0
             var snipsTitle = fsSnips.snippets[i]
-        } else if (i % 2 === 0) {
+        } else if (i % 2 === 0 && i !== 0) {
             // Do the even number one, concatenating to the previous
             snipsTitle = fsSnips.snippets[i]
         } else {
