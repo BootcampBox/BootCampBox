@@ -3,6 +3,7 @@
 $('#saveBtn').on('click', function(user) {
     console.log('save fired')
     var user = firebase.auth().currentUser;
+    console.log(user)
     fireStore.collection('users').doc(user.uid).get().then((doc) => {
         console.log(doc.data().snippets);
     })
@@ -36,12 +37,10 @@ $('#saveBtn').on('click', function(user) {
     // User is signed in. uid is now available to use
     fireStore.collection('users')
         .doc(user.uid)
-        .update({
+        .set({
             snippets: snips_LS,
 
             links: links_LS
-        }, {
-            merge: true
-        });
+        }, { merge: true });
     console.log(fireStore.collection('users').doc(user.uid));
 });

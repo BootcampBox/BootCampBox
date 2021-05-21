@@ -28,9 +28,6 @@ $(function() {
         list.appendTo(currentItem);
     });
 });
-
-
-var snipArray = [];
 var snippetsFormEl = $('#snippets-form');
 var snippetsListEl = $('#snippets-list');
 var snipTitle = $('#input-title');
@@ -60,13 +57,12 @@ enterBtn.on('click', function() {
         removeBtn.on("click", theSnipsRemover);
         snippetsListEl.append(codeResult);
         snippetsListEl.append(removeBtn);
-        snipArray.push(snipTitle.val(), snipInput.val());
+        snippets.push(snipTitle.val(), snipInput.val());
 
         localStorage.setItem("ls-snippets", JSON.stringify({
-            snippets: [
-                snipArray
-            ]
+            snippets
         }));
+        // firebase.firestore().collections('users').doc(user.uid).update({ snippets: JSONStringify({ snipArray }) });
         snipTitle.val("");
         snipInput.val("");
 
@@ -81,7 +77,7 @@ function appendlsSnips() {
             // Do the first name at index 0
             var snipsTitle = lsSnips.snippets[i]
             console.log(snipsTitle);
-        } else if (i % 2 === 0) {
+        } else if (i % 2 === 0 && i !== 0) {
             // Do the even number one, concatenating to the previous
             snipsTitle = lsSnips.snippets[i]
             console.log(lsSnips.snippets[i]);
@@ -105,7 +101,7 @@ function appendfsSnips(fsSnips) {
         if (i === 0) {
             // Do the first name at index 0
             var snipsTitle = fsSnips.snippets[i]
-        } else if (i % 2 === 0) {
+        } else if (i % 2 === 0 && i !== 0) {
             // Do the even number one, concatenating to the previous
             snipsTitle = fsSnips.snippets[i]
         } else {
