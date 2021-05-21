@@ -51,7 +51,7 @@ $('#cdnjsBtn').on('click', function() {
                 linksInputAnchor.text(cdnjsScriptCopy);
                 linksList.append(linksListInputEl);
                 linksListInputEl.append(linksInputAnchor);
-                lsLinks.push(cdnjsScriptCopy);
+                // lsLinks.push(cdnjsScriptCopy);
                 // console.log(lsLinks);
                 localStorage.setItem("stored-links", JSON.stringify(lsLinks));
                 console.log(lsLinks);

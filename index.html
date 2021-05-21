@@ -20,6 +20,7 @@
     <script defer type="text/javascript" src="./assets/js/script.js"></script>
     <script defer type="text/javascript" src="./assets/js/links.js"></script>
     <script defer type="text/javascript" src="./assets/js/CDNJS.js"></script>
+    <script defer type="text/javascript" src="./assets/js/github.js"></script>
     <!-- Auth Script -->
     <script defer type="text/javascript" src="./assets/js/auth.js"></script>
     <!--Save Script-->
@@ -57,11 +58,8 @@
                 <li id="navDash">
                     <a href="#dash">Dash</a>
                 </li>
-                <li id="navSlack">
-                    <a href="#slack">Slack</a>
-                </li>
-                <li id=navNotion>
-                    <a href="#notion">Notion</a>
+                <li id="navGit">
+                    <a href="#git">GitHub</a>
                 </li>
                 <li id="navCdnjs">
                     <a href="#cdnjs">CDNJS</a>
@@ -155,12 +153,26 @@
                     </div>
                 </div>
             </div>
-            <div id="slack">
-                <h2>Slack</h2>
-                <div id="slackCard" class="card noselect">
-                    <Form>
-                        <!-- <input name="formto_slack" type="hidden" value="https://hooks.slack.com/services/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"> -->
-                    </Form>
+            <div class="noselect" id="git">
+                <h2>Github Search Tool</h2>
+                <div id="gitCard" class="card noselect">
+                    <input id="gitInput" type="text" placeholder="Search for a Github User">
+                    <button id="gitBtn" class="btn grey darken-2 z-depth-0">Search</button>
+                    <div id="gitInstructions">Click on avatar to checkout GitHub page!</div>
+                    <!-- Modal Structure -->
+                    <div id="modal-git" class="modal noselect">
+                        <div class="modal-content">
+                            <h4>Oh no!</h4>
+                            <p>Your search returned no results, try again.</p>
+                        </div>
+                        <div class="modal-footer noselect">
+                            <a href="#!" id="modal-git--close" class="modal-close waves-effect white-text waves-green btn-flat noselect">Ok</a>
+                        </div>
+                    </div>
+                    <section id="gitResults">
+                        <ol id="gitOl" class="git-scroll">
+                        </ol>
+                    </section>
                 </div>
             </div>
             <div class="noselect" id="cdnjs">
