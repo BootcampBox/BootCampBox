@@ -237,7 +237,7 @@ a img {
 */
 
 #dash {
-    background: rgb(36, 35, 35);
+    background: none;
     display: grid;
     grid-column-start: 1;
     grid-column-end: 11;
@@ -260,8 +260,14 @@ a img {
     grid-column-start: 7;
     grid-column-end: 11;
     grid-row-start: 2;
-    grid-row-end: 7;
+    grid-row-end: 9;
     text-align: center;
+}
+
+.inTheDiv {
+    width: 90%;
+    float: center;
+    margin-left: 30px;
 }
 
 #dashSnips {
@@ -269,7 +275,9 @@ a img {
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-start: 2;
-    grid-row-end: 7;
+    grid-row-end: 9;
+    padding-bottom: 50px;
+    
 }
 
 #dashSnips h2,
@@ -459,7 +467,7 @@ a img {
     grid-row-start: 1;
     min-height: 41px;
     transform: translateY(-3px);
-    width: 10vw;
+    width: 15vw;
     border: 0;
     font-size: 1.5vw;
     color: white;
@@ -621,7 +629,7 @@ a img {
     grid-row-start: 1;
     min-height: 41px;
     transform: translateY(-3px);
-    width: 10vw;
+    width: 15vw;
     border: 0;
     font-size: 1.5vw;
     color: white;
@@ -754,3 +762,29 @@ a img {
     color: white;
     box-shadow: inset 0.5px 2px 5.5px 1px rgba(64, 69, 204, 0.562);
 }
+
+/* @media only screen and (max-width: 500px) {
+    .wrapper {
+      grid-template-columns: 20% auto;
+      grid-template-areas: "header   header" "sidebar  content" "sidebar2 sidebar2" "footer   footer";
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .wrapper {
+      grid-gap: 20px;
+      grid-template-columns: 120px auto 120px;
+      grid-template-areas: "header  header  header" "sidebar content sidebar2" "footer  footer  footer";
+      max-width: 600px;
+    }
+  } */
+
+  .wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  @media only screen and (max-width: 768px){
+      .dashWidgets{
+          width: 100%;
+      }
+      #dashLinks {}
+  }
