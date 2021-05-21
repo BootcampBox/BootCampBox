@@ -50,13 +50,13 @@ enterBtn.on('click', function() {
         var errMessage = "We couldn't save that one.";
         $('#modal-error').modal('open');
         $('#errmsg').text(errMessage);
-        $('#posSolution').text('Try typing something');
+        $('#posSolution').text('Try typing something... you dunce. ');
     } else {
         var codeResult = $('<div> <pre class="snippet"><strong>' + snipTitle.val() + ': </strong><br/>' + snipInput.val() + '</pre></div>');
         var removeBtn = $('<button type=button class="btn teal darken-2">Remove Aforementioned Snippy</button>')
         removeBtn.on("click", theSnipsRemover);
         snippetsListEl.append(codeResult);
-        codeResult.append(removeBtn);
+        snippetsListEl.append(removeBtn);
         snipArray.push(snipTitle.val(), snipInput.val());
 
         localStorage.setItem("ls-snippets", JSON.stringify({
