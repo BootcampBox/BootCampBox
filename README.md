@@ -5,6 +5,25 @@
 A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.
 
 ## User Story:
+AS A bootcamp student,
+I WANT to see a web application that combines some of the most used web development resources in one convenient place.
+SO THAT I can reduce the amount of open tabs and windows.
+Acceptance Criteria
+GIVEN a dashboard
+WHEN I open the app,
+THEN I can Sign Up and create  a user account that saves my name, email address, and password.
+WHEN I click Login,
+THEN I can enter my email and password.
+WHEN I view the Dashboard,
+THEN I am presented with the current date/time and places to enter and save Code Snippets and Links to local storage.
+WHEN I click GitHub on the navbar,
+THEN I am presented with a search for GitHub.
+WHEN I click CDNJS on the navbar,
+THEN I am presented with a search function for CDNJS.
+WHEN I click Calendar on the navbar,
+THEN I am presented with a weekly planner that saves to local storage.
+WHEN I click About on the navbar,
+THEN I am presented with a window about the application and contributors.
 
 ## GitHub URL:
 https://github.com/BootcampBox/BootCampBox.git
