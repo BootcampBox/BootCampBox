@@ -45,8 +45,8 @@
 
         </div>
     </header>
-    <main>
-        <aside class="navTabs noselect">
+    <main class="wrapper">
+        <aside class="navTabs noselect wrapper">
             <ul id="navTabsTop">
                 <li class="logged-in noselect"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
                 <li class="logged-out noselect"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
@@ -75,22 +75,25 @@
             </ul>
             </section>
         </aside>
-        <section id="workspace" class="black noselect">
-            <div id="dash">
+        <section id="workspace" class="black noselect wrapper">
+            <div class="wrapper" id="dash">
                 <h2 class="noselect" id="dashHead">Dashboard</h2>
-                <div id="dashLinks" class="dashWidget">
-                    <h2>Links</h2>
-                    <input class="white-text" type="text" id="linkInput" placeholder="Add a Link">
-                    <input class="white-text" type="text" id="nameInput" placeholder="Add a Name">
-                    <input id="linksBtn" type="submit">
-                    <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
+                <div id="dashLinks" class="noselect dashWidgets">
+                    <div class="inTheDiv">
+                        <h2>Links</h2>
+                        <input class="white-text" type="text" id="linkInput" placeholder="Add a Link">
+                        <input id="linksBtn" type="submit">
+                        <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
+                    </div>
                 </div>
-                <div id="dashSnips" class="dashWidget noselect">
-                    <h2>Code Snippets</h2>
-                    <input class="white-text" id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
-                    <input class="white-text" id="input-snippet" type="text" name="code-snippets" placeholder="Enter Code Snippet" />
-                    <button id="enter-btn" type="button">Enter</button>
-                    <div id="snippets-list" class="snipResults"></div>
+                <div id="dashSnips" class="noselect dashWidgets">
+                    <div class="inTheDiv">
+                        <h2>Code Snippets</h2>
+                        <input class="white-text" id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
+                        <input class="white-text" id="input-snippet" type="text" name="code-snippets" placeholder="Enter Code Snippet" />
+                        <button id="enter-btn" type="button">Enter</button>
+                        <div id="snippets-list" class="snipResults"></div>
+                    </div>
                 </div>
             </div>
             <div id="calendar" class="card container">
@@ -155,7 +158,7 @@
             </div>
             <div class="noselect" id="git">
                 <h2>Github Search Tool</h2>
-                <div id="gitCard" class="card noselect">
+                <div id="gitCard" class="card noselect wrapper">
                     <input id="gitInput" type="text" placeholder="Search for a Github User">
                     <button id="gitBtn" class="btn grey darken-2 z-depth-0">Search</button>
                     <div id="gitInstructions">Click on avatar to checkout GitHub page!</div>
@@ -177,7 +180,7 @@
             </div>
             <div class="noselect" id="cdnjs">
                 <h2>CDNJS Search Tool</h2>
-                <div id="cdnjsCard" class="card noselect">
+                <div id="cdnjsCard" class="card noselect wrapper">
                     <input id="cdnjsInput" type="text" placeholder="Search for a Library">
                     <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0">Search</button>
                     <div id="cdnjsInstructions">Click on a link to send it to your links dashboard widget!</div>

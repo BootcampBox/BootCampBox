@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function placeholderItems() {
     var linksCheck = localStorage.getItem('stored-links');
-    if (linksCheck == null) {
+    if (!linksCheck) {
         console.log('LocalStorage was Empty')
         localStorage.setItem('stored-links', JSON.stringify({
             links: [
@@ -93,22 +93,23 @@ function restoreData(user) {
     var lsSnips = JSON.parse(localStorage.getItem("ls-snippets"));
     var fsSnips = JSON.parse(localStorage.getItem("fs-snippets"));
     var lsLinks = JSON.parse(localStorage.getItem("stored-links"))
-    var fsLinks = JSON.parse(localStorage.getItem("fs-links"));
-    console.log('fsLinks=', fsLinks);
+    console.log(lsLinks);
+    // var fsLinks = JSON.parse(localStorage.getItem("fs-links"));
+    // console.log('fsLinks=', fsLinks);
     console.log('lsLinks=', lsLinks);
     console.log('fsSnips=', fsSnips);
     console.log('lsSnips=', lsSnips);
     //If the item is not empty, append the contents to the page
-    if (fsLinks.links.length >= 0) {
-        appendfsLinks(fsLinks);
-    }
+    // if (fsLinks.links.length >= 0) {
+    //     appendfsLinks(fsLinks);
+    // }
     //If the item is not empty, append the contents to the page
-    if (fsLinks.links.length == undefined) {
-        window.reload();
-        setupData();
-    }
+    // if (fsLinks.links.length == undefined) {
+    //     window.reload();
+    //     setupData();
+    // }
     //If the item is not empty, append the contents to the page
-    if (lsLinks.length >= 0 && lsLinks != null) {
+    if (lsLinks) {
         appendlsLinks(lsLinks);
     }
     //If the item is not empty, append the contents to the page
