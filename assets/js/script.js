@@ -87,7 +87,7 @@ function setupData(user) {
     });
 }
 //Runs through the different functions and appends correlating items to the page.
-function restoreData(user) {
+function restoreData() {
     console.log('restoreData has fired')
         //Create local variables for each local storage key
     var lsSnips = JSON.parse(localStorage.getItem("ls-snippets"));
@@ -119,8 +119,35 @@ function restoreData(user) {
         appendfsSnips(fsSnips);
     }
     //If the item is not empty, append the contents to the page
-    if (lsSnips.snippets.length >= 0) {
+    if (lsSnips) {
         appendlsSnips(lsSnips);
+    }
+}
+
+function appendlsSnips() {
+    console.log('appendlsSnips has fired')
+    var lsSnips = JSON.parse(localStorage.getItem("ls-snippets"));
+    if (lsSnips) {
+    for (var i = 0; i < lsSnips.snippets.length; i++) {
+        if (i === 0) {
+            // Do the first name at index 0
+            var snipsTitle = lsSnips.snippets[i]
+            console.log(snipsTitle);
+        } else if (i % 2 === 0 && i !== 0) {
+            // Do the even number one, concatenating to the previous
+            snipsTitle = lsSnips.snippets[i]
+            console.log(lsSnips.snippets[i]);
+        } else {
+            //  Do the odd number one
+            var snipsText = lsSnips.snippets[i]
+            console.log(snipsText);
+        };
+        console.log(i % 2);
+        var codeResultForLoop = $('<div class="snipsDiv"> <pre class="snippet"><strong>' + snipsTitle + ': </strong><br/>' + snipsText + '</pre></div>');
+        // var removeBtnForLoop = $('<button type=button class="btn teal darken-2">Remove Aforementioned Snippy</button>')
+        snippetsListEl.append(codeResultForLoop);
+        // snippetsListEl.append(removeBtnForLoop);
+        // console.log('stored snipTitles ', storedSnips.snippetText, 'stored snippets', storedSnips.snippetTitle);
     }
 }
 
@@ -203,4 +230,5 @@ $("#clearBtn").on("click", function() {
     $(`#${dayList[i].id}`).val(""); 
     localStorage.removeItem(`${dayList[i].id}`) 
   }
-})
+});
+}

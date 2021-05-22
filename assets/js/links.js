@@ -47,6 +47,23 @@ function linkMaker(user) {
     linkInput.val("");
     localStorage.setItem("stored-links", JSON.stringify(lsLinks));
 }
+
+// TODO: localStorage removals
+function theLinksRemover() {
+  var theLinks = $("#linksList");
+  console.log(theLinks);
+  console.log($(this).attr("id"));
+  if ($(this).attr("class") == "fullRemover") {   
+      // Remove Loop
+      for (var i = 0; i < theLinks.length; i++) {
+          theLinks[i].remove();
+      }
+  } else if ($(this).attr("class") == "lastRemover") {
+      var i = theLinks.length - 1;
+      theLinks[i].remove();
+  }
+}
+
 // On page load, add the values from localStorage to <li>s and add them (hidden) to the <ul>
 // if (!localStorage.getItem("stored-links") == null || localStorage.getItem("stored-links") == undefined) {
 //   localStorage.setItem("stored-links", JSON.stringify({
