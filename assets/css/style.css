@@ -35,13 +35,6 @@ h2 {
     margin-top: 1rem;
 }
 
-
-/* Conditional formatting and specialzed classes */
-
-
-/*** Disables user from selecting or highlighting text *******
-**** jQuery code $('ELEMENTSELECTOR').addClass('noselect'); */
-
 .noselect {
     -webkit-touch-callout: none;
     /* iOS Safari */
@@ -222,19 +215,20 @@ a img {
     color: white;
 }
 
-
-/* Unused -- Delete(?)
-.active {
-    display: grid !important;
-    grid-template-columns: repeat(10, 10%);
-    grid-template-rows: repeat(10, 10%);
-    height: 100%;
-} 
-
-.deactive {
-    display: none;
+#headerClock {
+    text-align: center;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    margin-top: 2vh;
 }
-*/
+
+#currentDay,
+#currentTime {
+    font-size: 1vw;
+    color: white;
+    margin: 0 !important;
+}
 
 #dash {
     background: none;
@@ -277,7 +271,6 @@ a img {
     grid-row-start: 2;
     grid-row-end: 9;
     padding-bottom: 50px;
-    
 }
 
 #dashSnips h2,
@@ -313,13 +306,6 @@ a img {
 }
 
 
-/* #snippets-list pre {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-} */
-
-
 /*Calendar*/
 
 #calendar {
@@ -334,67 +320,6 @@ a img {
     height: 100% !important;
     width: 100% !important;
 }
-
-
-/* #calendar p,
-#calendar td {
-    font-family: 'Roboto', sans-serif;
-    font-size: 10pt;
-}
-
-#calendar a {
-    color: #1192A3;
-}
-
-#calendar .space {
-    margin: 10px 0px 10px 0px;
-}
-
-#calendar .header {
-    background: #003267;
-    background: linear-gradient(to right, #011329 0%, #00639E 44%, #011329 100%);
-    padding: 20px 10px;
-    color: white;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
-}
-
-#calendar .header a {
-    color: white;
-}
-
-#calendar .header h1 a {
-    text-decoration: none;
-}
-
-#calendar .header h1 {
-    padding: 0px;
-    margin: 0px;
-}
-
-#calendar .main {
-    padding: 10px;
-    margin-top: 10px;
-}
-
-#calendar .generated {
-    color: #999;
-    margin-top: 10px;
-}
-
-#calendar .generated a {
-    color: #999;
-} */
-
-
-/* 
-#dashCal {
-    grid-column-start: 7;
-    grid-column-end: 11;
-    grid-row-start: 2;
-    grid-row-end: 7;
-    background-color: grey;
-    margin: 0 !important;
-} */
 
 
 /* Slack Slide */
@@ -745,8 +670,6 @@ a img {
     transition: all 0.3s ease-in-out;
 }
 
-
-
 #clearBtn {
     background: none;
     box-shadow: 0.5px 2px 5.5px 1px rgba(64, 69, 204, 0.562);
@@ -756,38 +679,19 @@ a img {
     float: right;
 }
 
-
 .inputField {
     border-style: none;
     color: white;
     box-shadow: inset 0.5px 2px 5.5px 1px rgba(64, 69, 204, 0.562);
+}
 
-/* @media only screen and (max-width: 500px) {
-    .wrapper {
-      grid-template-columns: 20% auto;
-      grid-template-areas: "header   header" "sidebar  content" "sidebar2 sidebar2" "footer   footer";
-    }
-  }
-  @media only screen and (max-width: 600px) {
-    .wrapper {
-      grid-gap: 20px;
-      grid-template-columns: 120px auto 120px;
-      grid-template-areas: "header  header  header" "sidebar content sidebar2" "footer  footer  footer";
-      max-width: 600px;
-    }
-  } */
-
-  .wrapper {
+.wrapper {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-  
-  @media only screen and (max-width: 768px){
-      .dashWidgets{
-          width: 100%;
-      }
-      #dashLinks {}
-  }
+}
 
+.dashWidgets {
+    width: 100%;
+}
 
 #aboutFlex {
     display: flex;
@@ -854,4 +758,3 @@ a img {
 #aboutPeter h3 {
     margin-top: 1.5vh;
 }
-
