@@ -54,20 +54,20 @@ function linkMaker() {
 
 // TODO: localStorage removals
 function theLinksRemover() {
-  var theLinks = $("#linksList");
-  console.log(theLinks)
+  var theLinks = $(".linksLi");
   var lsLinks = JSON.parse(localStorage.getItem("stored-links"));
+  lsLinksLinks = lsLinks.links;
   if ($(this).attr("class") == "fullRemover") {   
-      // Remove Loop
-      for (var i = 0; i < theLinks.length; i++) {
-          theLinks[i].remove();
-          lsLinks.pop();
-          localStorage.setItem("stored-links", JSON.stringify(lsLinks));
-        }
+  // Remove Loop
+  for (var i = 0; i < theLinks.length; i++) {
+  theLinks[i].remove();
+  lsLinks.pop();
+  localStorage.setItem("stored-links", JSON.stringify(lsLinks));
+  }
   } else if ($(this).attr("class") == "lastRemover") {
       var i = theLinks.length - 1;
       theLinks[i].remove();
-      lsLinks.pop();
+      lsLinksLinks.pop();
       localStorage.setItem("stored-links", JSON.stringify(lsLinks));
   }
 }

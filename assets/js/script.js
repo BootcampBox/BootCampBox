@@ -86,6 +86,20 @@ function setupData(user) {
         restoreData(user)
     });
 }
+
+function appendlsLinks(lsLinks) {
+    console.log('appendlslinks has fired')
+    var lsLinks = JSON.parse(localStorage.getItem("stored-links"))
+    console.log(lsLinks);
+    for (i = 0; i < lsLinks.links.length; i++) {
+        var linksListEl = $('<li>');
+        var linksAnchor = $("<a class='scroll linksLi'>");
+        linksAnchor.text(lsLinks.links[i]);
+        linksList.append(linksListEl);
+        linksListEl.append(linksAnchor);
+    }
+}
+
 //Runs through the different functions and appends correlating items to the page.
 function restoreData() {
     console.log('restoreData has fired')

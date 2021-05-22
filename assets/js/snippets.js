@@ -37,7 +37,7 @@ var snipsRemoverB = $("#snipsRemoverB");
 
 var enterBtn = $("#enter-btn");
 
-snipsRemoverA.on("click", theSnipsRemover())
+snipsRemoverA.on("click", theSnipsRemover)
 snipsRemoverB.on("click", theSnipsRemover)
 
 enterBtn.on('click', function() {
