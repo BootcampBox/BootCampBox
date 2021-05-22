@@ -32,13 +32,13 @@ var snippetsFormEl = $('#snippets-form');
 var snippetsListEl = $('#snippets-list');
 var snipTitle = $('#input-title');
 var snipInput = $('#input-snippet');
-var fullSnipsRemover = $(".fullRemover");
-var lastSnipsRemover = $(".lastRemover");
+var snipsRemoverA = $("#snipsRemoverA");
+var snipsRemoverB = $("#snipsRemoverB");
 
 var enterBtn = $("#enter-btn");
 
-fullSnipsRemover.on("click", theSnipsRemover);
-lastSnipsRemover.on("click", theSnipsRemover);
+snipsRemoverA.on("click", theSnipsRemover())
+snipsRemoverB.on("click", theSnipsRemover)
 
 enterBtn.on('click', function() {
     if (snipTitle.val() == '' || snipInput.val() == '') {
@@ -130,29 +130,65 @@ function appendfsSnips(fsSnips) {
 
 }
 
+function appendlsSnips() {
+    console.log('appendlsSnips has fired')
+    if (JSON.parse(localStorage.getItem("ls-snippets")).snippets) {
+        var lsSnips = JSON.parse(localStorage.getItem("ls-snippets"));
+        for (var i = 0; i < lsSnips.snippets.length; i++) {
+        if (i === 0) {
+            // Do the first name at index 0
+            var snipsTitle = lsSnips.snippets[i]
+            console.log(snipsTitle);
+        } else if (i % 2 === 0 && i !== 0) {
+            // Do the even number one, concatenating to the previous
+            snipsTitle = lsSnips.snippets[i]
+            console.log(lsSnips.snippets[i]);
+        } else {
+            //  Do the odd number one
+            var snipsText = lsSnips.snippets[i]
+            console.log(snipsText);
+        };
+        console.log(i % 2);
+        var codeResultForLoop = $('<div class="snipsDiv"> <pre class="snippet"><strong>' + snipsTitle + ': </strong><br/>' + snipsText + '</pre></div>');
+        // var removeBtnForLoop = $('<button type=button class="btn teal darken-2">Remove Aforementioned Snippy</button>')
+        snippetsListEl.append(codeResultForLoop);
+        // snippetsListEl.append(removeBtnForLoop);
+        // console.log('stored snipTitles ', storedSnips.snippetText, 'stored snippets', storedSnips.snippetTitle);
+    }
+}
+}
+
 function theSnipsRemover() {
     var theSnips = $(".snipsDiv");
-    console.log(theSnips);
-    console.log($(this).attr("class"));
-    var lsSnips = JSON.parse(localStorage.getItem("ls-snippets"));
-    console.log(lsSnips);
-    var lsSnipsSnippets = lsSnips.snippets;
-    if ($(this).attr("class") == "fullRemover") {   
-        // Remove Loop
-        for (var i = 0; i < theSnips.length; i++) {
-            console.log(theSnips);
-            console.log(lsSnipsSnippets);
+    if (typeof JSON.parse(localStorage.getItem("ls-snippets")) ===  "object") {
+        var lsSnips = JSON.parse(localStorage.getItem("ls-snippets"));
+        var lsSnipsSnippets = lsSnips.snippets;
+        if ($(this).attr("class") == "fullRemover") {   
+            // Remove Loop
+            for (var i = 0; i < theSnips.length; i++) {
+                theSnips[i].remove();
+                lsSnipsSnippets.pop();
+                localStorage.setItem("ls-snippets", JSON.stringify(lsSnipsSnippets));
+            }
+        } else if ($(this).attr("class") == "lastRemover") {
+            var i = theSnips.length - 1;
             theSnips[i].remove();
-            lsSnipsSnippets[i].remove();
+            lsSnipsSnippets.pop();
+            localStorage.setItem("ls-snippets", JSON.stringify(lsSnipsSnippets));
         }
-    } else if ($(this).attr("class") == "lastRemover") {
-        var i = theSnips.length - 1;
-        console.log(i);
-        var x = lsSnipsSnippets.length - 1;
-        console.log(theSnips);
-        console.log(lsSnipsSnippets);
-        theSnips[i].remove();
-        lsSnipsSnippets.pop();
-        localStorage.setItem("ls-snippets", JSON.stringify(lsSnipsSnippets));
+    } else  {
+        if ($(this).attr("class") == "fullRemover") {   
+            // Remove Loop
+            for (var i = 0; i < theSnips.length; i++) {
+                theSnips[i].remove();
+                lsSnips = [];
+                localStorage.setItem("ls-snippets", lsSnips);
+            }
+        } else if ($(this).attr("class") == "lastRemover") {
+            var i = theSnips.length - 1;
+            theSnips[i].remove();
+            lsSnipsSnippets = [];
+            localStorage.setItem("ls-snippets", lsSnipsSnippets);
+        }
     }
 }
