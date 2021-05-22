@@ -3,8 +3,12 @@ var linkInput = $('#linkInput');
 var nameInput = $('#nameInput');
 var linksBtn = $("#linksBtn");
 var linksList = $("#linksList");
+var linksRemoverA = $("#linksRemoverA");
+var linksRemoverB = $("#linksRemoverB");
 // Add an event listener to the add button, which takes value from link and name input fields, save to localStorage, apply to <li> variable
 linksBtn.on("click", linkMaker)
+linksRemoverA.on("click", theLinksRemover);
+linksRemoverB.on("click", theLinksRemover);
 
 // var lsLinks = JSON.parse(localStorage.getItem("stored-links"));
 
@@ -34,7 +38,7 @@ function appendfsLinks(fsLinks) {
     }
 }
 
-function linkMaker(user) {
+function linkMaker() {
     var linksInputAnchor = $("<a class='scroll linksLi'>");
     var linksListInputEl = $('<li>');
     linksInputAnchor.text(linkInput.val());
@@ -47,6 +51,27 @@ function linkMaker(user) {
     linkInput.val("");
     localStorage.setItem("stored-links", JSON.stringify(lsLinks));
 }
+
+// TODO: localStorage removals
+function theLinksRemover() {
+  var theLinks = $(".linksLi");
+  var lsLinks = JSON.parse(localStorage.getItem("stored-links"));
+  lsLinksLinks = lsLinks.links;
+  if ($(this).attr("class") == "fullRemover") {   
+  // Remove Loop
+  for (var i = 0; i < theLinks.length; i++) {
+  theLinks[i].remove();
+  lsLinks.pop();
+  localStorage.setItem("stored-links", JSON.stringify(lsLinks));
+  }
+  } else if ($(this).attr("class") == "lastRemover") {
+      var i = theLinks.length - 1;
+      theLinks[i].remove();
+      lsLinksLinks.pop();
+      localStorage.setItem("stored-links", JSON.stringify(lsLinks));
+  }
+}
+
 // On page load, add the values from localStorage to <li>s and add them (hidden) to the <ul>
 // if (!localStorage.getItem("stored-links") == null || localStorage.getItem("stored-links") == undefined) {
 //   localStorage.setItem("stored-links", JSON.stringify({

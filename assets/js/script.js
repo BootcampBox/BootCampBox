@@ -86,18 +86,32 @@ function setupData(user) {
         restoreData(user)
     });
 }
+
+function appendlsLinks(lsLinks) {
+    console.log('appendlslinks has fired')
+    var lsLinks = JSON.parse(localStorage.getItem("stored-links"))
+    console.log(lsLinks);
+    for (i = 0; i < lsLinks.links.length; i++) {
+        var linksListEl = $('<li>');
+        var linksAnchor = $("<a class='scroll linksLi'>");
+        linksAnchor.text(lsLinks.links[i]);
+        linksList.append(linksListEl);
+        linksListEl.append(linksAnchor);
+    }
+}
+
 //Runs through the different functions and appends correlating items to the page.
-function restoreData(user) {
+function restoreData() {
     console.log('restoreData has fired')
         //Create local variables for each local storage key
     var lsSnips = JSON.parse(localStorage.getItem("ls-snippets"));
-    var fsSnips = JSON.parse(localStorage.getItem("fs-snippets"));
+    // var fsSnips = JSON.parse(localStorage.getItem("fs-snippets"));
     var lsLinks = JSON.parse(localStorage.getItem("stored-links"))
     console.log(lsLinks);
     // var fsLinks = JSON.parse(localStorage.getItem("fs-links"));
     // console.log('fsLinks=', fsLinks);
     console.log('lsLinks=', lsLinks);
-    console.log('fsSnips=', fsSnips);
+    // console.log('fsSnips=', fsSnips);
     console.log('lsSnips=', lsSnips);
     //If the item is not empty, append the contents to the page
     // if (fsLinks.links.length >= 0) {
@@ -113,16 +127,18 @@ function restoreData(user) {
         appendlsLinks(lsLinks);
     }
     //If the item is not empty, append the contents to the page
-    if (!fsSnips) {
-        placeholderItems();
-    } else if (fsSnips.snippets.length >= 0 && fsSnips.snippets != null) {
-        appendfsSnips(fsSnips);
-    }
+    // if (!fsSnips) {
+    placeholderItems();
+    // } else if (fsSnips.snippets.length >= 0 && fsSnips.snippets != null) {
+    // appendfsSnips(fsSnips);
+    // }
     //If the item is not empty, append the contents to the page
-    if (lsSnips.snippets.length >= 0) {
+    if (lsSnips) {
         appendlsSnips(lsSnips);
     }
 }
+
+
 
 /*****************************/
 /********END UI SCRIPTS*******\
@@ -195,12 +211,12 @@ $(function() {
     };
 })
 $("#clearBtn").on("click", function() {
-  var dayList = $(".inputField");
-  console.log(dayList);
-  for (var i = 0; i < dayList.length; i++) {
-    console.log(dayList[i]);
-    console.log(`${dayList[i].id}`);
-    $(`#${dayList[i].id}`).val(""); 
-    localStorage.removeItem(`${dayList[i].id}`) 
-  }
-})
+    var dayList = $(".inputField");
+    console.log(dayList);
+    for (var i = 0; i < dayList.length; i++) {
+        console.log(dayList[i]);
+        console.log(`${dayList[i].id}`);
+        $(`#${dayList[i].id}`).val("");
+        localStorage.removeItem(`${dayList[i].id}`)
+    }
+});
