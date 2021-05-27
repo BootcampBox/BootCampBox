@@ -271,7 +271,6 @@ a img {
     grid-row-start: 2;
     grid-row-end: 9;
     padding-bottom: 50px;
-    <<<<<<< HEAD=======>>>>>>>1505fa7236323c45016c1713aa5a006a19d69752
 }
 
 #dashSnips h2,
@@ -297,13 +296,38 @@ a img {
 
 #snippets-list {
     max-height: 425px;
-    max-width: 400px;
-    margin: 0 10px;
+    max-width: 90%;
+    margin: 0 5%;
     padding: 4px;
     /* background-color: rgba(255, 255, 255, 0.25); */
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify;
+}
+
+.snipsDiv {
+    margin-bottom: 1.5vh;
+}
+
+.snipsDiv button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.snipsDiv:hover {
+    box-shadow: 0 4px 11px 4px rgba(64, 69, 204, 0.8);
+}
+
+
+/* .rmSnips {
+    margin: 0 30% 1vh margin-bottom: 1vh;
+} */
+
+.rmSnips:hover::before {}
+
+.snippet {
+    margin-bottom: 0
 }
 
 
