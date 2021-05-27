@@ -78,11 +78,12 @@ enterBtn.on('click', function() {
         console.log(localSnips)
         let setUpSnips = JSON.stringify(localSnips);
         localStorage.setItem('snippets', setUpSnips);
+        packSnips()
     }
     //Clear Input Fields
     snipTitle.val("");
     snipInput.val("");
-    packSnips();
+
 })
 
 function packSnips() {
@@ -134,18 +135,26 @@ function sendToFS(packedSnips) {
 function appendSnips() {
     console.log('appendSnips has fired')
     let setUpSnips = JSON.parse(localStorage.getItem('snippets'))
-
+    console.log(setUpSnips.snippets.length)
     if (setUpSnips.snippets != null && setUpSnips.snippets != '') {
         for (var i = 0, n = 1; i < setUpSnips.snippets.length; i += 2, n += 2) {
             var removeBtn = $('<button type=button class="rmSnips btn blue darken-1">Remove Snippy</button>')
-                // if (i % 2 === 0 && i !== 0) {
-                //   // Do the even number one, concatenating to the previous
-                //   var snipsTitle = setUpSnips.snippets[i]
-                // } else {
-                //   //  Do the odd number one
-                //   var snipsText = setUpSnips.snippets[i]
-                // }
-            var codeResultForLoop = $('<div class="snipsDiv"> <pre class="snippet"><p><strong>' + setUpSnips.snippets[i] + '</strong></p><br/><p>' + setUpSnips.snippets[n] + '</p></pre></div>');
+            console.log('i=', setUpSnips.snippets[i], 'n=', n)
+            var codeResultForLoop = $(`<div class="snipsDiv"> <pre class="snippet"><strong>${setUpSnips.snippets[i].replace(/[:<>&\n]/g, function(x) {
+                return {
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '&': '&amp;',
+                   '\n': '<br>'
+                }[x];
+            })}: </strong><br/>${setUpSnips.snippets[n].replace(/[<>&\n]/g, function(x) {
+                return {
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '&': '&amp;',
+                   '\n': '<br>'
+                }[x];
+            })}</pre></div>`);
             snippetsListEl.append(codeResultForLoop);
             codeResultForLoop.append(removeBtn);
             removeBtn.on('click', rmSnip)

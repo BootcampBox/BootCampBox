@@ -295,7 +295,7 @@ a img {
 /*Snippets*/
 
 #snippets-list {
-    max-height: 425px;
+    max-height: 40vh;
     max-width: 90%;
     margin: 0 5%;
     padding: 4px;
