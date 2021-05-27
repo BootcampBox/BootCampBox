@@ -64,3 +64,31 @@ Place in head tag.
     </div>
   </div>
 ```
+
+### Stuff for save JS Calendar 
+
+```
+    var mon = localStorage.getItem('Monday')
+    var tue = localStorage.getItem('Tuesday')
+    var wed = localStorage.getItem('Wednesday')
+    var thu = localStorage.getItem('Thursday')
+    var fri = localStorage.getItem('Friday')
+    var sat = localStorage.getItem('Saturday')
+    var sun = localStorage.getItem('Sunday')
+    var calendar_LS = [{
+        mon
+    }, {
+        tue
+    }, {
+        wed
+    }, {
+        thu
+    }, {
+        fri
+    }, {
+        sat
+    }, {
+        sun
+    }]
+
+```

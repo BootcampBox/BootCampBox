@@ -89,7 +89,7 @@
                     <button class="lastRemover" id="linksRemoverB">Clear Last</button>
                 </div>
                 <div id="dashSnips" class="noselect dashWidgets">
-                    <div class="inTheDiv">
+                    <div>
                         <h2>Code Snippets</h2>
                         <input class="white-text" id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
                         <input class="white-text" id="input-snippet" type="text" name="code-snippets" placeholder="Enter Code Snippet" />
@@ -97,7 +97,7 @@
                         <div id="snippets-list" class="snipResults"></div>
                     </div>
                     <!-- <button class="fullRemover" id="snipsRemoverA">Clear All</button> -->
-                    <button class="lastRemover" id="snipsRemoverB">Clear Last</button>
+                    <!-- <button class="lastRemover" id="snipsRemoverB">Clear Last</button> -->
                 </div>
             </div>
             <div id="calendar" class="card container">
@@ -265,6 +265,14 @@
                     <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
                 </div>
             </div>
+            <!--Save MODAL -->
+            <div id="modal-save" class="modal noselect">
+                <div class="modal-content center-align noselect">
+                    <h4>Save</h4><br />
+                    <p> Congratulations your stuff has been saved.</p>
+                    <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
+                </div>
+            </div>
             <!--ABOUT MODAL -->
             <div id="modal-about" class="modal noselect">
                 <div id="aboutGrid">
@@ -369,6 +377,7 @@
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script> -->
     <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -387,6 +396,7 @@
         //Make Auth and firestore refences
         const auth = firebase.auth();
         const fireStore = firebase.firestore(); //Update firestore settings db.settings
+        // const db = firebase.database();
         ({
             timestampsinsnapshots: true
         });

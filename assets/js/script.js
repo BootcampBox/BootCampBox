@@ -4,42 +4,48 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Modal.init(modals);
 });
 
+//global remove from array function
+Array.prototype.remove = function(value) {
+    const index = this.findIndex(obj => obj[key] === value);
+    return index >= 0 ? [
+        ...this.slice(0, index),
+        ...this.slice(index + 1)
+    ] : this;
+};
+
+//Declare Storage Items
+const snippetsGet = localStorage.getItem("snippets");
+const linksGet = localStorage.getItem("links");
+
 function placeholderItems() {
-    var linksCheck = localStorage.getItem('stored-links');
-    if (!linksCheck) {
+    if (!linksGet || linksGet == '') {
         console.log('LocalStorage was Empty')
-        localStorage.setItem('stored-links', JSON.stringify({
-            links: [
+        localStorage.setItem('links', JSON.stringify(
+            [
                 "https://github.com/public-apis/public-apis",
                 "https://unicode.org/emoji/charts/full-emoji-list.html",
-                "https://www.w3schools.com/",
+                "https://www.w3schools.com/"
             ]
-        }))
+        ))
     }
-    if (localStorage.getItem('ls-snippets') == null) {
-        localStorage.setItem('ls-snippets', JSON.stringify({
+    if (localStorage.getItem('snippets') == null || localStorage.getItem('snippets') == '') {
+        localStorage.setItem('snippets', {
             snippets: [
                 'This is a snippet Title saved in localStorage:',
                 'This is a snippet. Saved to localStorage whenever you click save'
             ]
-        }));
-    }
-    if (localStorage.getItem('fs-snippets') == null || localStorage.getItem('fs-snippets') == '') {
-        localStorage.setItem('fs-snippets', JSON.stringify({
-            snippets: [
-                'This is a snippet Title saved with FireStore:',
-                'This is a snippet, now you try! Click Save.'
-            ]
-        }));
-    }
-};
+        })
 
+    };
+}
 /*************************************************************************\
  **** Appending the DOM with info from Firestore on login******************\
  *** IF YOU SEE SOMETHING I'M FORGETTING PLEASE ADD THE PSEUDOCODE FOR IT**\
  **************************************************************************/
-// const userDBget
-const accountDetails = $('.account-details');
+
+
+
+
 
 //Toggle UI based on signed in state
 function setupUI(user) {
@@ -58,84 +64,48 @@ function setupUI(user) {
           <p><span>Email:</span>${user.email}</p>
           </div>`;
             accountDetails.append(userInfo);
-
-            // setupLinks(user)
         });
     }
     setupData(user);
 }
 
+var snipObj = {
+    snippets: []
+}
+
 function setupData(user) {
     console.log('setupData has fired');
-    //Go retireve the user data from Firestore
-    fireStore.collection('users').doc(user.uid).get().then(function(doc) {
-        //If there is user data proceeed
-        if (doc.exists) {
-            console.log(doc.data())
-            localStorage.setItem('fs-snippets', doc.data().snippets)
-            localStorage.setItem('fs-links', doc.data().links)
-            console.log(doc.data().links)
-                //If not, don't.
+    console.log(user.uid);
+    let userDocRef = fireStore.collection('users').doc(user.uid)
+        //Go retireve the user data from Firestore
+    userDocRef.get('snippets').then((doc) => {
+        console.log(doc.data().snippets)
+            //If there is user data proceeed
+        if (doc.exists && doc.data() != null) {
+            for (var i = 0; i < doc.data().snippets.snippets.length; i++) {
+                snipObj.snippets.push(doc.data().snippets.snippets[i])
+            }
+            console.log(snipObj)
+            let setUpSnips = JSON.stringify(snipObj)
+            console.log('setUpSnips=', setUpSnips)
+            localStorage.setItem('snippets', setUpSnips)
+
+            // var setUpLinks = {
+            //   links: JSON.stringify([doc.data().links])
+            // }
+            //
+            // localStorage.setItem('links', JSON.parse(setUpLinks))
+
+            appendSnips();
+            // appendLinks(setUpLinks);
+            //If not, don't.
         } else {
             console.log('No such Document');
         }
         /*After the above function has fired, invoke next function.
         This prevents items from coming back as null or undefined
         if it takes longer than expected to get the data back.*/
-    }).then(function() {
-        restoreData(user)
-    });
-}
-
-function appendlsLinks(lsLinks) {
-    console.log('appendlslinks has fired')
-    var lsLinks = JSON.parse(localStorage.getItem("stored-links"))
-    console.log(lsLinks);
-    for (i = 0; i < lsLinks.links.length; i++) {
-        var linksListEl = $('<li>');
-        var linksAnchor = $("<a class='scroll linksLi'>");
-        linksAnchor.text(lsLinks.links[i]);
-        linksList.append(linksListEl);
-        linksListEl.append(linksAnchor);
-    }
-}
-
-//Runs through the different functions and appends correlating items to the page.
-function restoreData() {
-    console.log('restoreData has fired')
-        //Create local variables for each local storage key
-    var lsSnips = JSON.parse(localStorage.getItem("ls-snippets"));
-    // var fsSnips = JSON.parse(localStorage.getItem("fs-snippets"));
-    var lsLinks = JSON.parse(localStorage.getItem("stored-links"))
-    console.log(lsLinks);
-    // var fsLinks = JSON.parse(localStorage.getItem("fs-links"));
-    // console.log('fsLinks=', fsLinks);
-    console.log('lsLinks=', lsLinks);
-    // console.log('fsSnips=', fsSnips);
-    console.log('lsSnips=', lsSnips);
-    //If the item is not empty, append the contents to the page
-    // if (fsLinks.links.length >= 0) {
-    //     appendfsLinks(fsLinks);
-    // }
-    //If the item is not empty, append the contents to the page
-    // if (fsLinks.links.length == undefined) {
-    //     window.reload();
-    //     setupData();
-    // }
-    //If the item is not empty, append the contents to the page
-    if (lsLinks) {
-        appendlsLinks(lsLinks);
-    }
-    //If the item is not empty, append the contents to the page
-    // if (!fsSnips) {
-    placeholderItems();
-    // } else if (fsSnips.snippets.length >= 0 && fsSnips.snippets != null) {
-    // appendfsSnips(fsSnips);
-    // }
-    //If the item is not empty, append the contents to the page
-    if (lsSnips) {
-        appendlsSnips(lsSnips);
-    }
+    })
 }
 
 

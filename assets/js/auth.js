@@ -1,29 +1,24 @@
+// const userDBget
+const accountDetails = $('.account-details');
+var userID
 //Listen for login state changes
 auth.onAuthStateChanged(function(user) {
+
   //Get Data
   if (user) {
-    if (localStorage.getItem('ls-snippets') == null) {
-      localStorage.setItem('ls-snippets', JSON.stringify({
-        snippets: [
-          'This is a snippet Title saved in localStorage:',
-          'This is a snippet. Saved to localStorage whenever you click save'
-        ]
-      }));
-    }
-    if (localStorage.getItem('stored-links') == null) {
-      console.log('LocalStorage was Empty')
-      localStorage.setItem('stored-links', JSON.stringify({
-        links: [
-          "https://github.com/public-apis/public-apis",
-          "https://unicode.org/emoji/charts/full-emoji-list.html",
-          "https://www.w3schools.com/",
-        ]
-      }))
-    }
-
+    localStorage.setItem('UID', user.uid);
+    var tempSnip = {
+      snippets: []
+    };
+    localStorage.setItem('snippets', JSON.stringify(tempSnip));
+    userID = localStorage.getItem('UID')
+    fireStore.collection('users').doc(userID.snippets).get().then((snapshot) => {
+      console.log(snapshot);
+    })
     setupUI(user);
     console.log('user logged in: ', user.email);
     console.log('uid is: ', user.uid);
+
   } else {
     //hide account info
     accountDetails.innerHTML = '';
@@ -33,9 +28,8 @@ auth.onAuthStateChanged(function(user) {
     $('#emailDisplay').text('');
     $('#snippets-list').children().remove();
     localStorage.clear();
+    console.log('user logged out');
   };
-  console.log('user logged out');
-
 });
 
 // signup
@@ -50,18 +44,25 @@ signupForm.addEventListener('submit', function(e) {
 
   // sign up the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
+    userID = cred.user.uid;
+    console.log(cred.user.uid)
     return cred.user.updateProfile({
       displayName: username
-    });
+    })
   }).then(function() {
     placeholderItems();
-    // close the signup modal & reset form
+  }).then(function() {
+    fireStore.collection('users').doc(userID).set({
+      username: username,
+      snippets: '',
+      links: '',
+    })
 
+    // close the signup modal & reset form
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
     signupForm.reset();
   })
-
 });
 
 // logout
