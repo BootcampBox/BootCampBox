@@ -107,13 +107,6 @@ function setupData(user) {
         if it takes longer than expected to get the data back.*/
     })
 }
-// .then(function() {
-//   restoreData()
-// });
-
-
-//Runs through the different functions and appends correlating items to the page.
-// function restoreData() {}
 
 
 
