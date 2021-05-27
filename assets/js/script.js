@@ -72,6 +72,7 @@ function setupUI(user) {
 var snipObj = {
     snippets: []
 }
+var linkObj = { links: [] }
 
 function setupData(user) {
     console.log('setupData has fired');
@@ -106,7 +107,21 @@ function setupData(user) {
         This prevents items from coming back as null or undefined
         if it takes longer than expected to get the data back.*/
     })
-}
+    userDocRef.get('links').then((doc) => {
+        if (doc.exists && doc.data() != null) {
+            for (var i = 0; i < doc.data().links.length; i++) {
+                linkObj.links.push(doc.data().links[i])
+            }
+            console.log(linkObj)
+            let setUpLinks = JSON.stringify(linkObj)
+            console.log('setUpLinks =', setUpLinks)
+            localStorage.setItem('links', setUpLinks)
+            appendLinks(setUpLinks)
+
+        }
+    })
+};
+
 
 
 
@@ -178,8 +193,9 @@ $(function() {
         var setEventText = localStorage.getItem(dayStorage);
         // console.log(setEventText);
         $(`#${dayStorage}`).val(setEventText);
-    };
+    }
 })
+
 $("#clearBtn").on("click", function() {
     var dayList = $(".inputField");
     console.log(dayList);

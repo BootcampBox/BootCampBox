@@ -64,7 +64,7 @@
         position: absolute;
         top: 0;
         left: 2vw;
-        background-color: #fff;
+        /* background-color: #fff; */
         padding: 1vh 0 1vh 0;
         max-height: 10vh;
     }
