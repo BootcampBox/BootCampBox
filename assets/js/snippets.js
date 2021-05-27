@@ -52,26 +52,19 @@ enterBtn.on('click', function() {
         $('#posSolution').text('Try typing something.');
     } else {
         var removeBtn = $('<button type=button class="rmSnips btn blue darken-2">Remove Snippy</button>')
-        var codeResult = $(`<div class="snipsDiv"> <pre class="snippet"><strong>${snipTitle.val().replace(/[<>&\n]/g, function(x) {
-            return {
-                '<': '&lt;',
-                '>': '&gt;',
-                '&': '&amp;',
-               '\n': '<br />'
-            }[x];
-        })}: </strong><br/>${snipInput.val().replace(/[<>&\n]/g, function(x) {
-            return {
-                '<': '&lt;',
-                '>': '&gt;',
-                '&': '&amp;',
-               '\n': '<br />'
-            }[x];
-        })}</pre></div>`);
+        var codeResult = $('<div class="snipsDiv"> <p><strong>' + snipTitle.val() + '</strong></p><br/><code class="snippet">' +
+            snipInput.val()
+            .replace(/(-)/g, '&#8209')
+            .replace(/(\}|\}\s)+/g, '\}\r\n')
+            .replace(/(\{\s)/g, '\{\r\n\ ')
+            .replace(/(\<)/g, '&lt')
+            .replace(/(\>)/g, '&gt')
+            .replace(/(\;)+/g, '\;\r\n\ ') + '</code></div>');
         snippetsListEl.append(codeResult);
         codeResult.append(removeBtn);
         removeBtn.on('click', rmSnip)
-        var preppedTitle = codeResult[0].children[0].childNodes[0].childNodes[0].nodeValue;
-        var preppedCode = codeResult[0].children[0].childNodes[2].nodeValue;
+        var preppedTitle = codeResult[0].children[0].childNodes[0].innerText
+        var preppedCode = codeResult[0].children[2].innerText
         console.log(preppedTitle);
         console.log(preppedCode);
         localSnips.snippets.push(preppedTitle, preppedCode);
@@ -103,15 +96,15 @@ function rmSnip() {
 
     let snipObj = JSON.parse(localStorage.getItem('snippets'));
     console.log(snipObj)
-    let rmS = $(this).prev().children().last()[0].innerText;
-    let rmT = $(this).prev().children().first()[0].innerText;
-    console.log(snipObj.snippets)
+    let rmT = $(this)[0].parentElement.children[0].innerText
+    console.log(rmT)
     let index = snipObj.snippets.indexOf(rmT);
     console.log(index)
     modSnips = snipObj.snippets.splice(index, 2)
     console.log('modSnips=', modSnips)
     console.log('snipObj=', snipObj)
     localStorage.setItem('snippets', JSON.stringify(snipObj))
+    $(this).parent().remove();
     $(this).prev().remove();
     $(this).remove();
     packSnips()
@@ -139,24 +132,19 @@ function appendSnips() {
     if (setUpSnips.snippets != null && setUpSnips.snippets != '') {
         for (var i = 0, n = 1; i < setUpSnips.snippets.length; i += 2, n += 2) {
             var removeBtn = $('<button type=button class="rmSnips btn blue darken-1">Remove Snippy</button>')
-            console.log('i=', setUpSnips.snippets[i], 'n=', n)
-            var codeResultForLoop = $(`<div class="snipsDiv"> <pre class="snippet"><strong>${setUpSnips.snippets[i].replace(/[:<>&\n]/g, function(x) {
-                return {
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '&': '&amp;',
-                   '\n': '<br>'
-                }[x];
-            })}: </strong><br/>${setUpSnips.snippets[n].replace(/[<>&\n]/g, function(x) {
-                return {
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '&': '&amp;',
-                   '\n': '<br>'
-                }[x];
-            })}</pre></div>`);
+            console.log('i=', setUpSnips.snippets[i], 'n=', setUpSnips.snippets[n])
+            var codeResultForLoop = $('<div class="snipsDiv"> <p><strong>' + setUpSnips.snippets[i] + '</strong></p><br/><code class="snippet">' +
+                setUpSnips.snippets[n]
+                .replace(/(-)/g, '&#8209')
+                .replace(/(\}|\}\s)+/g, '\}\r\n')
+                .replace(/(\{\s)/g, '\{\r\n\ ')
+                .replace(/(\<)/g, '&lt')
+                .replace(/(\>)/g, '&gt')
+                .replace(/(\;)+/g, '\;\r\n\ ') +
+                '</code></div>');
             snippetsListEl.append(codeResultForLoop);
             codeResultForLoop.append(removeBtn);
+            codeResultForLoop.attr('select', 'unset;');
             removeBtn.on('click', rmSnip)
 
         }
@@ -166,42 +154,3 @@ function appendSnips() {
     }
 
 };
-
-
-
-// function theSnipsRemover() {
-//     var theSnips = $(".snipsDiv");
-//     if (typeof JSON.parse(localStorage.getItem("ls-snippets")) === "object") {
-
-//         var lsSnips = JSON.parse(localStorage.getItem("ls-snippets"));
-//         console.log(setUpSnips);
-//         if ($(this).attr("class") == "fullRemover") {
-//             // Remove Loop
-//             for (var i = 0; i < theSnips.length; i++) {
-//                 theSnips[i].remove();
-//                 lsSnipsSnippets.pop();
-//                 localStorage.setItem("ls-snippets", JSON.stringify(lsSnipsSnippets));
-//             }
-//         } else if ($(this).attr("class") == "lastRemover") {
-//             var i = theSnips.length - 1;
-//             console.log(theSnips);
-//             theSnips[i].remove();
-//             lsSnipsSnippets.pop();
-//             localStorage.setItem("ls-snippets", JSON.stringify(lsSnipsSnippets));
-//         }
-//     } else {
-//         if ($(this).attr("class") == "fullRemover") {
-//             // Remove Loop
-//             for (var i = 0; i < theSnips.length; i++) {
-//                 theSnips[i].remove();
-//                 lsSnips = [];
-//                 localStorage.setItem("ls-snippets", lsSnips);
-//             }
-//         } else if ($(this).attr("class") == "lastRemover") {
-//             var i = theSnips.length - 1;
-//             theSnips[i].remove();
-//             lsSnipsSnippets = [];
-//             localStorage.setItem("ls-snippets", lsSnipsSnippets);
-//         }
-//     }
-// }
