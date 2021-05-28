@@ -2,416 +2,394 @@
 <html lang='en-us'>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>BootCampBox</title>
-  <meta name="description" content="A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google fonts cdn -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Favicon Link-->
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BootCampBox</title>
+    <meta name="description" content="A helpful dashboard for use in a web-development environment. Integrates multiple links, sites, and tools that are frequently used within a web-development lifestyle.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google fonts cdn -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Favicon Link-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-  <!--Our Scripts-->
-  <script defer type="text/javascript" src="./assets/js/snippets.js"></script>
-  <script defer type="text/javascript" src="./assets/js/script.js"></script>
-  <script defer type="text/javascript" src="./assets/js/links.js"></script>
-  <script defer type="text/javascript" src="./assets/js/CDNJS.js"></script>
-  <script defer type="text/javascript" src="./assets/js/github.js"></script>
-  <!-- Auth Script -->
-  <script defer type="text/javascript" src="./assets/js/auth.js"></script>
-  <!--Save Script-->
-  <script defer type="text/javascript" src="./assets/js/save.js"></script>
+    <!--Our Scripts-->
+    <script defer type="text/javascript" src="./assets/js/snippets.js"></script>
+    <script defer type="text/javascript" src="./assets/js/script.js"></script>
+    <script defer type="text/javascript" src="./assets/js/links.js"></script>
+    <script defer type="text/javascript" src="./assets/js/CDNJS.js"></script>
+    <script defer type="text/javascript" src="./assets/js/github.js"></script>
+    <!-- Auth Script -->
+    <script defer type="text/javascript" src="./assets/js/auth.js"></script>
+    <!--Save Script-->
+    <script defer type="text/javascript" src="./assets/js/save.js"></script>
 
-  <!-- Materialize CSS Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- UIkit CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
-  <!--Our Stylesheet-->
-  <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Materialize CSS Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
+    <!--Our Stylesheet-->
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-  <header class="noselect center">
+    <header class="noselect center">
 
-    <div id="greeting">
+        <div id="greeting">
 
-      <h2 class="flow-text noselect">Welcome <br /><span id="emailDisplay"></span></h2>
-    </div>
-  </header>
-  <main>
-    <aside class=" container navTabs noselect">
-      <img id="logo" src="./assets/images/BcB_Logo.png">
-      <ul id="navTabsTop">
-        <li class="logged-in noselect"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
-        <li class="logged-out noselect"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
-        <li class="logged-out noselect"><a href="#modal-login" class="grey-text modal-trigger" data-target="modal-login">Login</a></li>
-        <li id='saveBtn' class="logged-in noselect"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
-        <li class="logged-in noselect"><a href="#" class="grey-text" id="logout">Logout</a></li>
-      </ul>
-      <ul id="navTabsMid">
-        <li id="navDash">
-          <a href="#dash">Dash</a>
-        </li>
-        <li id="navGit">
-          <a href="#git">GitHub</a>
-        </li>
-        <li id="navCdnjs">
-          <a href="#cdnjs">CDNJS</a>
-        </li>
-        <li id="navCal">
-          <a href="#calendar">Calendar</a>
-        </li>
-      </ul>
-      <ul id="navTabsBottom">
-        <li><a href="#modal-about" class="grey-text modal-trigger noselect" data-target="modal-about">About</a></li>
-        <li><a href="#modal-help" class="grey-text modal-trigger noselect" data-target="modal-help">Help</a>
-        </li>
-      </ul>
-      </section>
-    </aside>
-    <section id="workspace" class="black noselect">
-      <div id="dash">
-        <span id="headerClock">
+            <h2 class="flow-text noselect">Welcome <br /><span id="emailDisplay"></span></h2>
+        </div>
+    </header>
+    <main>
+        <aside class=" container navTabs noselect">
+            <img id="logo" src="./assets/images/BcB_Logo.png">
+            <ul id="navTabsTop">
+                <li class="logged-in noselect"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
+                <li class="logged-out noselect"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
+                <li class="logged-out noselect"><a href="#modal-login" class="grey-text modal-trigger" data-target="modal-login">Login</a></li>
+                <li id='saveBtn' class="logged-in noselect"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
+                <li class="logged-in noselect"><a href="#" class="grey-text" id="logout">Logout</a></li>
+            </ul>
+            <ul id="navTabsMid">
+                <li id="navDash">
+                    <a href="#dash">Dash</a>
+                </li>
+                <li id="navGit">
+                    <a href="#git">GitHub</a>
+                </li>
+                <li id="navCdnjs">
+                    <a href="#cdnjs">CDNJS</a>
+                </li>
+                <li id="navCal">
+                    <a href="#calendar">Calendar</a>
+                </li>
+            </ul>
+            <ul id="navTabsBottom">
+                <li><a href="#modal-about" class="grey-text modal-trigger noselect" data-target="modal-about">About</a></li>
+                <li><a href="#modal-help" class="grey-text modal-trigger noselect" data-target="modal-help">Help</a>
+                </li>
+            </ul>
+            </section>
+        </aside>
+        <section id="workspace" class="black noselect">
+            <div id="dash">
+                <span id="headerClock">
           <h2 class="noselect" id="dashHead">Dashboard</h2>
           <p id="currentDay"></p>
           <p id="currentTime"></p>
         </span>
-        <div id="dashLinks" class="noselect dashWidgets">
+                <div id="dashLinks" class="noselect dashWidgets">
 
-          <h2>Links</h2>
-          <input class="white-text" type="text" id="linkInput" placeholder="Add a Link">
-          <input id="linksBtn" type="submit">
-          <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
+                    <h2>Links</h2>
+                    <input class="white-text" type="text" id="linkInput" placeholder="Add a Link">
+                    <input id="linksBtn" type="submit">
+                    <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
 
-          <!-- <button class="fullRemover" id="linksRemoverA">Clear All</button> -->
-          <button class="lastRemover" id="linksRemoverB">Clear Last</button>
-        </div>
-        <div id="dashSnips" class="noselect dashWidgets center">
-          <h2>Code Snippets</h2>
-          <input class="white-text" id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
-          <input class="white-text" id="input-snippet" type="text" name="code-snippets" placeholder="Enter Code Snippet" />
-          <button id="enter-btn" class="btn btn-primary blue lighten-1" type="button">Enter</button>
-          <div id="snippets-list" class="snipResults"></div>
-        </div>
-      </div>
-      <div id="calendar" class="card container">
-        <div id="mainContainer">
-          <div>
-            <ul>
-              <li class="weekday">
-                <p class="day">Monday</p>
-                <button class="saveBtn">
+                    <!-- <button class="fullRemover" id="linksRemoverA">Clear All</button> -->
+                    <button class="lastRemover" id="linksRemoverB">Clear Last</button>
+                </div>
+                <div id="dashSnips" class="noselect dashWidgets center">
+                    <h2>Code Snippets</h2>
+                    <input class="white-text" id="input-title" type="text" name="snippets-title" placeholder="Enter Snippet Title" />
+                    <input class="white-text" id="input-snippet" type="text" name="code-snippets" placeholder="Enter Code Snippet" />
+                    <button id="enter-btn" class="btn btn-primary blue lighten-1" type="button">Enter</button>
+                    <div id="snippets-list" class="snipResults"></div>
+                </div>
+            </div>
+            <div id="calendar" class="card container">
+                <div id="mainContainer">
+                    <div>
+                        <ul>
+                            <li class="weekday">
+                                <p class="day">Monday</p>
+                                <button class="saveBtn">
                   Save
                 </button>
-                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Monday">
-              </li>
-              <li class="weekday">
-                <p class="day">Tuesday</p>
-                <button class="saveBtn">
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Monday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Tuesday</p>
+                                <button class="saveBtn">
                   Save
                 </button>
-                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Tuesday">
-              </li>
-              <li class="weekday">
-                <p class="day">Wednesday</p>
-                <button class="saveBtn">
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Tuesday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Wednesday</p>
+                                <button class="saveBtn">
                   Save
                 </button>
-                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Wednesday">
-              </li>
-              <li class="weekday">
-                <p class="day">Thursday</p>
-                <button class="saveBtn">
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Wednesday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Thursday</p>
+                                <button class="saveBtn">
                   Save
                 </button>
-                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Thursday">
-              </li>
-              <li class="weekday">
-                <p class="day">Friday</p>
-                <button class="saveBtn">
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Thursday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Friday</p>
+                                <button class="saveBtn">
                   Save
                 </button>
-                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Friday">
-              </li>
-              <li class="weekday">
-                <p class="day">Saturday</p>
-                <button class="saveBtn">
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Friday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Saturday</p>
+                                <button class="saveBtn">
                   Save
                 </button>
-                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Saturday">
-              </li>
-              <li class="weekday">
-                <p class="day">Sunday</p>
-                <button class="saveBtn">
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Saturday">
+                            </li>
+                            <li class="weekday">
+                                <p class="day">Sunday</p>
+                                <button class="saveBtn">
                   Save
                 </button>
-                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Sunday">
-              </li>
-            </ul>
-            <button id="clearBtn">
+                                <input type="text" class="inputField" placeholder="What Do You Have To Do?" id="Sunday">
+                            </li>
+                        </ul>
+                        <button id="clearBtn">
               Clear
             </button>
-          </div>
-        </div>
-      </div>
-      <div class="noselect" id="git">
-        <h2>Github Search Tool</h2>
-        <div id="gitCard" class="card noselect wrapper">
-          <input id="gitInput" type="text" placeholder="Search for a Github User">
-          <button id="gitBtn" class="btn grey darken-2 z-depth-0">Search</button>
-          <div id="gitInstructions">Click on avatar to checkout GitHub page!</div>
-          <!-- Modal Structure -->
-          <div id="modal-git" class="modal noselect">
-            <div class="modal-content">
-              <h4>Oh no!</h4>
-              <p>Your search returned no results, try again.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="noselect" id="git">
+                <h2>Github Search Tool</h2>
+                <div id="gitCard" class="card noselect wrapper">
+                    <input id="gitInput" type="text" placeholder="Search for a Github User">
+                    <button id="gitBtn" class="btn grey darken-2 z-depth-0">Search</button>
+                    <div id="gitInstructions">Click on avatar to checkout GitHub page!</div>
+                    <!-- Modal Structure -->
+                    <div id="modal-git" class="modal noselect">
+                        <div class="modal-content">
+                            <h4>Oh no!</h4>
+                            <p>Your search returned no results, try again.</p>
+                        </div>
+                        <div class="modal-footer noselect">
+                            <a href="#!" id="modal-git--close" class="modal-close waves-effect white-text waves-green btn-flat noselect">Ok</a>
+                        </div>
+                    </div>
+                    <section id="gitResults">
+                        <ol id="gitOl" class="git-scroll">
+                        </ol>
+                    </section>
+                </div>
+            </div>
+            <div class="noselect" id="cdnjs">
+                <h2>CDNJS Search Tool</h2>
+                <div id="cdnjsCard" class="card noselect wrapper">
+                    <input id="cdnjsInput" type="text" placeholder="Search for a Library">
+                    <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0">Search</button>
+                    <div id="cdnjsInstructions">Click on a link to send it to your links dashboard widget!</div>
+                    <!-- Modal Structure -->
+                    <div id="modal-cdnjs" class="modal noselect">
+                        <div class="modal-content">
+                            <h4>Oh no!</h4>
+                            <p>Your search returned no results, try again.</p>
+                        </div>
+                        <div class="modal-footer noselect">
+                            <a href="#!" id="modal-cdnjs--close" class="modal-close waves-effect white-text waves-green btn-flat noselect">Ok</a>
+                        </div>
+                    </div>
+                    <section id="cdnjsResults" class="cdnjs-scroll">
+                        <ol id="cdnOl">
+                        </ol>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <!-- <section> -->
+        <!--Modals-->
+        <!--Error Modal-->
+        <div id="modal-error" class="modal noselect">
+            <div class="modal-content noselect">
+                <h4>Sorry . . . </h4>
+                <p id="errmsg"></p>
+                <p id="posSolution"></p>
             </div>
             <div class="modal-footer noselect">
-              <a href="#!" id="modal-git--close" class="modal-close waves-effect white-text waves-green btn-flat noselect">Ok</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat noselect">Try Again</a>
             </div>
-          </div>
-          <section id="gitResults">
-            <ol id="gitOl" class="git-scroll">
-            </ol>
-          </section>
         </div>
-      </div>
-      <div class="noselect" id="cdnjs">
-        <h2>CDNJS Search Tool</h2>
-        <div id="cdnjsCard" class="card noselect wrapper">
-          <input id="cdnjsInput" type="text" placeholder="Search for a Library">
-          <button id="cdnjsBtn" class="btn grey darken-2 z-depth-0">Search</button>
-          <div id="cdnjsInstructions">Click on a link to send it to your links dashboard widget!</div>
-          <!-- Modal Structure -->
-          <div id="modal-cdnjs" class="modal noselect">
-            <div class="modal-content">
-              <h4>Oh no!</h4>
-              <p>Your search returned no results, try again.</p>
+        <!-- Modal Structure -->
+        <!-- SIGN UP MODAL -->
+        <div id="modal-signup" class="modal noselect">
+            <div class="modal-content noselect">
+                <h4>Sign up</h4><br />
+                <form id="signup-form">
+                    <div class="input-field noselect">
+                        <input type="text" id="signup-user" placeholder="What would you like to be called. . ." required>
+                        <label for="signupUserID">Full Name</label>
+                    </div>
+                    <div class="input-field noselect">
+                        <input type="email" id="signup-email" required />
+                        <label for="signup-email">Email address</label>
+                    </div>
+                    <div class="input-field noselect">
+                        <input type="password" id="signup-password" required />
+                        <label for="signup-password">Choose password</label>
+                    </div>
+                    <button class="btn grey darken-2 z-depth-0 noselect">Sign up</button>
+                </form>
             </div>
-            <div class="modal-footer noselect">
-              <a href="#!" id="modal-cdnjs--close" class="modal-close waves-effect white-text waves-green btn-flat noselect">Ok</a>
-            </div>
-          </div>
-          <section id="cdnjsResults" class="cdnjs-scroll">
-            <ol id="cdnOl">
-            </ol>
-          </section>
         </div>
-      </div>
-    </section>
-    <!-- <section> -->
-    <!--Modals-->
-    <!--Error Modal-->
-    <div id="modal-error" class="modal noselect">
-      <div class="modal-content noselect">
-        <h4>Sorry . . . </h4>
-        <p id="errmsg"></p>
-        <p id="posSolution"></p>
-      </div>
-      <div class="modal-footer noselect">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat noselect">Try Again</a>
-      </div>
-    </div>
-    <!-- Modal Structure -->
-    <!-- SIGN UP MODAL -->
-    <div id="modal-signup" class="modal noselect">
-      <div class="modal-content noselect">
-        <h4>Sign up</h4><br />
-        <form id="signup-form">
-          <div class="input-field noselect">
-            <input type="text" id="signup-user" placeholder="What would you like to be called. . ." required>
-            <label for="signupUserID">Full Name</label>
-          </div>
-          <div class="input-field noselect">
-            <input type="email" id="signup-email" required />
-            <label for="signup-email">Email address</label>
-          </div>
-          <div class="input-field noselect">
-            <input type="password" id="signup-password" required />
-            <label for="signup-password">Choose password</label>
-          </div>
-          <button class="btn grey darken-2 z-depth-0 noselect">Sign up</button>
-        </form>
-      </div>
-    </div>
-    <!-- LOGIN MODAL -->
-    <div id="modal-login" class="modal noselect">
-      <div class="modal-content noselect">
-        <h4>Login</h4><br />
-        <form id="login-form">
-          <div class="input-field noselect">
-            <input type="email" id="login-email" required />
-            <label for="login-email">Email address</label>
-          </div>
-          <div class="input-field noselect">
-            <input type="password" id="login-password" required />
-            <label for="login-password">Your password</label>
-          </div>
-          <button class="btn grey darken-2 z-depth-0 noselect">Login</button>
-        </form>
-      </div>
-    </div>
-    <!-- ACCOUNT MODAL -->
-    <div id="modal-account" class="modal noselect">
-      <div class="modal-content center-align noselect">
-        <h4>Account details</h4><br />
-        <div class="account-details noselect"></div>
-        <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
-      </div>
-    </div>
-    <!--Save MODAL -->
-    <div id="modal-save" class="modal noselect">
-      <div class="modal-content center-align noselect">
-        <h4>Save</h4><br />
-        <p> Congratulations your stuff has been saved.</p>
-        <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
-      </div>
-    </div>
-    <!--ABOUT MODAL -->
-    <div id="modal-about" class="modal noselect">
-      <div id="aboutGrid">
-        <div id="modal-about-content " class="modal-content grey center-align noselect">
-          <h1><strong>About</strong></h1><br />
-          <p class="flow-text noselect">Bootcampbox is a helpful dashboard for use in a web-development environment. Integrating multiple links, sites, and tools that are frequently used within a web-development lifestyle. </p>
-          <h2 id="about-header " class="center noselect">BootCamp Box Authors</h2>
-          <p><a href="#aboutJoe">Joe Sumis</a> | <a href="#aboutRudie">Rauol Moore</a> | <a href="#aboutGerald">Gerald Plotke</a> | <a href="#aboutPeter">Peter Roto</a></p>
+        <!-- LOGIN MODAL -->
+        <div id="modal-login" class="modal noselect">
+            <div class="modal-content noselect">
+                <h4>Login</h4><br />
+                <form id="login-form">
+                    <div class="input-field noselect">
+                        <input type="email" id="login-email" required />
+                        <label for="login-email">Email address</label>
+                    </div>
+                    <div class="input-field noselect">
+                        <input type="password" id="login-password" required />
+                        <label for="login-password">Your password</label>
+                    </div>
+                    <button class="btn grey darken-2 z-depth-0 noselect">Login</button>
+                </form>
+            </div>
         </div>
-        <!--About Contibutors Cards-->
-        <div id="aboutJoe" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
-          <div class="uk-card-header">
-            <div class="uk-grid-small uk-flex-middle" uk-grid>
-              <div class="uk-width-auto">
-                <img alt="Joe's Profile Picture" class="uk-border-rounded" width="150" height="150" src="./assets/images/about/JSumis.jpg">
-              </div>
-              <div class="uk-width-expand">
-                <h3 class="uk-card-title uk-margin-remove-bottom">Joe Sumis</h3>
-                <p class="uk-text-meta uk-margin-remove-top">HTML | CSS | Markdown</p>
-              </div>
+        <!-- ACCOUNT MODAL -->
+        <div id="modal-account" class="modal noselect">
+            <div class="modal-content center-align noselect">
+                <h4>Account details</h4><br />
+                <div class="account-details noselect"></div>
+                <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
             </div>
-            <div class="uk-card-body">
-              <p>Joe likes puppies, fuzzy socks, and long walks on the beach.</p>
-            </div>
-            <div class="uk-card-footer">
-              <a href="http://github.com/Jsumis" class="uk-button uk-button-text">Check out Joe's Github</a>
-            </div>
-          </div>
         </div>
-        <div id="aboutRudie" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
-          <div class="uk-card-header">
-            <div class="uk-grid-small uk-flex-middle" uk-grid>
-              <div class="uk-width-auto">
-                <img alt="Rauol's Profile Picture" class="uk-border-rounded" width="150" height="150" src="./assets/images/about/RudieG.jpg">
-              </div>
-              <div class="uk-width-expand">
-                <h3 class="uk-card-title uk-margin-remove-bottom">Rauol Moore</h3>
-                <p class="uk-text-meta uk-margin-remove-top">JS | CSS | Project Management</p>
-              </div>
+        <!--Save MODAL -->
+        <div id="modal-save" class="modal noselect">
+            <div class="modal-content center-align noselect">
+                <h4>Save</h4><br />
+                <p> Congratulations your stuff has been saved.</p>
+                <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
             </div>
-            <div class="uk-card-body">
-              <p>Rauol "Rudie" Moore was born and raised in the Chicagoland area, and is reachable at rauoldm@gmail.com</p>
-            </div>
-            <div class="uk-card-footer">
-              <a href="https://github.com/rudie-g" class="uk-button uk-button-text">Check out Rauol's Github</a>
-            </div>
-          </div>
         </div>
-        <div id="aboutGerald" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
-          <div class="uk-card-header">
-            <div class="uk-grid-small uk-flex-middle" uk-grid>
-              <div class="uk-width-auto">
-                <img alt="Gerald's Profile Picture" class="uk-border-rounded" width="150" height="150" src="./assets/images/about/GPlotke.jpg">
-              </div>
-              <div class="uk-width-expand">
-                <h3 class="uk-card-title uk-margin-remove-bottom">Gerald Plotke</h3>
-                <p class="uk-text-meta uk-margin-remove-top">CSS | JS | HTML | API Handling </p>
-              </div>
-            </div>
+        <!--ABOUT MODAL -->
+        <div id="modal-about" class="modal noselect">
+            <div id="aboutGrid">
+                <div id="modal-about-content " class="modal-content grey center-align noselect">
+                    <h1><strong>About</strong></h1><br />
+                    <p class="flow-text noselect">Bootcampbox is a helpful dashboard for use in a web-development environment. Integrating multiple links, sites, and tools that are frequently used within a web-development lifestyle. </p>
+                    <h2 id="about-header " class="center noselect">BootCamp Box Authors</h2>
+                    <p><a href="#aboutJoe">Joe Sumis</a> | <a href="#aboutRudie">Rauol Moore</a> | <a href="#aboutGerald">Gerald Plotke</a> | <a href="#aboutPeter">Peter Roto</a></p>
+                </div>
+                <!--About Contibutors Cards-->
+                <div id="aboutJoe" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img alt="Joe's Profile Picture" class="uk-border-rounded" width="150" height="150" src="./assets/images/about/JSumis.jpg">
+                            </div>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Joe Sumis</h3>
+                                <p class="uk-text-meta uk-margin-remove-top">HTML | CSS | Markdown</p>
+                            </div>
+                        </div>
+                        <div class="uk-card-body">
+                            <p>Joe likes puppies, fuzzy socks, and long walks on the beach.</p>
+                        </div>
+                        <div class="uk-card-footer">
+                            <a href="http://github.com/Jsumis" class="uk-button uk-button-text">Check out Joe's Github</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="aboutRudie" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img alt="Rauol's Profile Picture" class="uk-border-rounded" width="150" height="150" src="./assets/images/about/RudieG.jpg">
+                            </div>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Rauol Moore</h3>
+                                <p class="uk-text-meta uk-margin-remove-top">JS | CSS | Project Management</p>
+                            </div>
+                        </div>
+                        <div class="uk-card-body">
+                            <p>Rauol "Rudie" Moore was born and raised in the Chicagoland area, and is reachable at rauoldm@gmail.com</p>
+                        </div>
+                        <div class="uk-card-footer">
+                            <a href="https://github.com/rudie-g" class="uk-button uk-button-text">Check out Rauol's Github</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="aboutGerald" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img alt="Gerald's Profile Picture" class="uk-border-rounded" width="150" height="150" src="./assets/images/about/GPlotke.jpg">
+                            </div>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Gerald Plotke</h3>
+                                <p class="uk-text-meta uk-margin-remove-top">CSS | JS | HTML | API Handling </p>
+                            </div>
+                        </div>
 
-            <div class="uk-card-body">
-              <p>Jerry graduated from Illinois State University with a degree in business marketing before entering sales for 7 years in the logistics industry. From there he made the switch to web development to further his professional career
-                and expand his online retail business. Jerry has a beautiful wife, Ranna and his two children, Amara and Gerald.</p>
+                        <div class="uk-card-body">
+                            <p>Jerry graduated from Illinois State University with a degree in business marketing before entering sales for 7 years in the logistics industry. From there he made the switch to web development to further his professional career
+                                and expand his online retail business. Jerry has a beautiful wife, Ranna and his two children, Amara and Gerald.</p>
+                        </div>
+                        <div class="uk-card-footer">
+                            <a href="https://www.github.com/GPLOTKE" class="uk-button uk-button-text">Check out Gerald's Github</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="aboutPeter" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img alt="Peter's Profile Picture" class="uk-border-rounded" width="150" height="150" src="./assets/images/about/Ntbg.png">
+                            </div>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Peter Roto</h3>
+                                <p class="uk-text-meta uk-margin-remove-top">HTML | CSS | JS | Project Management</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-card-body">
+                        <p>Peter loves his family. His wife and two kids help drive him to always be growing and becoming better.</p>
+                    </div>
+                    <div class="uk-card-footer">
+                        <a href="https://www.github.com/Proto133" class="uk-button uk-button-text">Check out Peter's Github</a>
+                    </div>
+                </div>
+                <div class="row center noselect">
+                    <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
+                </div>
             </div>
-            <div class="uk-card-footer">
-              <a href="https://www.github.com/GPLOTKE" class="uk-button uk-button-text">Check out Gerald's Github</a>
-            </div>
-          </div>
         </div>
-        <div id="aboutPeter" class="uk-card uk-card-default uk-width-1-2@m aboutCard">
-          <div class="uk-card-header">
-            <div class="uk-grid-small uk-flex-middle" uk-grid>
-              <div class="uk-width-auto">
-                <img alt="Peter's Profile Picture" class="uk-border-rounded" width="150" height="150" src="./assets/images/about/Ntbg.png">
-              </div>
-              <div class="uk-width-expand">
-                <h3 class="uk-card-title uk-margin-remove-bottom">Peter Roto</h3>
-                <p class="uk-text-meta uk-margin-remove-top">HTML | CSS | JS | Project Management</p>
-              </div>
-            </div>
-          </div>
-          <div class="uk-card-body">
-            <p>Peter loves his family. His wife and two kids help drive him to always be growing and becoming better.</p>
-          </div>
-          <div class="uk-card-footer">
-            <a href="https://www.github.com/Proto133" class="uk-button uk-button-text">Check out Peter's Github</a>
-          </div>
-        </div>
-        <div class="row center noselect">
-          <button class="btn grey darken-2 z-depth-0 modal-close noselect">Close</button>
-        </div>
-      </div>
-    </div>
-    <!-- </section> -->
-  </main>
-  <footer>
-  </footer>
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
-  <!-- <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script> -->
-  <script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-      apiKey: "AIzaSyAhr03GPm1oGzx4AJstN4C9NFzCOT_kPIg",
-      authDomain: "bootcampbox-1c031.firebaseapp.com",
-      databaseURL: "https://bootcampbox-1c031-default-rtdb.firebaseio.com",
-      projectId: "bootcampbox-1c031",
-      storageBucket: "bootcampbox-1c031.appspot.com",
-      messagingSenderId: "449681568493",
-      appId: "1:449681568493:web:80039cb38640d7430152e4",
-      measurementId: "G-NSKYB1SJ9P"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    //Make Auth and firestore refences
-    const auth = firebase.auth();
-    const fireStore = firebase.firestore(); //Update firestore settings db.settings
-    // const db = firebase.database();
-    ({
-      timestampsinsnapshots: true
-    });
-  </script>
-  <!-- Dayjs -->
-  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+        <!-- </section> -->
+    </main>
+    <footer>
+    </footer>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script type="text/javascript" src="./config.js"></script>
+    <script type="text/javascript" src="./firebaseconfig.js"></script>
+    <!-- Dayjs -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
-  <!--requireJS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin=" anonymous"></script>
-  <!-- jquery cdn -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin=" anonymous"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- UIkit JS -->
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
-  </div>
+    <!--requireJS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin=" anonymous"></script>
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin=" anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
+    </div>
 </body>
 
 </html>
