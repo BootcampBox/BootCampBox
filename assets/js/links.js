@@ -5,7 +5,7 @@ var linksBtn = $("#linksBtn");
 var linksList = $("#linksList");
 var linksRemoverA = $("#linksRemoverA");
 var linksRemoverB = $("#linksRemoverB");
-var lsLinks = JSON.parse(localStorage.getItem("links"));
+// var lsLinks = JSON.parse(localStorage.getItem("links"));
 
 // Add an event listener to the add button, which takes value from link and name input fields, save to localStorage, apply to <li> variable
 linksBtn.on("click", linkMaker)
@@ -13,19 +13,24 @@ linksRemoverA.on("click", theLinksRemover);
 linksRemoverB.on("click", theLinksRemover);
 
 
-function appendLinks(setUpLinks) {
+function appendLinks() {
     console.log('appendlinks has fired')
-    console.log(setUpLinks);
-    for (i = 0; i < setUpLinks.length; i++) {
+    let setUpLinks = JSON.parse(localStorage.getItem("links"));
+    if (setUpLinks.links.length <= 0) {
+        placeholderItems()
+    }
+    console.log(setUpLinks.links.length);
+    for (i = 0; i < setUpLinks.links.length; i++) {
         var linksListEl = $('<li>');
         var linksAnchor = $("<a class='scroll linksLi'>");
-        linksAnchor.text(lsLinks.links[i]);
+        linksAnchor.text(setUpLinks.links[i]);
         linksList.append(linksListEl);
         linksListEl.append(linksAnchor);
     }
 }
 
 function linkMaker() {
+    let lsLinks = JSON.parse(localStorage.getItem('links'))
     var linksInputAnchor = $("<a class='scroll linksLi'>");
     var linksListInputEl = $('<li>');
     linksInputAnchor.text(linkInput.val());
@@ -34,6 +39,7 @@ function linkMaker() {
     console.log(lsLinks)
     lsLinks.links.push(linkInput.val());
     localStorage.setItem("links", JSON.stringify(lsLinks));
+    linkInput.val('')
     packLinks();
 
 }
@@ -44,11 +50,12 @@ function packLinks() {
     }
     let lsLinks = JSON.parse(localStorage.getItem('links'))
     console.log(lsLinks)
-    let setUpLinks = lsLinks
+    let setUpLinks = lsLinks.links
     console.log(setUpLinks)
     for (let i = 0; i < lsLinks.links.length; i++) {
         packedLinks.links.push(setUpLinks[i])
     }
+    console.log(packedLinks)
     sendLinksToFS(packedLinks)
 }
 
@@ -71,7 +78,7 @@ function sendLinksToFS(packedLinks) {
 // TODO: localStorage removals
 function theLinksRemover() {
     var theLinks = $(".linksLi");
-
+    let lsLinks = JSON.parse(localStorage.getItem('links'))
     lsLinksLinks = lsLinks.links;
     if ($(this).attr("class") == "fullRemover") {
         // Remove Loop
@@ -86,31 +93,7 @@ function theLinksRemover() {
         lsLinksLinks.pop();
         localStorage.setItem("links", JSON.stringify(lsLinks));
     }
+    packLinks();
 }
 
 // On page load, add the values from localStorage to <li>s and add them (hidden) to the <ul>
-// if (!localStorage.getItem("stored-links") == null || localStorage.getItem("stored-links") == undefined) {
-//   localStorage.setItem("stored-links", JSON.stringify({
-//     links: [
-//       "https://github.com/public-apis/public-apis",
-//       "https://unicode.org/emoji/charts/full-emoji-list.html",
-//       "https://www.w3schools.com/",
-//       "https://developer.mozilla.org/en-US/",
-//       "https://devhints.io/",
-//       "https://jquery.com/download/"
-//     ]
-//   }));
-// }
-// console.log(localStorage.getItem("stored-links"));
-
-
-
-// function restoreLinks() {
-//     for (i = 0; i < lsLinks.links.length; i++) {
-//         var linksListEl = $('<li>');
-//         var linksAnchor = $("<a class='scroll linksLi'>");
-//         linksAnchor.text(lsLinks.links[i]);
-//         linksList.append(linksListEl);
-//         linksListEl.append(linksAnchor);
-//     }
-// }
