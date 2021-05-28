@@ -1,21 +1,13 @@
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+console.log('firebaseConfig.js fired')
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
-    apiKey: config.apiKey,
-    authDomain: config.authDomain,
-    databaseURL: config.databaseURL,
-    projectId: config.projectId,
-    storageBucket: config.storageBucket,
-    messagingSenderId: config.messagingSenderId,
-    appId: config.appId,
-    measurementId: config.measurementId
+    apiKey: FB_apiKey,
+    authDomain: FB_authDomain,
+    databaseURL: FB_databaseURL,
+    projectId: FB_projectId,
+    storageBucket: FB_storageBucket,
+    messagingSenderId: FB_messagingSenderId,
+    appId: FB_appId,
+    measurementId: FB_measurementId
 };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-//Make Auth and firestore refences
-const auth = firebase.auth();
-const fireStore = firebase.firestore(); //Update firestore settings db.settings
-// const db = firebase.database();
-({
-    timestampsinsnapshots: true
-});
