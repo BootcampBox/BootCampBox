@@ -18,25 +18,26 @@ const snippetsGet = localStorage.getItem("snippets");
 const linksGet = localStorage.getItem("links");
 
 function placeholderItems() {
-    if (!linksGet || linksGet == '') {
+    if (!linksGet.links || linksGet.links == '') {
         console.log('LocalStorage was Empty')
-        localStorage.setItem('links', JSON.stringify(
-            [
+        localStorage.setItem('links', JSON.stringify({
+            links: [
                 "https://github.com/public-apis/public-apis",
                 "https://unicode.org/emoji/charts/full-emoji-list.html",
                 "https://www.w3schools.com/"
             ]
-        ))
+        }))
     }
-    if (localStorage.getItem('snippets') == null || localStorage.getItem('snippets') == '') {
-        localStorage.setItem('snippets', {
-            snippets: [
-                'This is a snippet Title saved in localStorage:',
-                'This is a snippet. Saved to localStorage whenever you click save'
-            ]
-        })
+    // if (localStorage.getItem('snippets') == null || localStorage.getItem('snippets') == '') {
+    //     localStorage.setItem('snippets', {
+    //         snippets: [
+    //             'This is a snippet Title saved in localStorage:',
+    //             'This is a snippet. Saved to localStorage whenever you click save'
+    //         ]
+    //     })
 
-    };
+    // };
+    appendLinks()
 }
 /*************************************************************************\
  **** Appending the DOM with info from Firestore on login******************\
@@ -72,6 +73,7 @@ function setupUI(user) {
 var snipObj = {
     snippets: []
 }
+var linkObj = { links: [] }
 
 function setupData(user) {
     console.log('setupData has fired');
@@ -106,7 +108,22 @@ function setupData(user) {
         This prevents items from coming back as null or undefined
         if it takes longer than expected to get the data back.*/
     })
-}
+    userDocRef.get('links').then((doc) => {
+        console.log(doc.data())
+        if (doc.exists && doc.data() != null) {
+            for (var i = 0; i < doc.data().links.links.length; i++) {
+                linkObj.links.push(doc.data().links.links[i])
+            }
+            console.log(linkObj)
+                // let setUpLinks = JSON.stringify(linkObj)
+                // console.log('setUpLinks =', setUpLinks)
+            localStorage.setItem('links', JSON.stringify(linkObj));
+            appendLinks(linkObj)
+
+        }
+    })
+};
+
 
 
 
@@ -178,8 +195,9 @@ $(function() {
         var setEventText = localStorage.getItem(dayStorage);
         // console.log(setEventText);
         $(`#${dayStorage}`).val(setEventText);
-    };
+    }
 })
+
 $("#clearBtn").on("click", function() {
     var dayList = $(".inputField");
     console.log(dayList);
