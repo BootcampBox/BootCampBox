@@ -31,7 +31,7 @@ function appendLinks() {
 
 function linkMaker() {
   let lsLinks = JSON.parse(localStorage.getItem('links'))
-  var linksInputAnchor = $("<a class='scroll linksLi'>");
+  var linksInputAnchor = $("<a class='scroll linksLi' href='" + linkInput.val() + "' target='_blank'>");
   var linksListInputEl = $('<li>');
   linksInputAnchor.text(linkInput.val());
   linksList.append(linksListInputEl);
