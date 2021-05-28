@@ -1,13 +1,4 @@
 console.log('auth.js fired')
-    // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-//Make Auth and firestore refences
-const auth = firebase.auth();
-const fireStore = firebase.firestore(); //Update firestore settings db.settings
-// const db = firebase.database();
-({
-    timestampsinsnapshots: true
-});
 
 // const userDBget
 const accountDetails = $('.account-details');

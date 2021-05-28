@@ -17,7 +17,7 @@
 
     <!--Our Scripts-->
     <script defer type="text/javascript" src="./assets/js/snippets.js"></script>
-
+    <script defer type="text/javascript" src="./assets/js/script.js"></script>
     <script defer type="text/javascript" src="./assets/js/links.js"></script>
     <script defer type="text/javascript" src="./assets/js/CDNJS.js"></script>
     <script defer type="text/javascript" src="./assets/js/github.js"></script>
@@ -375,18 +375,37 @@
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
-    <!-- jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin=" anonymous"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script> -->
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAhr03GPm1oGzx4AJstN4C9NFzCOT_kPIg",
+            authDomain: "bootcampbox-1c031.firebaseapp.com",
+            databaseURL: "https://bootcampbox-1c031-default-rtdb.firebaseio.com",
+            projectId: "bootcampbox-1c031",
+            storageBucket: "bootcampbox-1c031.appspot.com",
+            messagingSenderId: "449681568493",
+            appId: "1:449681568493:web:80039cb38640d7430152e4",
+            measurementId: "G-NSKYB1SJ9P"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        //Make Auth and firestore refences
+        const auth = firebase.auth();
+        const fireStore = firebase.firestore(); //Update firestore settings db.settings
+        // const db = firebase.database();
+        ({
+            timestampsinsnapshots: true
+        });
+    </script>
     <!-- Dayjs -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <script type="text/javascript" src="./config.js"></script>
-    <script type="text/javascript" src="./assets/js/script.js"></script>
-    <script type="text/javascript" src="./firebaseconfig.js"></script>
-
 
     <!--requireJS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin=" anonymous"></script>
-
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin=" anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- UIkit JS -->

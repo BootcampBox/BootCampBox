@@ -1,14 +1,3 @@
-console.log('script.js fired')
-    //config variables
-const FB_apiKey = config.apiKey,
-    FB_authDomain = config.authDomain,
-    FB_databaseURL = config.databaseURL,
-    FB_projectId = config.projectId,
-    FB_storageBucket = config.storageBucket,
-    FB_messagingSenderId = config.FB_messagingSenderId,
-    FB_appId = config.appId,
-    FB_measurementId = config.measurementId;
-
 // Setup Materialize Components
 document.addEventListener('DOMContentLoaded', function() {
     var modals = document.querySelectorAll('.modal');
