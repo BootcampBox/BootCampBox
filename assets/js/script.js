@@ -177,6 +177,10 @@ $('#modal-cdnjs--close').on('click', function() {
     $('#modal-cdnjs').modal('close');
 });
 
+$('#logo').on('click', function() {
+    $(window).scrollTop(0)
+})
+
 // Week Planner
 
 function getEventText() {
