@@ -35,22 +35,32 @@
 </head>
 
 <body>
-    <header class="noselect center">
+    <header class="noselect">
 
         <div id="greeting">
 
-            <h2 class="flow-text noselect">Welcome <br /><span id="emailDisplay"></span></h2>
+            <h2 class="flow-text  black-text noselect">Welcome <br /><span id="emailDisplay"></span></h2>
         </div>
     </header>
     <main>
-        <aside class=" container navTabs noselect">
+        <aside class="navTabs noselect">
             <img id="logo" src="./assets/images/BcB_Logo.png">
             <ul id="navTabsTop">
-                <li class="logged-in noselect"><a href="#modal-account" class="grey-text modal-trigger" data-target="modal-account">Account</a></li>
-                <li class="logged-out noselect"><a href="#modal-signup" class="grey-text modal-trigger" data-target="modal-signup">Sign Up</a></li>
-                <li class="logged-out noselect"><a href="#modal-login" class="grey-text modal-trigger" data-target="modal-login">Login</a></li>
-                <li id='saveBtn' class="logged-in noselect"><a href="#modal-save" class="grey-text modal-trigger" data-target="modal-save">Save</a></li>
-                <li class="logged-in noselect"><a href="#" class="grey-text" id="logout">Logout</a></li>
+                <li class="logged-in noselect">
+                    <a href="#modal-account" class="modal-trigger" data-target="modal-account">Account</a>
+                </li>
+                <li class="logged-out noselect">
+                    <a href="#modal-signup" class="modal-trigger" data-target="modal-signup">Sign Up</a>
+                </li>
+                <li class="logged-out noselect">
+                    <a href="#modal-login" class="modal-trigger" data-target="modal-login">Login</a>
+                </li>
+                <li id='saveBtn' class="logged-in noselect">
+                    <a href="#modal-save" class="modal-trigger" data-target="modal-save">Save</a>
+                </li>
+                <li class="logged-in noselect">
+                    <a href="#" id="logout">Logout</a>
+                </li>
             </ul>
             <ul id="navTabsMid">
                 <li id="navDash">
@@ -67,8 +77,8 @@
                 </li>
             </ul>
             <ul id="navTabsBottom">
-                <li><a href="#modal-about" class="grey-text modal-trigger noselect" data-target="modal-about">About</a></li>
-                <li><a href="#modal-help" class="grey-text modal-trigger noselect" data-target="modal-help">Help</a>
+                <li><a href="#modal-about" class="modal-trigger noselect" data-target="modal-about">About</a></li>
+                <li><a href="#modal-help" class="modal-trigger noselect" data-target="modal-help">Help</a>
                 </li>
             </ul>
             </section>
@@ -84,7 +94,7 @@
 
                     <h2>Links</h2>
                     <input class="white-text" type="text" id="linkInput" placeholder="https://... if you want the link to work">
-                    <input id="linksBtn" type="submit">
+                    <button id="linksBtn" class="btn btn-primary blue lighten-1" type="button">Enter</button>
                     <ul id="linksList" class="scroll-links uk-text-truncate"></ul>
 
                     <!-- <button class="fullRemover" id="linksRemoverA">Clear All</button> -->
@@ -274,10 +284,10 @@
         <!--ABOUT MODAL -->
         <div id="modal-about" class="modal noselect">
             <div id="aboutGrid">
-                <div id="modal-about-content " class="modal-content grey center-align noselect">
+                <div id="modal-about-content" class="modal-content grey center-align noselect">
                     <h1><strong>About</strong></h1><br />
                     <p class="flow-text noselect">Bootcampbox is a helpful dashboard for use in a web-development environment. Integrating multiple links, sites, and tools that are frequently used within a web-development lifestyle. </p>
-                    <h2 id="about-header " class="center noselect">BootCamp Box Authors</h2>
+                    <h2 id="about-header" class="center noselect">BootCamp Box Authors</h2>
                     <p><a href="#aboutJoe">Joe Sumis</a> | <a href="#aboutRudie">Rauol Moore</a> | <a href="#aboutGerald">Gerald Plotke</a> | <a href="#aboutPeter">Peter Roto</a></p>
                 </div>
                 <!--About Contibutors Cards-->
